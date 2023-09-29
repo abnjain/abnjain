@@ -25,3 +25,14 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+div.raju{
+  margin: 50px;
+  align-content: center;
+  align-items: center;
+  justify-items: space-between;
+  display: flex;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
