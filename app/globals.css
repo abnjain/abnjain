@@ -56,10 +56,11 @@ html,body{
     height: 60px;
     font-size: 1.5rem;
   }
-  .navLink{
+  .navLinks{
     display: none;
   }
   .nav_list_i_menu{
+    display: block;
     align-items: center;
     justify-content: space-between;
     font-size: 3.5vh;
