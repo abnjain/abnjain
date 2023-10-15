@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 *{
   margin: 0px;
@@ -34,6 +34,7 @@ html,body{
   gap: 20px;
 }
 .navLinks{
+  text-decoration: none;
   font-size: 1.4vw;
 }
 .nav_list_i{
@@ -58,14 +59,14 @@ h1{
 .expert{
   padding: 2vw;
   text-align: center;
-  font-size: 1.2rem;
 }
 .expert h2{
   font-size: 1.5vw;
   line-height: 4vw;
+  font-weight: 400;
 }
 .expert .distinguish{
-  margin-left: 15%;
+  margin-left: 12%;
   opacity: 0.18;
   border-top: 2px solid #bbb ;
   border-radius: 50%;
@@ -74,10 +75,13 @@ h1{
 .expert h3{
   font-size: 1.5vw;
   line-height: 5vw;
+  font-weight: 500;
 }
 .expert ul{
+  font-size: 1.3rem;
   line-height: 2.5vw;
   list-style-type: none;
+  padding: 30px;
 }
 .expert .expertise li::before {
   content: "\2192";
@@ -86,16 +90,24 @@ h1{
   margin-right: 0.4rem;
 }
 .expert ul .button{
-  line-height: 5vw;
+  background-color: transparent;
+  border: 0px;
+  line-height: 2vw;
+  font-size: 1.2rem;
+}
+.expert ul .button a{
+  text-decoration: none;
 }
 .expert ul .button:hover{
+  text-transform: uppercase;
+  text-shadow: rgb(244, 200, 22) 20px;
   text-decoration: underline;
 }
 .expert .horLine{
   border-left: 3px solid white;
   opacity: 0.3;
   border-radius: 50%;
-  height: 965px;
+  height: 1120px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
@@ -123,7 +135,7 @@ h1{
   opacity: 0.2;
   border-radius: 50%;
   width: 500px;
-  margin-left: 310px;
+  margin-left: 280px;
 }
 
 
@@ -142,6 +154,7 @@ h1{
   .nav_list_i_menu{
     display: block;
     padding-left: 20px;
+    padding-right: 5px;
     align-items: center;
     justify-content: space-between;
     font-size: 3.5vh;
@@ -155,6 +168,8 @@ h1{
   .expert h2{
     font-size: 1.02rem;
     line-height: 6vw;
+    font-weight: 500;
+    padding: 10px;
   }
   .expert .distinguish{
     margin-left: 10%;
@@ -162,9 +177,9 @@ h1{
     border-top: 2px solid #bbb ;
     border-radius: 50%;
     width: 300px;
-    padding-bottom: 15px;
   }
   .expert h3{
+    padding: 15px;
     font-size: 1.5rem;
     line-height: 9vw;
   }
@@ -172,6 +187,8 @@ h1{
     font-size: 1.15rem;
   }
   .expert ul{
+    margin-top: -15px;
+    padding: 5px;
     line-height: 7vw;
   }
   .expert ul .button{
@@ -179,13 +196,14 @@ h1{
   }
   .expert p{
     display: flex;
+    font-size: 1rem;
     margin-left: 15px;
   }
   .expert .horLine{
     border-left: 2px solid white;
     opacity: 0.3;
     border-radius: 0px;
-    height: 995px;
+    height: 920px;
     left: 10%;
   }
   .expert .title{

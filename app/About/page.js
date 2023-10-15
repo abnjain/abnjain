@@ -27,7 +27,7 @@ const About = () => {
                     <ul>
                         <li className="right"><span className="title">Malwa Institute of Science and Technology</span><br/><hr className="lineR"/>
                             • August 2023 - Present
-                            <p>Acquired knowledge in the new technology, namely Java.Developed a comprehensive project integrating MySQL, Java, and Web Designing.</p>
+                            <p>Acquired knowledge in the new technology, namely Java. Developed a comprehensive project integrating MySQL, Java, and Web Designing.</p>
                         </li>
                         <br/>
                         <li className="left"><span className="title">Quintus Tech Pvt. Ltd.</span><br/><hr className="lineL"/>
