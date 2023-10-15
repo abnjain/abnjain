@@ -4,7 +4,11 @@ export default function Home() {
   return (
     <>
       <main>
-        <h1>This is home page</h1>
+        <div className="content">
+          <h1>Hello I am Abhinav Jain</h1>
+          
+        </div>
+        
       </main>
     </>
   )

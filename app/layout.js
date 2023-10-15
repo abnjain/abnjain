@@ -1,7 +1,7 @@
 import Header from "@/Components/Header.js"
+import Footer from "@/Components/Footer.js"
 import './globals.css'
 import 'remixicon/fonts/remixicon.css'
-import Footer from "@/Components/Footer.js"
 
 export const metadata = {
   title: 'Abhinav Jain',
