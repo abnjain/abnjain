@@ -1,7 +1,7 @@
-import Header from "@/Components/Header.js"
-import Footer from "@/Components/Footer.js"
-import './globals.css'
-import 'remixicon/fonts/remixicon.css'
+import Header from "@/Components/Header.js";
+import Footer from "@/Components/Footer.js";
+import "./globals.css";
+// import "remixicon/fonts/remixicon.css";
 
 export const metadata = {
   title: 'Abhinav Jain',
@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   )

@@ -1,13 +1,15 @@
 import React from "react";
 
-const Blogs = () => {
-    return (
-        <>
-            <main>
-                <h1>This is Blogs Page</h1>
-            </main>
-        </>
-    )
+const Blog = () => {
+  return (
+    <>
+    <main className="flex min-h-max items-center justify-center font-bold p-24">
+      <div className=" text-4xl">
+      <h1>Blog Page</h1>
+      </div>
+    </main>
+    </>
+  )
 }
 
-export default Blogs;
+export default Blog;

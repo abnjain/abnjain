@@ -1,25 +1,20 @@
-import Link from "next/link"
-import React from "react"
+import React from "react";
+import Link from "next/link";
 
 const Header = () => {
-    return(
-        <>
-            <main>
-                <div className="nav">
-                    <h2>Logo</h2>
-                    <div className="nav_list">
-                        <Link className="navLinks" href="/">home</Link>
-                        <Link className="navLinks" href="/Projects">projects</Link>
-                        <Link className="navLinks" href="/About">about</Link>
-                        <Link className="navLinks" href="/Blogs">blogs</Link>
-                        <i className="nav_list_i nav_list_i_light ri-sun-fill"></i>
-                        <i className="nav_list_i nav_list_i_dark ri-contrast-2-fill"></i>
-                        <i className="nav_list_i nav_list_i_menu ri-menu-3-fill"></i>
-                    </div>
-                </div>
-            </main>
-        </>
-    )
+  return (
+    <>
+      <div className="mt-8 h-8 p-5 px-40 flex items-center justify-between text-2xl">
+        <Link href="/"><h1>Logo</h1></Link>
+        <div className="flex gap-8">
+          <Link href="/">home</Link>
+          <Link href="/About">about</Link>
+          <Link href="/Projects">projects</Link>
+          <Link href="/Blog">blog</Link>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default Header;

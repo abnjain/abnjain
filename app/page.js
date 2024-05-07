@@ -1,15 +1,13 @@
-import React from 'react'
 
-export default function Home() {
+const Home = () => {
   return (
-    <>
-      <main>
-        <div className="content">
-          <h1>Hello I am Abhinav Jain</h1>
-          
-        </div>
-        
-      </main>
-    </>
+    <main className="flex min-h-max justify-center">
+      <div className="text-4xl font-bold p-24">
+      <h1 className="text-center">Hello from Abhinav</h1>
+      <h2>I am a Designer | Developer | Entrepreneur | Freelancer</h2>
+      </div>
+    </main>
   )
 }
+
+export default Home;

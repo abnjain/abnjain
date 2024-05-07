@@ -1,12 +1,12 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   background-color: black; 
   color: #fff;
 }
@@ -20,8 +20,6 @@ html,body{
   height: 100px;
   width: 100%;
   padding: 0px 200px;
-  /* background-color: black; */
-  /* color: #fff; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,13 +45,6 @@ html,body{
 }
 .nav_list_i_menu{
   display: none;
-}
-
-h1{
-  text-align: center;
-  font-size: 2.5vw;
-  font-weight: 500;
-  line-height: 2vw;
 }
 
 .expert{
@@ -161,12 +152,6 @@ h1{
     justify-content: space-between;
     font-size: 3.5vh;
   }
-
-  h1{
-    font-size: 2rem;
-    line-height: 5rem;
-  }
-
   .expert h2{
     font-size: 1.02rem;
     line-height: 6vw;
