@@ -16,46 +16,6 @@ html,body{
   height: 100%;
 }
 
-.nav{
-  height: 100px;
-  width: 100%;
-  padding: 0px 200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.5rem;
-}
-.nav_list{
-  display:flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-.navLinks{
-  text-decoration: none;
-  font-size: 1.4vw;
-}
-.nav_list_i{
-  align-items: center;
-  justify-content: space-between;
-  width: 2vw;
-}
-.nav_list_i_dark{
-  display: none;
-}
-.nav_list_i_menu{
-  display: none;
-}
-
-.expert{
-  padding: 2vw;
-  text-align: center;
-}
-.expert h2{
-  font-size: 1.5vw;
-  line-height: 4vw;
-  font-weight: 400;
-}
 .expert .distinguish{
   margin-left: 12%;
   opacity: 0.18;
@@ -63,50 +23,24 @@ html,body{
   border-radius: 50%;
   width: 1150px;
 }
-.expert h3{
-  font-size: 1.5vw;
-  line-height: 5vw;
-  font-weight: 500;
-}
-.expert ul{
-  font-size: 1.3rem;
-  margin-top: -45px;
-  padding: 5px;
-  line-height: 2.5vw;
-  list-style-type: none;
-  padding: 30px;
-}
 .expert .expertise li::before {
   content: "\2192";
   color: #fff;
   font-weight: 700;
   margin-right: 0.4rem;
 }
-.expert ul .button{
-  background-color: transparent;
-  border: 0px;
-  line-height: 2vw;
-  font-size: 1.2rem;
-}
-.expert ul .button a{
-  text-decoration: none;
-}
-.expert ul .button:hover{
+.expert ul .resumeButton:hover{
   text-transform: uppercase;
   text-shadow: rgb(244, 200, 22) 20px;
-  text-decoration: underline;
 }
 .expert .horLine{
   border-left: 3px solid white;
   opacity: 0.3;
   border-radius: 50%;
-  height: 1080px;
+  height: 1078px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
-}
-.expert .newLine{
-  display: none;
 }
 .expert ul .left{
   text-align: left;
@@ -128,98 +62,10 @@ html,body{
   opacity: 0.2;
   border-radius: 50%;
   width: 500px;
-  margin-left: 280px;
+  margin-left: 330px;
 }
 
 
 
  @media (max-width:600px) {
-  .nav{
-    /* background-color: black;
-    color: #fff; */
-    padding: 0px 50px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-  .navLinks{
-    display: none;
-  }
-  .nav_list_i_menu{
-    display: block;
-    padding-left: 20px;
-    padding-right: 5px;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 3.5vh;
-  }
-  .expert h2{
-    font-size: 1.02rem;
-    line-height: 6vw;
-    font-weight: 500;
-    padding: 10px;
-  }
-  .expert .distinguish{
-    margin-left: 10%;
-    opacity: 0.18;
-    border-top: 2px solid #bbb ;
-    border-radius: 50%;
-    width: 300px;
-  }
-  .expert h3{
-    padding: 15px;
-    font-size: 1.5rem;
-    line-height: 9vw;
-  }
-  .expert ul li{
-    font-size: 1.15rem;
-  }
-  .expert ul{
-    margin-top: -15px;
-    padding: 5px;
-    line-height: 7vw;
-  }
-  .expert ul .button{
-    line-height: 15vw;
-  }
-  .expert p{
-    display: flex;
-    font-size: 1rem;
-    margin-left: 15px;
-  }
-  .expert .horLine{
-    border-left: 2px solid white;
-    opacity: 0.3;
-    border-radius: 0px;
-    height: 920px;
-    left: 10%;
-  }
-  .expert .title{
-    font-weight: 500;
-  }
-  .expert ul .left{
-    text-align: left;
-    margin-left: 18%;
-    margin-right: 5%;
-  }
-  .expert .lineL {
-    border-left: 3px solid white;
-    opacity: 0.25;
-    border-radius: 0%;
-    width: 300px;
-    margin-left: -13%;
-    margin-right: 5%;
-  }
-  .expert ul .right{
-    text-align: left;
-    margin-left: 18%;
-    margin-right: 5%;
-  }
-  .expert .lineR {
-    border-left: 3px solid white;
-    opacity: 0.25;
-    border-radius: 0%;
-    width: 300px;
-    margin-left: -13%;
-    margin-right: 5%;
-  }
 } 
