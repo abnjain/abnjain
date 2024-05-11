@@ -1,6 +1,6 @@
 .buttonCustomShadow {
-    box-shadow: 4px 5px 5px white;
+    box-shadow: 1px -10px 8px rgba(255, 255, 255, 0.201);
 }
 .buttonCustomShadow2 {
-    box-shadow: 4px 5px 5px white ;
+    box-shadow: 1px -10px 8px rgba(255, 255, 255, 0.201) ;
 }
