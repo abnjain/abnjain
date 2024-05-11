@@ -32,10 +32,10 @@ const Home = () => {
           </div>
         </div>
         <div className="flex gap-6">
-            <button className={`py-2 px-4 bg-blue-500 text-white rounded-3xl shadow-2xl ${styles.buttonCustomShadow} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125`}>
+            <button className={`py-2 px-4 bg-blue-500 text-white rounded-3xl shadow-2xl ${styles.buttonCustomShadow} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125 hover:shadow-none`}>
             Hire Me
             </button>
-            <button className={`py-1 px-1 bg-blue-500 text-white rounded-3xl shadow-md ${styles.buttonCustomShadow2} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125`}>
+            <button className={`py-1 px-1 bg-blue-500 text-white rounded-3xl shadow-md ${styles.buttonCustomShadow2} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125 hover:shadow-none`}>
               <span className="py-2 px-4 block bg-black rounded-3xl">Download CV</span>
             </button>
         </div>
