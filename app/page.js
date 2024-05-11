@@ -1,5 +1,6 @@
 "use client";
 import { TypeAnimation } from "react-type-animation";
+import Image from 'next/image';
 import styles from "./page.module.css";
 
 const Home = () => {
@@ -8,9 +9,9 @@ const Home = () => {
       <main className="flex min-h-max justify-center flex-col items-center">
         <div className="text-4xl font-bold mt-24 mb-8">
           <h1 className="text-center mb-3">Hello from Abhinav</h1>
-          <div className="flex">
+          <div className="flex flex-wrap justify-center">
             <h2 className="inline-block">I am a </h2>
-            <h2 className="inline-block ml-2">
+            <h2 className="inline-block text-center ml-2">
               <TypeAnimation
                 sequence={[
                   "Web Designer",
@@ -31,13 +32,23 @@ const Home = () => {
             </h2>
           </div>
         </div>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-24">
             <button className={`py-2 px-4 bg-blue-500 text-white rounded-3xl shadow-2xl ${styles.buttonCustomShadow} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125 hover:shadow-none`}>
             Hire Me
             </button>
             <button className={`py-1 px-1 bg-blue-500 text-white rounded-3xl shadow-md ${styles.buttonCustomShadow2} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125 hover:shadow-none`}>
               <span className="py-2 px-4 block bg-black rounded-3xl">Download CV</span>
             </button>
+        </div>
+        <div className="my-10 p-6 border-2 border-b-0 shadow-2xl shadow-neutral-500 rounded-xl rounded-b-none w-7/12">
+          <p className="text-center p-6">Hi These are some Images of me</p>
+          <section>
+            <Image 
+              src="/me.png"
+              width={500} // Width of the image
+              height={300} 
+            />
+          </section>
         </div>
       </main>
     </>
