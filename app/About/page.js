@@ -18,7 +18,7 @@ const About = () => {
                         <li>Frontend Designing with Bootstrap, React.js, and Next.js involves creating responsive, dynamic user interfaces with reusable components and optimized performance.</li>
                         <li>SQL and NoSQL database management systems efficiently organize, store, and retrieve data, meeting diverse needs and scalability demands in modern applications.</li>
                         <li>AWS and Google Cloud Platform provide scalable and secure cloud infrastructure services for efficient application deployment and management.</li>
-                        <a type="submit" className="resumeButton m-6 pr-3 pl-3 border border-solid rounded-full text-lg" href="/resume" target="_blank">view resume</a>
+                        <a type="submit" className="m-6 pr-3 pl-3 border border-solid rounded-full text-lg hover:uppercase" href="/resume.pdf" download="Abhinav Jain Resume.pdf">view resume</a>
                         <br/>
                     </ul>
                     <hr className="distinguish"/>

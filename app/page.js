@@ -41,18 +41,18 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-24">
-          <button
+        <a type="submit" href="/resume.pdf" download="Abhinav Jain Resume.pdf"
             className={`py-2 px-4 bg-blue-500 text-white rounded-3xl shadow-2xl ${styles.buttonCustomShadow} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125 hover:shadow-none`}
           >
             Hire Me
-          </button>
-          <button
+          </a>
+          <a type="submit" href="/resume.pdf" download="Abhinav Jain Resume.pdf"
             className={`py-1 px-1 bg-blue-500 text-white rounded-3xl shadow-md ${styles.buttonCustomShadow2} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125 hover:shadow-none`}
           >
             <span className="py-2 px-4 block bg-black rounded-3xl">
               Download CV
             </span>
-          </button>
+            </a>
         </div>
         <div className="my-20 space-y-8">
           <p className="text-center font-bold text-2xl">I am Proficient in</p>

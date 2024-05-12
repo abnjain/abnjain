@@ -29,10 +29,6 @@ html,body{
   font-weight: 700;
   margin-right: 0.4rem;
 }
-.expert ul .resumeButton:hover{
-  text-transform: uppercase;
-  text-shadow: rgb(244, 200, 22) 20px;
-}
 .expert .horLine{
   border-left: 3px solid white;
   opacity: 0.3;
@@ -64,12 +60,3 @@ html,body{
   width: 500px;
   margin-left: 330px;
 }
-
-/* "Web Designer",
-                "Web Developer",
-                "Coder",
-                "Enterpreneur",
-                "Freelancer", */
-
- @media (max-width:600px) {
-} 
