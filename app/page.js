@@ -41,7 +41,8 @@ const Home = () => {
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-24">
-        <a type="submit" href="/resume.pdf" download="Abhinav Jain Resume.pdf"
+        <a 
+        // type="submit" href="/resume.pdf" download="Abhinav Jain Resume.pdf"
             className={`py-2 px-4 bg-blue-500 text-white rounded-3xl shadow-2xl ${styles.buttonCustomShadow} hover:bg-blue-600 transform transition-all duration-100 hover:scale-125 hover:shadow-none`}
           >
             Hire Me
