@@ -13,7 +13,7 @@ const Projects = () => {
             <Image
               src="/Images/findTheBubble.png" // Path to your image file in the public directory
               alt="find-the-bubble GAME"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
@@ -30,9 +30,9 @@ const Projects = () => {
           </div>
           <div className="relative w-72 h-96 rounded-3xl flex flex-col justify-center group">
             <Image
-              src="/Images/" // Path to your image file in the public directory
+              src="/Images/notepad.png" // Path to your image file in the public directory
               alt="NOTEPAD Website"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
@@ -51,7 +51,7 @@ const Projects = () => {
             <Image
               src="/Images/portfolio.png" // Path to your image file in the public directory
               alt="PORTFOLIO Website"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
@@ -70,7 +70,7 @@ const Projects = () => {
             <Image
               src="/Images/" // Path to your image file in the public directory
               alt="GREYT HR Portal"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
@@ -89,7 +89,7 @@ const Projects = () => {
             <Image
               src="/Images/" // Path to your image file in the public directory
               alt="Website"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
