@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import { AiFillInstagram } from "react-icons/ai";
 import { IoLogoGithub } from "react-icons/io5";
@@ -9,12 +10,17 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="py-16 flex flex-wrap gap-5 justify-evenly text-center text-xl">
-        <div>
-          <h2>Logo</h2>
+      <footer className="py-16 flex flex-wrap gap-5 justify-evenly items-center text-center text-xl">
+        <div className="flex flex-col items-center">
+        <Image 
+            src="/Images/favicon.png"
+            width={60}
+            height={60}
+            className="items-center"
+          />
           <h4>&copy; 2024 All Rights Reserved</h4>
         </div>
-
+        
         <div className="space-y-2">
           <h1>Socials</h1>
           <div className="flex gap-8 text-4xl items-center">

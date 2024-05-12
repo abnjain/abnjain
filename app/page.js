@@ -3,7 +3,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import styles from "./page.module.css";
-import PortFolio from "@/Components/Portfolio";
+// import PortFolio from "@/Components/Portfolio";
 
 import { SiMongodb } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
