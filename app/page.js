@@ -88,7 +88,7 @@ const Home = () => {
             />
             <Image
               className="h-60 w-56 rounded-3xl"
-              src="/Images"
+              src="/Images/me.jpg"
               width={500}
               height={300}
             />
@@ -100,13 +100,13 @@ const Home = () => {
             />
             <Image
               className="h-60 w-56 rounded-3xl"
-              src="/Images"
+              src="/Images/me.jpg"
               width={500}
               height={300}
             />
             <Image
               className="h-60 w-56 rounded-3xl"
-              src="/Images"
+              src="/Images/me.jpg"
               width={500}
               height={300}
             />
@@ -118,7 +118,7 @@ const Home = () => {
             />
             <Image
               className="h-60 w-56 rounded-3xl"
-              src="/Images"
+              src="/Images/me.jpg"
               width={500}
               height={300}
             />
