@@ -22,7 +22,7 @@ const Projects = () => {
               href="https://kubergroup.in"
               target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
+              title="Visit Kuber Group Webapp"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
                 KUBER GROUP
@@ -42,7 +42,7 @@ const Projects = () => {
               href=" https://findthebubble.netlify.app/"
               target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
+              title="Visit Game"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-10">
               find-the-bubble GAME
@@ -62,7 +62,7 @@ const Projects = () => {
               href="/"
               // target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
+              title="Visit The Portfolio Website"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-24">
                 PORTFOLIO
@@ -82,7 +82,7 @@ const Projects = () => {
               href="/https://github.com/abnjain/shikshakRecruitment"
               // target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
+              title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-7">
                 SHIKSHAK RECRUITMENT
@@ -102,7 +102,7 @@ const Projects = () => {
               href="https://github.com/ABNjain/notepad"
               target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
+              title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-24">
                 NOTEPAD
@@ -122,7 +122,7 @@ const Projects = () => {
               href="https://github.com/ABNjain/greytHR"
               target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
+              title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
                 GREYT HR Portal

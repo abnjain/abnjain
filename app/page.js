@@ -97,7 +97,6 @@ const Home = () => {
             <a
               href="#"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
               My stead
@@ -121,7 +120,6 @@ const Home = () => {
             <a
               href="#"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
               It ain’t me
@@ -139,7 +137,6 @@ const Home = () => {
             <a
               href="#"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
                 Not ME
@@ -163,7 +160,6 @@ const Home = () => {
             <a
               href="#"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Example Website"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
               Not mine
