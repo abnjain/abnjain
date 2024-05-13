@@ -79,7 +79,7 @@ const Projects = () => {
               height={300} // Height of the image
             />
             <a
-              href="/Projects"
+              href="/https://github.com/abnjain/shikshakRecruitment"
               // target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
               title="Visit Example Website"
