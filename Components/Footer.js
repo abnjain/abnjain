@@ -42,7 +42,7 @@ const Footer = () => {
         <div>
           <h4>
             Build with &hearts; By{" "}
-            <a className="text-Decration-line underline" href="/">
+            <a className="text-Decration-line underline text-custom-fireOpal" href="/">
               abnjain
             </a>
           </h4>

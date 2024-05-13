@@ -4,13 +4,13 @@ const About = () => {
     return (
         <>
             <main>
-                <h1 className="text-center text-4xl font-bold tracking-wide m-8 mt-20">About ME</h1>
+                <h1 className="text-center text-3xl font-bold tracking-wide m-8 mt-10">About ME</h1>
                 <div className="expert text-center">
-                    <h2 className="text-xl m-6">As a seasoned full-stack developer, I specialize in building web applications and services. <br />
+                    <h2 className="text-lg m-6">As a seasoned full-stack developer, I specialize in building web applications and services. <br />
                     I'm also skilled in creating animations, which elevate user experience by adding dynamic elements to interfaces. </h2>
                     <hr className="distinguish mb-3"/>
-                    <h3 className="text-2xl font-semibold m-4 mt-3">My expertise includes :</h3>
-                    <ul className="expertise text-center text-lg">
+                    <h3 className="text-xl font-semibold m-4 mt-3">My expertise includes :</h3>
+                    <ul className="expertise text-center text-base">
                         <li>In my experience, Frontend Development entails crafting user-friendly interfaces with JavaScript, HTML5, CSS3, Bootstrap, and jQuery.</li>
                         <li>Incorporating React and Next.js enhances development by enabling dynamic UIs and optimizing performance.</li>
                         <li>Backend Development with Node.js and Express.js involves creating server-side logic and APIs for web applications.</li>
@@ -22,7 +22,7 @@ const About = () => {
                         <br/>
                     </ul>
                     <hr className="distinguish"/>
-                    <h3 className="text-2xl font-semibold m-4 mt-3">Experience :</h3>
+                    <h3 className="text-xl font-semibold m-4 mt-3">Experience :</h3>
                     <p>
                         {/* <hr className="newLine"/> */}
                     many more work to do ahead</p>
@@ -35,12 +35,12 @@ const About = () => {
                             <p>It is a recruiting company, where I got to know about how the <br /> companies recruit the candidate and how does ATS works.</p>
                         </li>
                         <br/>
-                        <li className="left m-3"><span className="title  text-lg font-medium">Continuum Global Solutions</span><br/><hr className="lineL m-1"/>
+                        <li className="left m-3"><span className="title text-lg font-medium">Continuum Global Solutions</span><br/><hr className="lineL m-1"/>
                             • January 2024 - February 2024
                             <p>A MNC BPO company, where I worked as a Assoc. II Customer <br /> Care. Here I developed my communication skills and get experience <br /> about the America region.</p>
                         </li>
                         <br/>
-                        <li className="right  m-3"><span className="title text-lg font-medium">Malwa Institute of Science and Technology</span><br/><hr className="lineR m-1"/>
+                        <li className="right m-3"><span className="title text-lg font-medium">Malwa Institute of Science and Technology</span><br/><hr className="lineR m-1"/>
                             • August 2023 - October 2023
                             <p>Acquired knowledge in the new technology, namely Java. Developed <br /> a comprehensive project integrating MySQL, Java, and Web Designing.</p>
                         </li>

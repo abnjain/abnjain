@@ -6,7 +6,8 @@ import Image from "next/image";
 const Header = () => {
   return (
     <>
-      <div className="mt-8 py-6 flex flex-wrap justify-evenly items-center md:{grid grid-rows-3 space-y-4} text-2xl">
+      <header>
+      <div className="mt-10 flex flex-wrap justify-evenly items-center md:{grid grid-rows-3 space-y-4} text-xl">
         <Link href="/">
           <Image 
             src="/Images/favicon.png"
@@ -24,6 +25,7 @@ const Header = () => {
           {/* <Link href="/Blogs"><h3>blog</h3></Link> */}
         </div>
       </div>
+      </header>
     </>
   )
 }
