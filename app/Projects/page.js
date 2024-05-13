@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const Projects = () => {
   return (
-    <main className="flex min-h-max justify-center py-12">
+    <main className="flex min-h-max justify-center py-8">
       <div className="justify-center items-center">
-        <h1 className="text-4xl text-center font-bold">Some Projects I Developed and Designed</h1>
+        <h1 className="text-3xl text-center font-bold">Projects I Developed and Designed</h1>
         {/* <PortFolio /> */}
         <div className="flex flex-wrap gap-16 mt-10 px-4 py-10 justify-center border-2 shadow-2xl shadow-neutral-50 rounded-xl max-w-7xl h-fit overflow-hidden no-scrollbar">
           {/* KUBER GROUP */}

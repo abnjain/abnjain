@@ -86,42 +86,90 @@ const Home = () => {
               height={300}
               title="Java"
             />
+            <div className="relative w-56 h-60 rounded-3xl justify-center group">
             <Image
-              className="h-60 w-56 rounded-3xl"
-              src="/Images/me.jpg"
-              width={500}
-              height={300}
+              src="/Images/me.jpg" // Path to your image file in the public directory
+              alt="My stead"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
             />
+            <a
+              href="#"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="Visit Example Website"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-16">
+              My stead
+              </span>
+            </a>
+            </div>
             <Image
               className="h-60 w-56 rounded-3xl object-cover"
               src="/Images/me1.jpeg"
               width={800}
               height={300}
             />
+            <div className="relative w-56 h-60 rounded-3xl justify-center group">
             <Image
-              className="h-60 w-56 rounded-3xl"
-              src="/Images/me.jpg"
-              width={500}
-              height={300}
+              src="/Images/me.jpg" // Path to your image file in the public directory
+              alt="It ain’t me"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
             />
+            <a
+              href="#"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="Visit Example Website"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-16">
+              It ain’t me
+              </span>
+            </a>
+            </div>
+            <div className="relative w-56 h-60 rounded-3xl justify-center group">
             <Image
-              className="h-60 w-56 rounded-3xl"
-              src="/Images/me.jpg"
-              width={500}
-              height={300}
+              src="/Images/me.jpg" // Path to your image file in the public directory
+              alt="Not ME"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
             />
+            <a
+              href="#"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="Visit Example Website"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-16">
+                Not ME
+              </span>
+            </a>
+            </div>
             <Image
               className="h-60 w-56 rounded-3xl"
               src="/Images/me2.jpeg"
               width={500}
               height={300}
             />
+            <div className="relative w-56 h-60 rounded-3xl justify-center group">
             <Image
-              className="h-60 w-56 rounded-3xl"
-              src="/Images/me.jpg"
-              width={500}
-              height={300}
+              src="/Images/me.jpg" // Path to your image file in the public directory
+              alt="Not mine"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
             />
+            <a
+              href="#"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="Visit Example Website"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-16">
+              Not mine
+              </span>
+            </a>
+            </div>
             <Image
               className="h-60 w-56 rounded-3xl object-cover"
               src="/Images/me3.jpeg"
