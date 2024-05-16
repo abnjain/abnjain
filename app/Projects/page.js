@@ -64,7 +64,7 @@ const Projects = () => {
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
               title="Visit The Portfolio Website"
             >
-              <span className="text-xl px-3 rounded-3xl group-hover:px-24">
+              <span className="text-xl px-3 rounded-3xl text-custom-fireOpal group-hover:px-24">
                 PORTFOLIO
               </span>
             </a>
