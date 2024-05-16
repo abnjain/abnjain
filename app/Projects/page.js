@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const Projects = () => {
   return (
-    <main className="flex min-h-max justify-center py-8">
+    <main className="flex min-h-max justify-center py-8 mt-3 m-1">
       <div className="justify-center items-center">
-        <h1 className="text-3xl text-center font-bold">Projects I Developed and Designed</h1>
+        <h1 className="text-3xl text-center font-bold">Projects I <span className="text-custom-fireOpal">Developed</span> and <span className="text-custom-fireOpal">Designed</span></h1>
         {/* <PortFolio /> */}
-        <div className="flex flex-wrap gap-16 mt-10 px-4 py-10 justify-center border-2 shadow-2xl shadow-neutral-50 rounded-xl max-w-7xl h-fit overflow-hidden no-scrollbar">
+        <div className="flex flex-wrap gap-16 mt-10 m-6 px-4 py-10 justify-center border-2 shadow-2xl shadow-neutral-50 rounded-xl max-w-7xl h-fit overflow-hidden no-scrollbar">
           {/* KUBER GROUP */}
           <div className="relative w-72 h-96 rounded-3xl group">
             <Image
@@ -30,7 +30,7 @@ const Projects = () => {
             </a>
           </div>
           {/* find-the-bubble GAME */}
-          <div className="relative w-72 h-96 rounded-3xl justify-center group">
+          <div className="relative w-72 h-96 rounded-3xl group">
             <Image
               src="/Images/findTheBubble.png" // Path to your image file in the public directory
               alt="find-the-bubble GAME"
@@ -50,7 +50,7 @@ const Projects = () => {
             </a>
           </div>
           {/* PORTFOLIO */}
-          <div className="relative w-72 h-96 rounded-3xl justify-center group">
+          <div className="relative w-72 h-96 rounded-3xl group">
             <Image
               src="/Images/portfolio.png" // Path to your image file in the public directory
               alt="PORTFOLIO Website"
@@ -70,7 +70,7 @@ const Projects = () => {
             </a>
           </div>
           {/* SHIKSHAK RECRUITMENT */}
-          <div className="relative w-72 h-96 rounded-3xl justify-center group">
+          <div className="relative w-72 h-96 rounded-3xl group">
             <Image
               src="/Images/shikshakRecruitment.png" // Path to your image file in the public directory
               alt="Shikshak Recruitment Website"
@@ -90,7 +90,7 @@ const Projects = () => {
             </a>
           </div>
           {/* NOTEPAD */}
-          <div className="relative w-72 h-96 rounded-3xl justify-center group">
+          <div className="relative w-72 h-96 rounded-3xl group">
             <Image
               src="/Images/notepad.png" // Path to your image file in the public directory
               alt="NOTEPAD Website"
@@ -110,7 +110,7 @@ const Projects = () => {
             </a>
           </div>
           {/* GREYT HR Portal */}
-          <div className="relative w-72 h-96 rounded-3xl justify-center group">
+          <div className="relative w-72 h-96 rounded-3xl group">
             <Image
               src="/Images/" // Path to your image file in the public directory
               alt="GREYT HR Portal"

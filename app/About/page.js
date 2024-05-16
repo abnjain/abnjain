@@ -4,13 +4,13 @@ const About = () => {
     return (
         <>
             <main>
-                <h1 className="text-center text-3xl font-bold tracking-wide m-8 mt-10">About ME</h1>
-                <div className="expert text-center">
+                <h1 className="text-center text-3xl font-bold tracking-wide m-8 mt-10">About <span className="text-custom-fireOpal">ME</span></h1>
+                <div className="expert text-center m-2">
                     <h2 className="text-lg m-6">As a seasoned full-stack developer, I specialize in building web applications and services. <br />
                     I'm also skilled in creating animations, which elevate user experience by adding dynamic elements to interfaces. </h2>
-                    <hr className="distinguish mb-3"/>
-                    <h3 className="text-xl font-semibold m-4 mt-3">My expertise includes :</h3>
-                    <ul className="expertise text-center text-base">
+                    <hr className="mb-3 opacity-20 w-2/3 mx-auto" />
+                    <h3 className="text-xl font-semibold m-4 mt-3">My <span className="text-custom-fireOpal">expertise</span> includes :</h3>
+                    <ul className="expertise text-center text-base space-y-2">
                         <li>In my experience, Frontend Development entails crafting user-friendly interfaces with JavaScript, HTML5, CSS3, Bootstrap, and jQuery.</li>
                         <li>Incorporating React and Next.js enhances development by enabling dynamic UIs and optimizing performance.</li>
                         <li>Backend Development with Node.js and Express.js involves creating server-side logic and APIs for web applications.</li>
@@ -18,14 +18,13 @@ const About = () => {
                         <li>Frontend Designing with Bootstrap, React.js, and Next.js involves creating responsive, dynamic user interfaces with reusable components and optimized performance.</li>
                         <li>SQL and NoSQL database management systems efficiently organize, store, and retrieve data, meeting diverse needs and scalability demands in modern applications.</li>
                         <li>AWS and Google Cloud Platform provide scalable and secure cloud infrastructure services for efficient application deployment and management.</li>
-                        <a type="submit" className="m-6 pr-3 pl-3 border border-solid rounded-full text-lg hover:uppercase" href="/resume.pdf" download="Abhinav Jain Resume.pdf">view resume</a>
                         <br/>
                     </ul>
-                    <hr className="distinguish"/>
+                        <a type="submit" className="mb-6 px-3 text-custom-fireOpal border border-solid rounded-full text-lg hover:uppercase" href="/resume.pdf" download="Abhinav Jain Resume.pdf">view resume</a>
+                    <hr className="mb-3 opacity-20 w-2/3 mx-auto" />
                     <h3 className="text-xl font-semibold m-4 mt-3">Experience :</h3>
-                    <p>
-                        {/* <hr className="newLine"/> */}
-                    many more work to do ahead</p>
+                    <p className="many">many more work to do ahead</p>
+                    <hr className="aLine flex md:hidden"/>
                     <hr className="horLine"/>
                     <br/>
                     <br/>   
@@ -60,10 +59,9 @@ const About = () => {
                             <p>Acquired knowledge in the new technology, namely Java. Developed <br /> a comprehensive project integrating MySQL, Java, and Web Designing.</p>
                         </li>
                         <br/>
-                        <p className="m-6">
-                            {/* <hr className="newLine"/> */}
-                            start</p>
                     </ul>
+                    <hr className="aLine flex md:hidden"/>
+                        <p className="start">start</p>
                 </div>
             </main>
         </>

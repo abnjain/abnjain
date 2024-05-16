@@ -6,7 +6,6 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   background-color: black; 
   color: #fff;
 }
@@ -16,24 +15,17 @@ html,body{
   height: 100%;
 }
 
-.expert .distinguish{
-  margin-left: 12%;
-  opacity: 0.18;
-  border-top: 2px solid #bbb ;
-  border-radius: 50%;
-  width: 1150px;
-}
 .expert .expertise li::before {
   content: "\2192";
   color: #fff;
   font-weight: 700;
   margin-right: 0.4rem;
 }
-.expert .horLine{
+.expert .horLine{ 
   border-left: 3px solid white;
   opacity: 0.3;
   border-radius: 50%;
-  height: 1078px;
+  height: 1050px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
@@ -58,5 +50,44 @@ html,body{
   opacity: 0.2;
   border-radius: 50%;
   width: 500px;
-  margin-left: 245px;
+  margin-left: 238px;
+}
+.aLine{
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .expert .horLine{
+    height: 1540px;
+    left: 5%;
+  }
+  .aLine{
+    left: 2%;
+    width: 150px;
+    opacity: 0.3;
+  }
+  .start {
+    margin: -10px ;
+  }
+  .many {
+    margin-bottom: -12px;
+  }
+  .expert ul .left{
+    text-align: center;
+    margin-left: 3%;
+    padding: 15px;
+  }
+  .expert .lineL {
+    width: 330px;
+    margin-left: -5%;
+  }
+  .expert ul .right{
+    text-align: center;
+    margin-right: 3%;
+    padding: 15px;
+  }
+  .expert .lineR {
+    width: 330px;
+    margin-left: -5%;
+  }
 }
