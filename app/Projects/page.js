@@ -69,23 +69,23 @@ const Projects = () => {
               </span>
             </a>
           </div>
-          {/* SHIKSHAK RECRUITMENT */}
+          {/* CHESS Game */}
           <div className="relative w-72 h-96 rounded-3xl group">
             <Image
-              src="/Images/shikshakRecruitment.png" // Path to your image file in the public directory
-              alt="Shikshak Recruitment Website"
+              src="/Images/Screenshot1.png" // Path to your image file in the public directory
+              alt="CHESS Game"
               className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
             <a
-              href="/https://github.com/abnjain/shikshakRecruitment"
-              // target="_blank"
+              href="https://abnjainchessgame-912a1526128c.herokuapp.com/"
+              target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
               title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
             >
-              <span className="text-xl px-3 rounded-3xl group-hover:px-7">
-                SHIKSHAK RECRUITMENT
+              <span className="text-xl px-3 rounded-3xl group-hover:px-16">
+                CHESS Game
               </span>
             </a>
           </div>
@@ -109,6 +109,26 @@ const Projects = () => {
               </span>
             </a>
           </div>
+          {/* SHIKSHAK RECRUITMENT */}
+          <div className="relative w-72 h-96 rounded-3xl group">
+            <Image
+              src="/Images/shikshakRecruitment.png" // Path to your image file in the public directory
+              alt="Shikshak Recruitment Website"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
+            />
+            <a
+              href="/https://github.com/abnjain/shikshakRecruitment"
+              // target="_blank"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-7">
+                SHIKSHAK RECRUITMENT
+              </span>
+            </a>
+          </div>         
           {/* GREYT HR Portal */}
           <div className="relative w-72 h-96 rounded-3xl group">
             <Image
@@ -128,7 +148,7 @@ const Projects = () => {
                 GREYT HR Portal
               </span>
             </a>
-          </div>
+          </div>         
         </div>
       </div>
     </main>

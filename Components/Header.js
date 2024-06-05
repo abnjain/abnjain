@@ -15,13 +15,13 @@ const Menu = ({ onClose }) => {
     <div className="md:flex items-center justify-end">
       <div className="md:flex justify-end space-x-4 gap-8">
         <Link href="/">
-          <h3 onClick={handleClick}>home</h3>
+          <h3 onClick={handleClick}>HOME</h3>
         </Link>
         <Link href="/About">
-          <h3 onClick={handleClick}>about</h3>
+          <h3 onClick={handleClick}>ABOUT</h3>
         </Link>
         <Link href="/Projects">
-          <h3 onClick={handleClick}>projects</h3>
+          <h3 onClick={handleClick}>PROJECTS</h3>
         </Link>
       </div>
     </div>
