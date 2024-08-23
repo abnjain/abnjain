@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { TypeAnimation } from "react-type-animation";
-import Image from "next/image";
+  import { TypeAnimation } from "react-type-animation";
+  import Image from "next/image";
 import styles from "./page.module.css";
 import Modal from "./Modal";
 import emailjs from 'emailjs-com';
@@ -142,7 +142,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 mb-10 px-2 py-4 border-2 border-b-0 shadow-2xl shadow-neutral-50 rounded-xl rounded-b-none w-3/4 h-screen overflow-hidden">
+        {/* <div className="mt-8 mb-10 px-2 py-4 border-2 border-b-0 shadow-2xl shadow-neutral-50 rounded-xl rounded-b-none w-3/4 h-screen overflow-hidden">
           <p className="text-center text-2xl font-semibold text-Decration-line underline py-6">
             Here are Some Photos of ME
           </p>
@@ -246,7 +246,7 @@ const Home = () => {
               height={300}
             />
           </section>
-        </div>
+        </div> */}
         {/* <div>
           <PortFolio />
         </div> */}

@@ -10,7 +10,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="py-16 flex flex-wrap gap-5 justify-evenly items-center text-center text-xl space-y-4">
+      <footer className="pb-12 flex flex-wrap gap-5 justify-evenly items-center text-center text-xl space-y-4">
         <div className="flex flex-col items-center">
         <Image 
             src="/Images/favicon.png"

@@ -19,33 +19,33 @@ const Projects = () => {
               height={300} // Height of the image
             />
             <a
-              href="https://kubergroup.in"
+              href="https://kgstocks.in"
               target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Kuber Group Webapp"
+              title="Visit Kuber Group Webapp A live stock broking firm project"
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
                 KUBER GROUP
               </span>
             </a>
           </div>
-          {/* find-the-bubble GAME */}
+          {/* Shree Ram Tour & Travels */}
           <div className="relative w-72 h-96 rounded-3xl group">
             <Image
-              src="/Images/findTheBubble.png" // Path to your image file in the public directory
-              alt="find-the-bubble GAME"
+              src="/Images/ShreeRamTour&Travels.png" // Path to your image file in the public directory
+              alt="Shree Ram Tour & Travels"
               className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
             <a
-              href=" https://findthebubble.netlify.app/"
+              href="https://shreeramtourandtravel.in/"
               target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
-              title="Visit Game"
+              title="A live project deployed for the tours and travel company did the SEO part for them as well."
             >
-              <span className="text-xl px-3 rounded-3xl group-hover:px-10">
-              find-the-bubble GAME
+              <span className="text-xl px-3 rounded-3xl group-hover:px-7  ">
+                Shree Ram Tour & Travels
               </span>
             </a>
           </div>
@@ -69,6 +69,46 @@ const Projects = () => {
               </span>
             </a>
           </div>
+          {/* VVD (Vidhyavardhani) */}
+          <div className="relative w-72 h-96 rounded-3xl group">
+            <Image
+              src="/Images/VVD(VidhyaVardhani).png" // Path to your image file in the public directory
+              alt="VVD(VidhyaVardhani)"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
+            />
+            <a
+              href="https://www.vidhyavardhani.in/home"
+              target="_blank"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="A platform design and developed for an education revolution"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-10">
+                VVD(VidhyaVardhani)
+              </span>
+            </a>
+          </div>
+          {/* SHIKSHAK RECRUITMENT */}
+          <div className="relative w-72 h-96 rounded-3xl group">
+            <Image
+              src="/Images/shikshakRecruitment.png" // Path to your image file in the public directory
+              alt="Shikshak Recruitment Website"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
+            />
+            <a
+              href="/https://github.com/abnjain/shikshakRecruitment"
+              // target="_blank"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-7">
+                SHIKSHAK RECRUITMENT
+              </span>
+            </a>
+          </div>
           {/* CHESS Game */}
           <div className="relative w-72 h-96 rounded-3xl group">
             <Image
@@ -86,6 +126,26 @@ const Projects = () => {
             >
               <span className="text-xl px-3 rounded-3xl group-hover:px-16">
                 CHESS Game
+              </span>
+            </a>
+          </div>
+          {/* find-the-bubble GAME */}
+          <div className="relative w-72 h-96 rounded-3xl group">
+            <Image
+              src="/Images/findTheBubble.png" // Path to your image file in the public directory
+              alt="find-the-bubble GAME"
+              className="object-cover w-full h-full rounded-3xl"
+              width={500} // Width of the image
+              height={300} // Height of the image
+            />
+            <a
+              href=" https://findthebubble.netlify.app/"
+              target="_blank"
+              className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
+              title="Visit Game"
+            >
+              <span className="text-xl px-3 rounded-3xl group-hover:px-10">
+              find-the-bubble GAME
               </span>
             </a>
           </div>
@@ -109,26 +169,26 @@ const Projects = () => {
               </span>
             </a>
           </div>
-          {/* SHIKSHAK RECRUITMENT */}
+          {/* JobWallah */}
           <div className="relative w-72 h-96 rounded-3xl group">
             <Image
-              src="/Images/shikshakRecruitment.png" // Path to your image file in the public directory
-              alt="Shikshak Recruitment Website"
+              src="/Images/" // Path to your image file in the public directory
+              alt="JobWallah"
               className="object-cover w-full h-full rounded-3xl"
               width={500} // Width of the image
               height={300} // Height of the image
             />
             <a
-              href="/https://github.com/abnjain/shikshakRecruitment"
-              // target="_blank"
+              href="https://github.com/abnjain/JobWallah"
+              target="_blank"
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
               title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
             >
-              <span className="text-xl px-3 rounded-3xl group-hover:px-7">
-                SHIKSHAK RECRUITMENT
+              <span className="text-xl text-center px-3 rounded-3xl group-hover:px-16">
+                JobWallah <br/> (in progress)
               </span>
             </a>
-          </div>         
+          </div> 
           {/* GREYT HR Portal */}
           <div className="relative w-72 h-96 rounded-3xl group">
             <Image
@@ -144,11 +204,11 @@ const Projects = () => {
               className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur"
               title="Visit Github Link of the Webapp (Since No Deplyment Yet)"
             >
-              <span className="text-xl px-3 rounded-3xl group-hover:px-16">
-                GREYT HR Portal
+              <span className="text-xl text-center px-3 rounded-3xl group-hover:px-16">
+                GREYT HR Portal <br/> (in progress)
               </span>
             </a>
-          </div>         
+          </div>        
         </div>
       </div>
     </main>
