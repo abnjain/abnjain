@@ -25,7 +25,7 @@ html,body{
   border-left: 3px solid white;
   opacity: 0.3;
   border-radius: 50%;
-  height: 1050px;
+  height: 1330px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
@@ -55,15 +55,24 @@ html,body{
 .aLine{
   position: relative;
 }
+.bLine{
+  position: relative;
+}
 
 @media (max-width: 640px) {
   .expert .horLine{
-    height: 1540px;
+    height: 1675px;
     left: 5%;
   }
   .aLine{
     left: 2%;
-    width: 150px;
+    top: 5px;
+    width: 190px;
+    opacity: 0.3;
+  }
+  .bLine{
+    left: 2%;
+    width: 104px;
     opacity: 0.3;
   }
   .start {

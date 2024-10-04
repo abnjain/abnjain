@@ -13,6 +13,9 @@ import { FaReact } from "react-icons/fa";
 import { FaNodeJs } from "react-icons/fa6";
 import { FaJava } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
+import { SiWordpress } from 'react-icons/si';
+import { SiPhp } from 'react-icons/si';
+import { TbSeo } from "react-icons/tb";
 import Link from "next/link";
 
 const Home = () => {
@@ -78,7 +81,7 @@ const Home = () => {
         </div>
         <div className="flex justify-center items-center gap-10 md:gap-24 flex-col sm:flex-row">
           <button
-            // type="submit" href="/resume.pdf" download="Abhinav Jain Resume.pdf" 
+            type="submit" href="/resume.pdf" download="Abhinav_Jain_Resume.pdf" 
             onClick={openModal}
             className={`py-3 px-4 bg-gradient-to-br from-custom-fireOpal to-custom-blueGreen text-center text-white rounded-3xl shadow-2xl ${styles.buttonCustomShadow} transform transition-all duration-100 hover:scale-100 sm:hover:scale-125 hover:shadow-none`}
           >
@@ -88,7 +91,7 @@ const Home = () => {
           <a
             type="submit"
             href="/resume.pdf"
-            download="Abhinav Jain Resume.pdf"
+            download="Abhinav_Jain_Resume.pdf"
             className={`py-1 px-1 bg-gradient-to-r from-custom-fireOpal to-custom-blueGreen text-center text-white rounded-3xl shadow-md ${styles.buttonCustomShadow2} transform transition-all duration-100 hover:scale-100 sm:hover:scale-125 hover:shadow-none`}
           >
             <span className="py-2 px-4 block bg-black rounded-3xl">
@@ -96,14 +99,14 @@ const Home = () => {
             </span>
           </a>
         </div>
-        <div className="my-16 space-y-10 flex flex-col items-center justify-center">
-          <p className="text-center font-bold text-2xl">
+        <div className="proficiency my-16 space-y-10 flex flex-col items-center justify-center">
+          <p className="projectLink text-center font-bold text-2xl">
             Want to see my work move ahead to<Link href="/Projects" className="mb-6 px-3 text-custom-fireOpal hover:uppercase">projects</Link>section
           </p>
-          <p className="text-center font-bold text-2xl">
+          <p className="ptag text-center font-bold text-2xl">
             Proficient Developer Using
           </p>
-          <div className="flex flex-wrap justify-center gap-24">
+          <div className="skillLogos flex flex-wrap justify-center gap-24">
             <div className="flex flex-col items-center gap-3 md:gap-1">
               {" "}
               {/* Center vertically and horizontally */}
@@ -139,6 +142,24 @@ const Home = () => {
               {/* Center vertically and horizontally */}
               <FaJsSquare className="text-5xl hover:scale-150" />
               <p>JavaScript</p>
+            </div>
+            <div className="flex flex-col items-center gap-3 md:gap-1">
+              {" "}
+              {/* Center vertically and horizontally */}
+              <SiPhp className="text-5xl hover:scale-150" />
+              <p>PHP</p>
+            </div>
+            <div className="flex flex-col items-center gap-3 md:gap-1">
+              {" "}
+              {/* Center vertically and horizontally */}
+              <SiWordpress className="text-5xl hover:scale-150" />
+              <p>Wordress</p>
+            </div>
+            <div className="flex flex-col items-center gap-3 md:gap-1">
+              {" "}
+              {/* Center vertically and horizontally */}
+              <TbSeo   className="text-5xl hover:scale-150" />
+              <p>SEO</p>
             </div>
           </div>
         </div>
