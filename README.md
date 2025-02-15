@@ -29,7 +29,7 @@
 <div align="center">
   
 <img src="https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=onedark" width="48%"/> &nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=onedark" width="38%"/> <br>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=onedark" width="37%"/> <br>
 
 <img src="https://streak-stats.demolab.com?user=abnjain&theme=onedark&hide_border=true" width="55%"/>  <br>
 
