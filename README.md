@@ -4,23 +4,23 @@
 
 
 ## 🚀 Full Stack Developer | Java Web Developer | Open Source Enthusiast
-<p align="left">
+<div align="left">
 
 🔹 Passionate problem-solver and software developer with expertise in **MERN stack, Java Web Development, PHP, WordPress, and SEO**.  
 🌱 Currently pursuing **M.Tech in Computer Science** at **SCSIT, DAVV** and constantly exploring new technologies to stay ahead in the industry. 
-</p>
+</div>
 
 
 
 ## 📌 **Technical Skills:**
-<p align="left">
+<div align="left">
 
 🔹 **Programming Languages:** Java, JavaScript, C, C++, PHP  
 🔹 **Web Development:** MERN Stack (MongoDB, Express.js, React.js, Node.js), LAMP Stack, WordPress  
 🔹 **Database Management:** SQL, NoSQL (MongoDB, Firebase)  
 🔹 **Version Control:** Git, GitHub  
 🔹 **Tools & Technologies:** Docker, Redis, REST APIs, SEO Optimization  
-</p>
+</div>
 
 
 
@@ -44,11 +44,11 @@
 
 
 ## 🎯 **Extracurricular Activities:**
-<p align="left">
+<div align="left">
 
 🔹 **Technical Head, Ecell@SCSIT, DAVV** – Leading technical initiatives and mentoring students in various projects.  
 🔹 **NGO Volunteer** – Contributing to **girl child education awareness** through web and graphic design with NGO KindBeings.  
-</p>
+</div>
 
 
 
