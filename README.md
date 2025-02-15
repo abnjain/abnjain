@@ -13,18 +13,11 @@
 - **Version Control:** Git, GitHub
 - **Tools & Technologies:** Docker, Redis, REST APIs, SEO Optimization
 
-![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=radical)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical)
+![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=radical) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=abnjain&theme=radical&hide_border=true)
 
 ![GitHub Trophy](https://github-profile-trophy.vercel.app/?username=abnjain&theme=radical)
-
-
-📚 **Certifications:**
-- Programming Fundamentals Using Object-Oriented Programming C++ – SAIT Indore
-- Advanced Computer Networks – SAIT Indore
 
 🎯 **Extracurricular Activities:**
 - **Technical Head, Ecell** – Leading technical initiatives and mentoring students in various projects.
