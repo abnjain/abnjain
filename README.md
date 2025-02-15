@@ -25,6 +25,8 @@
 
 
 ## 📊 **GitHub Stats:**
+
+<div align="center">
   
 <img src="https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=onedark" width="48%"/> 
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=onedark" width="35%"/> &nbsp;&nbsp; 
@@ -32,6 +34,7 @@
 <img src="https://streak-stats.demolab.com?user=abnjain&theme=onedark&hide_border=true" width="55%"/>  &nbsp;&nbsp;
 
 <img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=onedark" width="75%"/>  
+</div>
 
 <!-- 
 ![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=dark) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical)
