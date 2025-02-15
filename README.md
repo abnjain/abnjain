@@ -26,12 +26,12 @@
 
 ## 📊 **GitHub Stats:**
   
-<img src="https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=synthwave" width="48%"/> 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=tokyonight" width="40%"/>  
+<img src="https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=onedark" width="48%"/> 
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=onedark" width="40%"/>  
 
-<img src="https://streak-stats.demolab.com?user=abnjain&theme=gruvbox&hide_border=true" width="55%"/>  
+<img src="https://streak-stats.demolab.com?user=abnjain&theme=onedark&hide_border=true" width="55%"/>  
 
-<img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=merko" width="75%"/>  
+<img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=onedark" width="75%"/>  
 
 <!-- 
 ![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=dark) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical)
@@ -46,7 +46,7 @@
 ## 🎯 **Extracurricular Activities:**
 <div align="left">
 
-🔹 **Technical Head, ECell@SCSIT, DAVV** – Leading technical initiatives and mentoring students in various projects.  
+🔹 **Technical Head, @ECell - SCSIT, DAVV** – Leading technical initiatives and mentoring students in various projects.  
 🔹 **NGO Volunteer** – Contributing to **girl child education awareness** through web and graphic design with NGO KindBeings.  
 </div>
 
