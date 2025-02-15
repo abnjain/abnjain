@@ -13,10 +13,14 @@
 - **Version Control:** Git, GitHub
 - **Tools & Technologies:** Docker, Redis, REST APIs, SEO Optimization
 
-🛠 **Projects:**
-- **Automated Drip System for Medical Sciences** – IoMT-based project integrating **ESP32 microcontroller, sensors, and actuators**.
-- **Faculty Recruitment System** – Built a **Java & SQL-based** platform for recruitment with **JDBC database connectivity**.
-- **Chess Game (Socket-Based Multiplayer)** – Developed using **Node.js, Express.js, and MongoDB** with real-time socket communication.
+![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=radical)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical)
+
+![GitHub Streak](https://streak-stats.demolab.com?user=abnjain&theme=radical&hide_border=true)
+
+![GitHub Trophy](https://github-profile-trophy.vercel.app/?username=abnjain&theme=radical)
+
 
 📚 **Certifications:**
 - Programming Fundamentals Using Object-Oriented Programming C++ – SAIT Indore
