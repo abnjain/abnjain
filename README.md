@@ -26,12 +26,12 @@
 
 ## 📊 **GitHub Stats:**
   
-<img src="https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=dark" width="48%"/> 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical" width="48%"/>  
+<img src="https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=synthwave" width="48%"/> 
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=dracula" width="30%"/>  
 
-<img src="https://streak-stats.demolab.com?user=abnjain&theme=onedark&hide_border=true" width="55%"/>  
+<img src="https://streak-stats.demolab.com?user=abnjain&theme=gruvbox&hide_border=true" width="55%"/>  
 
-<img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=radical" width="75%"/>  
+<img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=cobalt" width="75%"/>  
 
 <!-- 
 ![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=dark) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical)
