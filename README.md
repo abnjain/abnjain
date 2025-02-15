@@ -61,6 +61,9 @@
 ✉️ **Email:** abnjain25@gmail.com  
 🐙 **LinkedIn/GitHub (all other socials):** @abnjain  
 
+<p alig="center">
+
 ## ⭐ **Let's collaborate and build something amazing!** 🚀
+</p>
 
 <!-- </div> -->
