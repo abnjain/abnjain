@@ -24,7 +24,11 @@
 
 
 ## **Roadmap.sh Stats:**
-[![roadmap.sh](https://roadmap.sh/card/wide/68978462614598977e57df40?variant=light&roadmaps=docker)](https://roadmap.sh)
+<div align="center">
+  
+[![roadmap.sh](https://roadmap.sh/card/wide/68978462614598977e57df40?variant=dark&roadmaps=docker)](https://roadmap.sh)
+
+</div>
 
 
 ## 📊 **GitHub Stats:**
