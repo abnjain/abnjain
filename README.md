@@ -24,7 +24,7 @@
 
 
 ## **Roadmap.sh Stats:**
-<div align="center"><a href="https://roadmap.sh"><img src="https://roadmap.sh/card/wide/68978462614598977e57df40?variant=light&roadmaps=docker" alt="roadmap.sh"/></a></div>
+<div align="center">[![roadmap.sh](https://roadmap.sh/card/wide/68978462614598977e57df40?variant=light&roadmaps=docker)](https://roadmap.sh)</div>
 
 
 ## 📊 **GitHub Stats:**
@@ -38,7 +38,6 @@
 
 <img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=onedark" width="75%"/>  <br>
 
-[![roadmap.sh](https://roadmap.sh/card/wide/68978462614598977e57df40?variant=light&roadmaps=docker)](https://roadmap.sh)
 
 ![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=dark) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical) <br>
 
@@ -53,7 +52,7 @@
 
 🔹 **Volunteer, Civil Defence Indore (CDI)** – Awaring and making the mankind for the emergencies and working for it's relief.  
 🔹 **Technical Head, @ECell - SCSIT, DAVV** – Leading technical initiatives and mentoring students in various projects.  
-🔹 **NGO Volunteer** – Contributing to **girl child education awareness** through web and graphic design with NGO KindBeings.  
+🔹 **NGO Volunteer, SheBright - KindBeings** – Contributing to **girl child education awareness** through web and graphic design with NGO KindBeings.  
 </div>
 
 
