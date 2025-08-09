@@ -36,9 +36,9 @@
 
 <img src="https://streak-stats.demolab.com?user=abnjain&theme=onedark&hide_border=true" width="55%"/>  <br>
 
-<img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=onedark" width="75%"/>  
+<img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=onedark" width="75%"/>  <br>
 
-
+[![roadmap.sh](https://roadmap.sh/card/wide/68978462614598977e57df40?variant=light&roadmaps=docker)](https://roadmap.sh)
 
 ![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=dark) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical) <br>
 
@@ -51,6 +51,7 @@
 ## 🎯 **Extracurricular Activities:**
 <div align="left">
 
+🔹 **Volunteer, Civil Defence Indore (CDI)** – Awaring and making the mankind for the emergencies and working for it's relief.  
 🔹 **Technical Head, @ECell - SCSIT, DAVV** – Leading technical initiatives and mentoring students in various projects.  
 🔹 **NGO Volunteer** – Contributing to **girl child education awareness** through web and graphic design with NGO KindBeings.  
 </div>
