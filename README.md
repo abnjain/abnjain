@@ -23,6 +23,9 @@
 </div>
 
 
+## **Roadmap.sh Stats:**
+<a href="https://roadmap.sh"><img src="https://roadmap.sh/card/wide/68978462614598977e57df40?variant=light&roadmaps=docker" alt="roadmap.sh"/></a>
+
 
 ## 📊 **GitHub Stats:**
 
@@ -36,13 +39,12 @@
 <img src="https://github-profile-trophy.vercel.app/?username=abnjain&theme=onedark" width="75%"/>  
 </div>
 
-<!-- 
+
 ![Abhinav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=abnjain&show_icons=true&theme=dark) ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=abnjain&layout=compact&theme=radical)
 
 ![GitHub Streak](https://streak-stats.demolab.com?user=abnjain&theme=onedark&hide_border=true)
 
 ![GitHub Trophy](https://github-profile-trophy.vercel.app/?username=abnjain&theme=radical)
- -->
 
 
 
