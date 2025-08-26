@@ -26,8 +26,7 @@
 ## **Roadmap.sh Stats:**
 <div align="center">
   
-[![roadmap.sh](https://roadmap.sh/card/wide/68978462614598977e57df40?variant=dark&roadmaps=docker)](https://roadmap.sh)
-
+[![roadmap.sh](https://roadmap.sh/card/wide/68978462614598977e57df40?variant=dark)](https://roadmap.sh)
 </div>
 
 
