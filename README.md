@@ -62,7 +62,7 @@
 
 ## 📫 **Get in Touch:**
   
-🌐 **Portfolio:** [abnjain.vercel.app](https://abnjain.vercel.app)  
+🌐 **Portfolio:** [abnjain.me](https://abnjain.me)  
 ✉️ **Email:** abnjain25@gmail.com  
 🐙 **LinkedIn/GitHub (all other socials):** @abnjain  
 
