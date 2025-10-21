@@ -1,10 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Modal from "./Modal";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 // import PortFolio from "@/Components/Portfolio";
 
 import { SiMongodb } from "react-icons/si";
@@ -29,6 +29,18 @@ const Home = () => {
     setIsModalOpen(false);
   };
 
+  // useEffect(() => {
+  //   const testParams = {
+  //     from_name: "Abhinav Test",
+  //     message: "Hello test message",
+  //     reply_to: "your-email@example.com",
+  //   };
+  //   emailjs
+  //     .send("service_zln2j7l", "template_tmjormr", testParams, "RTOt4G16KUG0gULNa")
+  //     .then((res) => console.log("✅ Email test success:", res))
+  //     .catch((err) => console.error("❌ Email test failed:", err));
+  // }, []);
+
   const sendEmail = (formData) => {
     const templateParams = {
       ...formData,
@@ -39,10 +51,12 @@ const Home = () => {
       .send("service_zln2j7l", "template_tmjormr", templateParams, "RTOt4G16KUG0gULNa")
       .then(
         (result) => {
+          console.log("SUCCESS:", result.text);
           alert("Email successfully sent!");
           setIsModalOpen(false);
         },
         (error) => {
+          console.log("Email sending error: ", error);
           alert("Failed to send email, please try again later.");
         }
       );
