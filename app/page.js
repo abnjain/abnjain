@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-  import { TypeAnimation } from "react-type-animation";
-  import Image from "next/image";
+import { TypeAnimation } from "react-type-animation";
+import Image from "next/image";
 import styles from "./page.module.css";
 import Modal from "./Modal";
 import emailjs from 'emailjs-com';
@@ -34,7 +34,7 @@ const Home = () => {
       ...formData,
       sender_email: formData.email, // Assuming your email template expects the sender's email as 'sender_email'
     };
-  
+
     emailjs
       .send("service_zln2j7l", "template_tmjormr", templateParams, "RTOt4G16KUG0gULNa")
       .then(
@@ -81,7 +81,7 @@ const Home = () => {
         </div>
         <div className="flex justify-center items-center gap-10 md:gap-24 flex-col sm:flex-row">
           <button
-            type="submit" href="/resume.pdf" download="Abhinav_Jain_Resume.pdf" 
+            type="submit" href="/resume.pdf" download="Abhinav_Jain_Resume.pdf"
             onClick={openModal}
             className={`py-3 px-4 bg-gradient-to-br from-custom-fireOpal to-custom-blueGreen text-center text-white rounded-3xl shadow-2xl ${styles.buttonCustomShadow} transform transition-all duration-100 hover:scale-100 sm:hover:scale-125 hover:shadow-none`}
           >
@@ -158,7 +158,7 @@ const Home = () => {
             <div className="flex flex-col items-center gap-3 md:gap-1">
               {" "}
               {/* Center vertically and horizontally */}
-              <TbSeo   className="text-5xl hover:scale-150" />
+              <TbSeo className="text-5xl hover:scale-150" />
               <p>SEO</p>
             </div>
           </div>

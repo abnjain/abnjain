@@ -18,7 +18,7 @@ const Footer = () => {
             height={60}
             className="items-center"
           />
-          <h4>&copy; 2024 All Rights Reserved</h4>
+          <h4>&copy; 2025 All Rights Reserved</h4>
         </div>
         
         <div className="space-y-2">
