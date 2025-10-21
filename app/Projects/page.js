@@ -27,7 +27,7 @@ const Projects = () => {
     {
       name: "VVD(VidhyaVardhani)",
       img: "/Images/VVD(VidhyaVardhani).png",
-      link: "https://www.vidhyavardhani.in/home",
+      link: "https://vvdlive.com/",
       desc: "A platform designed and developed for an education revolution",
       textColor: "",
     },
