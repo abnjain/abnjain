@@ -102,8 +102,8 @@ const Projects = () => {
               />
               <a
                 href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={project.name === "PORTFOLIO" ? "_self" : "_blank"}
+                rel={project.name === "PORTFOLIO" ? undefined : "noopener noreferrer"}
                 className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur transition-all duration-300"
                 title={project.desc}
               >
