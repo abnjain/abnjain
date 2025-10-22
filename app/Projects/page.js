@@ -4,10 +4,10 @@ import Image from "next/image";
 const Projects = () => {
   const projects = [
     {
-      name: "KUBER GROUP",
-      img: "/Images/kuberGroup.png",
-      link: "https://kgstocks.in",
-      desc: "Visit Kuber Group Webapp — a live stock broking firm project",
+      name: "Central Repository System (CRS)",
+      img: "/Images/crs.png",
+      link: "https://crs.abnjain.me/",
+      desc: "This the live project at college SCSIT to manage all the departments in one place.",
       textColor: "",
     },
     {
@@ -32,6 +32,13 @@ const Projects = () => {
       textColor: "",
     },
     {
+      name: "KUBER GROUP",
+      img: "/Images/kuberGroup.png",
+      link: "https://kgstocks.in",
+      desc: "Visit Kuber Group Webapp — a live stock broking firm project",
+      textColor: "",
+    },
+    {
       name: "CHESS Game",
       img: "/Images/Screenshot1.png",
       link: "https://chess.abnjain.me/",
@@ -50,6 +57,13 @@ const Projects = () => {
       img: "/Images/notepad.png",
       link: "https://notepad.abnjain.me/",
       desc: "Visit the link of the Notepad Webapp",
+      textColor: "",
+    },
+    {
+      name: "Reimagined Beyond Water",
+      img: "/Images/beyondWater.png",
+      link: "https://bw.abnjain.me/",
+      desc: "Visit the link of the Reimagined Beyond Water Webpage",
       textColor: "",
     },
     {
