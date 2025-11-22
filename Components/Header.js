@@ -42,8 +42,10 @@ const Header = () => {
           <Link href="/">
             <Image
               src="/Images/favicon.png"
+              alt="abnjain Logo"
               width={60}
               height={60}
+              loading="lazy"
               className="justify-center align-middle"
             />
           </Link>

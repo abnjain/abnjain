@@ -14,25 +14,27 @@ const Footer = () => {
         <div className="flex flex-col items-center">
         <Image 
             src="/Images/favicon.png"
+            alt="abnjain Logo"
             width={60}
             height={60}
+            loading="lazy"
             className="items-center"
           />
-          <h4>&copy; 2025 All Rights Reserved</h4>
+          <h2>&copy; 2025 All Rights Reserved</h2>
         </div>
         
         <div className="space-y-2">
           <h1>Socials</h1>
           <div className="flex gap-8 text-4xl items-center">
-            <a className="text-3xl" href="https://www.linkedin.com/in/abnjain" target="_blank">
+            <a className="text-3xl" href="https://www.linkedin.com/in/abnjain" target="_blank" aria-label="Go to abnjain's LinkedIn Profile">
                 {""}
                 <FaLinkedin />
             </a>
-            <a  href="https://github.com/abnjain" target="_blank">
+            <a  href="https://github.com/abnjain" target="_blank" aria-label="Go to abnjain's GitHub Profile">
                 {""}
                 <IoLogoGithub />
             </a>
-            <a href="https://www.instagram.com/abnjain" target="_blank">
+            <a href="https://www.instagram.com/abnjain" target="_blank" aria-label="Go to abnjain's Instagram Profile">
                 {""}
                 <AiFillInstagram /> 
             </a>
@@ -40,12 +42,12 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4>
+          <h2>
             Build with &hearts; By{" "}
             <a className="text-Decration-line underline text-custom-fireOpal" href="/">
               abnjain
             </a>
-          </h4>
+          </h2>
         </div>
       </footer>
     </>
