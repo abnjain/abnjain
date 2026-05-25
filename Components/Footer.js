@@ -12,9 +12,9 @@ const Footer = () => {
     <>
       <footer className="pb-12 flex flex-wrap gap-5 justify-evenly items-center text-center text-xl space-y-4">
         <div className="flex flex-col items-center">
-        <Image 
+        <Image
             src="/Images/favicon.png"
-            alt="abnjain Logo"
+            alt="Abhinav Jain (abnjain) — Full Stack Developer & Designer"
             width={60}
             height={60}
             loading="lazy"

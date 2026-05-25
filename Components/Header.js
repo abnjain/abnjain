@@ -42,7 +42,7 @@ const Header = () => {
           <Link href="/">
             <Image
               src="/Images/favicon.png"
-              alt="abnjain Logo"
+              alt="Abhinav Jain (abnjain) — Portfolio Home"
               width={60}
               height={60}
               loading="lazy"

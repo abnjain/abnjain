@@ -1,0 +1,25 @@
+{
+  "name": "Abhinav Jain — Developer, Designer & Best IT Solutionist",
+  "short_name": "abnjain",
+  "description": "Portfolio of Abhinav Jain — Full Stack Developer, Web Designer, SEO Specialist, Cloud Developer, DevOps Specialist & Entrepreneur from Indore, India.",
+  "icons": [
+    { "src": "/abhinavjain-favicon-16x16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "/abhinavjain-favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/abhinavjain.png",               "sizes": "192x192","type": "image/png", "purpose": "any maskable" },
+    { "src": "/abhinavjain.png",               "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "start_url":        "/",
+  "scope":            "/",
+  "display":          "standalone",
+  "background_color": "#000000",
+  "theme_color":      "#EB3A56",
+  "lang":             "en-IN",
+  "dir":              "ltr",
+  "categories":       ["developer", "portfolio", "technology", "entrepreneur", "cloud", "devops", "seo", "cloud", "devops", "seo"],
+  "related_applications": [
+    {
+      "platform": "web"
+    }
+  ],
+  "prefer_related_applications": false
+}

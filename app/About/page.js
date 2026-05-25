@@ -1,4 +1,49 @@
 import React from "react";
+import { generatePageMetadata, JsonLd } from "@/Components/SEO";
+
+export const metadata = generatePageMetadata({
+  title:       "About Abhinav Jain | Full Stack Developer, Designer & Entrepreneur",
+  description:
+    "Learn about Abhinav Jain — Full Stack Developer, Web Designer, SEO Specialist, Cloud Developer, DevOps Engineer & Entrepreneur from Indore, India. Explore his expertise in MERN Stack, system design, AWS, and his professional experience.",
+  path:        "/About",
+  keywords: [
+    "About Abhinav Jain",
+    "Abhinav Jain Developer",
+    "Full Stack Developer Indore",
+    "MERN Stack Developer India",
+    "Developer Experience",
+    "IT Professional Indore",
+    "Software Engineer Background India",
+    "Cloud Developer India",
+    "DevOps Engineer Indore",
+    "SEO Specialist India",
+    "System Designer India",
+    "Entrepreneur India",
+  ],
+});
+
+function AboutSchema() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type':    'ProfilePage',
+    name:        'About Abhinav Jain',
+    url:         'https://abnjain.me/About',
+    mainEntity: {
+      '@type':         'Person',
+      name:             'Abhinav Jain',
+      alternateName:    'abnjain',
+      url:              'https://abnjain.me',
+      jobTitle:        ['Full Stack Developer', 'Web Designer', 'SEO Specialist', 'Cloud Developer', 'DevOps Engineer'],
+      address: {
+        '@type':         'PostalAddress',
+        addressLocality: 'Indore',
+        addressRegion:   'Madhya Pradesh',
+        addressCountry:  'IN',
+      },
+    },
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
+}
 
 const About = () => {
     const expertise = [
@@ -130,6 +175,8 @@ const About = () => {
     ];
 
     return (
+        <>
+        <AboutSchema />
         <main>
             <h1 className="text-center text-3xl font-bold tracking-wide m-8 mt-10">
                 About <span className="text-custom-fireOpal">ME</span>
@@ -189,6 +236,7 @@ const About = () => {
                 <p className="start">start</p>
             </section>
         </main>
+        </>
     );
 };
 

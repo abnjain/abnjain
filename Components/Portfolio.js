@@ -51,7 +51,7 @@ function PortFolio() {
               <img
                 src={logo}
                 className="w-[110px] h-[110px] p-1 rounded-full border-[2px]"
-                alt=""
+                alt={`${name} logo — technology used in Abhinav Jain's MERN stack projects`}
               />
               <div>
                 <div className="px-2 font-bold text-xl mb-2">{name}</div>

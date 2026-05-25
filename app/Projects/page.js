@@ -1,5 +1,26 @@
 import React from "react";
 import Image from "next/image";
+import { generatePageMetadata, getProjectsSchema } from "@/Components/SEO";
+
+export const metadata = generatePageMetadata({
+  title:       "Projects | Abhinav Jain — Web, Cloud & System Development",
+  description:
+    "Explore projects by Abhinav Jain — Full Stack Developer, System Designer, Cloud Developer & SEO Specialist from Indore, India. Live web apps, MERN stack projects, chess game, HR systems, and more.",
+  path:        "/Projects",
+  keywords: [
+    "Web Development Projects",
+    "MERN Stack Projects",
+    "Full Stack Projects India",
+    "React.js Projects",
+    "Node.js Projects",
+    "Cloud Projects India",
+    "System Design Projects",
+    "DevOps Projects",
+    "SEO Projects India",
+    "CRS Project",
+    "Portfolio Projects Abhinav Jain",
+  ],
+});
 
 const Projects = () => {
   const projects = [
@@ -93,7 +114,14 @@ const Projects = () => {
     },
   ];
 
+  const projectsSchema = getProjectsSchema(projects);
+
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(projectsSchema) }}
+    />
     <main className="flex min-h-max justify-center py-8 mt-3 m-1">
       <div className="justify-center items-center">
         <h1 className="text-3xl text-center font-bold">
@@ -107,19 +135,30 @@ const Projects = () => {
               key={index}
               className="relative w-72 h-96 rounded-3xl group overflow-hidden"
             >
-              <Image
-                src={project.img}
-                alt={project.name}
-                className="object-cover w-full h-full rounded-3xl"
-                width={500}
-                height={300}
-              />
+              {project.img ? (
+                <Image
+                  src={project.img}
+                  alt={`${project.name} — ${project.desc} | Project by Abhinav Jain`}
+                  className="object-cover w-full h-full rounded-3xl"
+                  width={500}
+                  height={300}
+                />
+              ) : (
+                <div
+                  className="w-full h-full rounded-3xl bg-gradient-to-br from-custom-blueGreen to-neutral-900 flex items-center justify-center"
+                  role="img"
+                  aria-label={`${project.name} — ${project.desc} | Project by Abhinav Jain (preview coming soon)`}
+                >
+                  <span className="text-sm text-gray-400 px-4 text-center">Preview coming soon</span>
+                </div>
+              )}
               <a
                 href={project.link}
                 target={project.name === "PORTFOLIO" ? "_self" : "_blank"}
                 rel={project.name === "PORTFOLIO" ? undefined : "noopener noreferrer"}
                 className="absolute inset-0 flex justify-center items-center bg-transparent group-hover:backdrop-blur transition-all duration-300"
                 title={project.desc}
+                aria-label={`${project.name} — ${project.desc}`}
               >
                 <span
                   className={`text-xl px-3 rounded-3xl text-center transition-all duration-300 ${project.textColor} group-hover:px-12`}
@@ -132,6 +171,7 @@ const Projects = () => {
         </div>
       </div>
     </main>
+    </>
   );
 };
 
