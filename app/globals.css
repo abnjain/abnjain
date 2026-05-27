@@ -42,6 +42,57 @@ body {
   color: var(--color-text);
 }
 
+/* ─── Always-dark scope ─────────────────────────────────────────────────────
+   Pins every existing design token back to its dark-mode value.
+   Apply as a class on any element that must never react to the light theme.
+   Does NOT create new variable names — only re-declares existing ones.
+──────────────────────────────────────────────────────────────────────────── */
+.always-dark {
+  --color-bg: #0a0f12;
+  --color-surface: #121a1f;
+  --color-header: #0d1418;
+  --color-accent: #eb3a56;
+  --color-accent-muted: #1c393d;
+  --color-text: #f4f7f8;
+  --color-muted: #8b9aa3;
+  --shadow-glow: 0 0 40px rgb(235 58 86 / 0.15);
+  --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.08);
+}
+
+/* ─── Glow Wordmark layers ───────────────────────────────────────────────── */
+.wordmark-outline {
+  -webkit-text-stroke: 1.5px var(--color-text);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.wordmark-glow-layer {
+  /* Radial gradient centred at the tracked cursor position */
+  background: radial-gradient(
+    circle 280px at var(--x, -999px) var(--y, -999px),
+    var(--color-accent) 0%,
+    transparent 62%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* Never receives pointer events — parent tracks the mouse */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.wordmark-container:hover .wordmark-glow-layer {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wordmark-glow-layer {
+    display: none;
+  }
+}
+
 .expert .expertise li::before {
   content: "\2192";
   color: #fff;
