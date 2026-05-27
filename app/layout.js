@@ -1,5 +1,6 @@
-import Header from "@/Components/Header.js";
+import Header from "@/components/layout/Header";
 import Footer from "@/Components/Footer.js";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { generatePageMetadata, JsonLd, getWebsiteSchema } from "@/Components/SEO";
@@ -23,13 +24,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN">
-      <body>
-        <JsonLd schema={getWebsiteSchema()} />
-        <Header />
-        {children}
-        <Footer />
-        <Analytics />
+    <html lang="en-IN" suppressHydrationWarning>
+      <body className="bg-bg text-text antialiased">
+        <ThemeProvider>
+          <JsonLd schema={getWebsiteSchema()} />
+          <Header />
+          {children}
+          <Footer />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -67,7 +67,10 @@ const HomeClient = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-10 md:gap-24 flex-col sm:flex-row">
+      <div
+        id="contact"
+        className="flex justify-center items-center gap-10 md:gap-24 flex-col sm:flex-row scroll-mt-28"
+      >
         <button
           type="button"
           onClick={openModal}

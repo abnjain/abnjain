@@ -2,18 +2,45 @@
   @tailwind components;
   @tailwind utilities;
 
-*{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  background-color: black; 
-  color: #fff;
+:root {
+  --color-bg: #0a0f12;
+  --color-surface: #121a1f;
+  --color-header: #0d1418;
+  --color-accent: #eb3a56;
+  --color-accent-muted: #1c393d;
+  --color-text: #f4f7f8;
+  --color-muted: #8b9aa3;
+  --radius-card: 1rem;
+  --shadow-glow: 0 0 40px rgb(235 58 86 / 0.15);
+  --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.08);
 }
 
-html,body{
+.light {
+  --color-bg: #f4f7f8;
+  --color-surface: #ffffff;
+  --color-header: #eef4f6;
+  --color-text: #0a0f12;
+  --color-muted: #5f6f78;
+  --shadow-soft: 0 8px 30px rgb(15 23 42 / 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
   width: 100%;
-  height: 100%;
-} 
+  min-height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
 
 .expert .expertise li::before {
   content: "\2192";
