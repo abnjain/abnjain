@@ -1,0 +1,45 @@
+import type { ReactNode } from "react";
+import Header from "@/components/layout/Header";
+import { SiteFrame } from "@/components/layout/SiteFrame";
+import { DetachedFooter } from "@/components/footer/DetachedFooter";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { generatePageMetadata, getWebsiteSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
+
+export const metadata = {
+  ...generatePageMetadata({}),
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/abhinavjain-favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/abhinavjain-favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/abhinavjain.png", sizes: "192x192", type: "image/png" }],
+    shortcut: "/favicon.ico",
+  },
+};
+
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <html lang="en-IN" suppressHydrationWarning>
+      <body className="bg-bg text-text antialiased">
+        <ThemeProvider>
+          <JsonLd schema={getWebsiteSchema()} />
+          <SiteFrame>
+            <Header />
+            {children}
+          </SiteFrame>
+          <div className="h-32 md:h-56 lg:h-72" aria-hidden />
+          <DetachedFooter />
+          <Analytics />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

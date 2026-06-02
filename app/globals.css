@@ -10,6 +10,7 @@
   --color-accent-muted: #1c393d;
   --color-text: #f4f7f8;
   --color-muted: #8b9aa3;
+  --color-connector: rgb(235 58 86 / 0.35);
   --radius-card: 1rem;
   --shadow-glow: 0 0 40px rgb(235 58 86 / 0.15);
   --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.08);
@@ -21,6 +22,7 @@
   --color-header: #eef4f6;
   --color-text: #0a0f12;
   --color-muted: #5f6f78;
+  --color-connector: #ffd9cc;
   --shadow-soft: 0 8px 30px rgb(15 23 42 / 0.08);
 }
 
@@ -55,8 +57,14 @@ body {
   --color-accent-muted: #1c393d;
   --color-text: #f4f7f8;
   --color-muted: #8b9aa3;
+  --color-connector: rgb(235 58 86 / 0.35);
   --shadow-glow: 0 0 40px rgb(235 58 86 / 0.15);
   --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.08);
+}
+
+/* Home CTA button shadows (from legacy page.module.css) */
+.btn-cta-shadow {
+  box-shadow: 2px 5px 15px rgb(255 255 255 / 0.52);
 }
 
 /* ─── Glow Wordmark layers ───────────────────────────────────────────────── */

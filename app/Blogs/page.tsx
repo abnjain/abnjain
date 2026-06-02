@@ -1,11 +1,10 @@
-import React from "react";
-import { generatePageMetadata } from "@/Components/SEO";
+import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata = generatePageMetadata({
-  title:       "Blogs | Abhinav Jain — Developer, Designer & IT Solutionist",
+  title: "Blogs | Abhinav Jain — Developer, Designer & IT Solutionist",
   description:
     "Blogs and articles by Abhinav Jain on Web Development, System Design, SEO, Cloud Computing, DevOps, and Entrepreneurship. Insights from a Full Stack Developer in Indore, India.",
-  path:        "/Blogs",
+  path: "/Blogs",
   keywords: [
     "Developer Blog India",
     "Web Development Blog",
@@ -21,14 +20,13 @@ export const metadata = generatePageMetadata({
   ],
 });
 
-const Blog = () => {
+export default function BlogsPage() {
   return (
-    <main className="flex min-h-max items-center justify-center font-bold p-24">
-      <div className=" text-4xl">
-      <h1>Blogs Page</h1>
+    <main className="flex min-h-max items-center justify-center p-24 font-bold">
+      <div className="text-4xl text-text">
+        <h1>Blogs Page</h1>
+        <p className="mt-4 text-base font-normal text-muted">Articles coming soon.</p>
       </div>
     </main>
-  )
+  );
 }
-
-export default Blog;

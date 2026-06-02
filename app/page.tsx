@@ -1,4 +1,5 @@
-import { generatePageMetadata, JsonLd, getPersonSchema } from "@/Components/SEO";
+import { generatePageMetadata, getPersonSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/JsonLd";
 import HomeClient from "./HomeClient";
 
 export const metadata = generatePageMetadata({
