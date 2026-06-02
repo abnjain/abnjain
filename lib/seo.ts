@@ -233,7 +233,7 @@ export function getProjectsSchema(projects: Pick<PortfolioProject, "name" | "lin
     "@type": "ItemList",
     name: `Projects by ${siteName}`,
     description: "Portfolio of web development projects by Abhinav Jain",
-    url: `${siteUrl}/Projects`,
+    url: `${siteUrl}/projects`,
     itemListElement: projects
       .filter((p) => p.link && p.link !== "/")
       .map((project, index) => ({

@@ -7,7 +7,7 @@ export const metadata = generatePageMetadata({
   title: "Projects | Abhinav Jain — Web, Cloud & System Development",
   description:
     "Explore projects by Abhinav Jain — Full Stack Developer, System Designer, Cloud Developer & SEO Specialist from Indore, India. Live web apps, MERN stack projects, chess game, HR systems, and more.",
-  path: "/Projects",
+  path: "/projects",
   keywords: [
     "Web Development Projects",
     "MERN Stack Projects",
@@ -30,8 +30,8 @@ export default function ProjectsPage() {
       <main className="m-1 mt-3 flex min-h-max justify-center py-8">
         <div className="items-center justify-center">
           <h1 className="text-center text-3xl font-bold text-text">
-            Projects I <span className="text-custom-fireOpal">Developed</span> and{" "}
-            <span className="text-custom-fireOpal">Designed</span>
+            Projects I <span className="text-accent">Developed</span> and{" "}
+            <span className="text-accent">Designed</span>
           </h1>
 
           <div className="no-scrollbar m-6 mt-10 flex h-fit max-w-7xl flex-wrap justify-center gap-16 overflow-hidden rounded-xl border-2 border-text/10 px-4 py-10 shadow-soft">
@@ -50,7 +50,7 @@ export default function ProjectsPage() {
                   />
                 ) : (
                   <div
-                    className="flex h-full w-full items-center justify-center rounded-3xl bg-gradient-to-br from-custom-blueGreen to-neutral-900"
+                    className="flex h-full w-full items-center justify-center rounded-3xl bg-gradient-to-br from-accent-muted to-bg"
                     role="img"
                     aria-label={`${project.name} — ${project.desc} | Project by Abhinav Jain (preview coming soon)`}
                   >

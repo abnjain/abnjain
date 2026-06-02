@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
-import Modal from "@/app/Modal";
+import { ContactModal } from "@/components/ui/ContactModal";
 import type { ContactFormData } from "@/types/home";
 
 const EMAILJS_SERVICE = "service_zln2j7l";
@@ -38,12 +38,12 @@ export function ContactCtaSection() {
           <button
             type="button"
             onClick={() => setIsModalOpen(true)}
-            className="btn-cta-shadow rounded-3xl bg-gradient-to-br from-custom-fireOpal to-custom-blueGreen px-4 py-3 text-center text-white shadow-2xl transition-all duration-100 hover:scale-100 hover:shadow-none sm:hover:scale-125"
+            className="btn-cta-shadow rounded-3xl bg-gradient-to-br from-accent to-accent-muted px-4 py-3 text-center text-white shadow-2xl transition-all duration-100 hover:scale-100 hover:shadow-none sm:hover:scale-125"
           >
             Hire Me
           </button>
 
-          <Modal
+          <ContactModal
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
             onSubmit={sendEmail}
@@ -52,7 +52,7 @@ export function ContactCtaSection() {
           <a
             href="/resume.pdf"
             download="Abhinav_Jain_Resume.pdf"
-            className="btn-cta-shadow rounded-3xl bg-gradient-to-r from-custom-fireOpal to-custom-blueGreen px-1 py-1 text-center text-white shadow-md transition-all duration-100 hover:scale-100 hover:shadow-none sm:hover:scale-125"
+            className="btn-cta-shadow rounded-3xl bg-gradient-to-r from-accent to-accent-muted px-1 py-1 text-center text-white shadow-md transition-all duration-100 hover:scale-100 hover:shadow-none sm:hover:scale-125"
           >
             <span className="block rounded-3xl bg-bg px-4 py-2">Download CV</span>
           </a>
@@ -60,7 +60,7 @@ export function ContactCtaSection() {
 
         <p className="text-center text-lg font-bold text-text">
           Want to see my work? Visit the{" "}
-          <Link href="/Projects" className="text-custom-fireOpal hover:uppercase">
+          <Link href="/projects" className="text-accent hover:uppercase">
             Projects
           </Link>{" "}
           section.

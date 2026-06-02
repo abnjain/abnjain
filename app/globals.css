@@ -3,17 +3,17 @@
   @tailwind utilities;
 
 :root {
-  --color-bg: #0a0f12;
-  --color-surface: #121a1f;
-  --color-header: #0d1418;
+  --color-bg: #05080b;
+  --color-surface: #0e151b;
+  --color-header: #0a1218;
   --color-accent: #eb3a56;
-  --color-accent-muted: #1c393d;
-  --color-text: #f4f7f8;
-  --color-muted: #8b9aa3;
-  --color-connector: rgb(235 58 86 / 0.35);
+  --color-accent-muted: #1a3540;
+  --color-text: #eef3f6;
+  --color-muted: #8fa3b0;
+  --color-connector: rgb(235 58 86 / 0.45);
   --radius-card: 1rem;
-  --shadow-glow: 0 0 40px rgb(235 58 86 / 0.15);
-  --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.08);
+  --shadow-glow: 0 0 48px rgb(235 58 86 / 0.22);
+  --shadow-soft: 0 12px 40px rgb(0 0 0 / 0.35);
 }
 
 .light {
@@ -23,6 +23,7 @@
   --color-text: #0a0f12;
   --color-muted: #5f6f78;
   --color-connector: #ffd9cc;
+  --shadow-glow: 0 0 32px rgb(235 58 86 / 0.12);
   --shadow-soft: 0 8px 30px rgb(15 23 42 / 0.08);
 }
 
@@ -44,30 +45,27 @@ body {
   color: var(--color-text);
 }
 
-/* ─── Always-dark scope ─────────────────────────────────────────────────────
-   Pins every existing design token back to its dark-mode value.
-   Apply as a class on any element that must never react to the light theme.
-   Does NOT create new variable names — only re-declares existing ones.
-──────────────────────────────────────────────────────────────────────────── */
 .always-dark {
-  --color-bg: #0a0f12;
-  --color-surface: #121a1f;
-  --color-header: #0d1418;
+  --color-bg: #05080b;
+  --color-surface: #0e151b;
+  --color-header: #0a1218;
   --color-accent: #eb3a56;
-  --color-accent-muted: #1c393d;
-  --color-text: #f4f7f8;
-  --color-muted: #8b9aa3;
-  --color-connector: rgb(235 58 86 / 0.35);
-  --shadow-glow: 0 0 40px rgb(235 58 86 / 0.15);
-  --shadow-soft: 0 8px 30px rgb(0 0 0 / 0.08);
+  --color-accent-muted: #1a3540;
+  --color-text: #eef3f6;
+  --color-muted: #8fa3b0;
+  --color-connector: rgb(235 58 86 / 0.45);
+  --shadow-glow: 0 0 48px rgb(235 58 86 / 0.22);
+  --shadow-soft: 0 12px 40px rgb(0 0 0 / 0.35);
 }
 
-/* Home CTA button shadows (from legacy page.module.css) */
 .btn-cta-shadow {
-  box-shadow: 2px 5px 15px rgb(255 255 255 / 0.52);
+  box-shadow: var(--shadow-glow);
 }
 
-/* ─── Glow Wordmark layers ───────────────────────────────────────────────── */
+.light .btn-cta-shadow {
+  box-shadow: 0 4px 20px rgb(15 23 42 / 0.12);
+}
+
 .wordmark-outline {
   -webkit-text-stroke: 1.5px var(--color-text);
   -webkit-text-fill-color: transparent;
@@ -75,7 +73,6 @@ body {
 }
 
 .wordmark-glow-layer {
-  /* Radial gradient centred at the tracked cursor position */
   background: radial-gradient(
     circle 280px at var(--x, -999px) var(--y, -999px),
     var(--color-accent) 0%,
@@ -85,7 +82,6 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  /* Never receives pointer events — parent tracks the mouse */
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -103,84 +99,99 @@ body {
 
 .expert .expertise li::before {
   content: "\2192";
-  color: #fff;
+  color: var(--color-accent);
   font-weight: 700;
   margin-right: 0.4rem;
 }
-.expert .horLine{ 
-  border-left: 3px solid white;
-  opacity: 0.3;
+
+.expert .horLine {
+  border-left: 3px solid var(--color-text);
+  opacity: 0.2;
   border-radius: 50%;
   height: 1330px;
   position: absolute;
   left: 50%;
   margin-left: -3px;
 }
-.expert ul .left{
+
+.expert ul .left {
   text-align: left;
   margin-left: 55%;
 }
+
 .expert .lineL {
-  border-left: 3px solid white;
-  opacity: 0.2;
+  border-left: 3px solid var(--color-muted);
+  opacity: 0.35;
   border-radius: 50%;
   width: 400px;
   margin-left: -75px;
 }
-.expert ul .right{
+
+.expert ul .right {
   text-align: right;
   margin-right: 55%;
 }
+
 .expert .lineR {
-  border-left: 3px solid white;
-  opacity: 0.2;
+  border-left: 3px solid var(--color-muted);
+  opacity: 0.35;
   border-radius: 50%;
   width: 500px;
   margin-left: 238px;
 }
-.aLine{
+
+.aLine {
   position: relative;
 }
-.bLine{
+
+.bLine {
   position: relative;
 }
 
 @media (max-width: 640px) {
-  .expert .horLine{
+  .expert .horLine {
     height: 1675px;
     left: 5%;
   }
-  .aLine{
+
+  .aLine {
     left: 2%;
     top: 5px;
     width: 190px;
     opacity: 0.3;
   }
-  .bLine{
+
+  .bLine {
     left: 2%;
     width: 104px;
     opacity: 0.3;
   }
+
   .start {
-    margin: -10px ;
+    margin: -10px;
   }
+
   .many {
     margin-bottom: -12px;
   }
-  .expert ul .left{
+
+  .expert ul .left {
     text-align: center;
     margin-left: 3%;
     padding: 15px;
   }
+
   .expert .lineL {
     width: 330px;
     margin-left: -5%;
   }
-  .expert ul .right{
+
+  .expert ul .right {
     text-align: center;
     margin-right: 3%;
     padding: 15px;
   }
+
   .expert .lineR {
     width: 330px;
     margin-left: -5%;

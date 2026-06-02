@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import type { IconType } from "react-icons";
-import { socialLinks, type SocialLinkId } from "@/data/socialLinks";
+import { socialLinks, type SocialLinkId } from "@/lib/data/socialLinks";
 import { SocialIconButton } from "@/components/footer/SocialIconButton";
 
 /**

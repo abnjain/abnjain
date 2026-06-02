@@ -3,7 +3,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import type { ContactFormData } from "@/types/home";
 
-type ModalProps = {
+type ContactModalProps = {
   isOpen: boolean;
   onClose: () => void;
   onSubmit: (data: ContactFormData) => void;
@@ -15,7 +15,7 @@ const emptyForm: ContactFormData = {
   message: "",
 };
 
-export default function Modal({ isOpen, onClose, onSubmit }: ModalProps) {
+export function ContactModal({ isOpen, onClose, onSubmit }: ContactModalProps) {
   const [formData, setFormData] = useState<ContactFormData>(emptyForm);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

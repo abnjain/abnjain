@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { NavPillBar } from "@/components/layout/NavPillBar";
-import type { NavItem } from "@/lib/nav";
+import type { NavItem } from "@/lib/data/site";
 import type { NavSection } from "@/lib/useActiveNav";
 
 type MobileNavProps = {

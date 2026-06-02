@@ -8,7 +8,7 @@ import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { NavPillBar } from "@/components/layout/NavPillBar";
 import { useActiveNav } from "@/lib/useActiveNav";
-import { headerCta, navLinks, siteBrand } from "@/lib/nav";
+import { headerCta, navLinks, siteBrand } from "@/lib/data/site";
 import type { NavSection } from "@/lib/useActiveNav";
 
 function sectionForHref(href: string): NavSection {

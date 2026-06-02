@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
-import { IoChevronDown } from "react-icons/io5";
 import {
   DEFAULT_THEME,
   getStoredTheme,

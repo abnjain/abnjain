@@ -22,8 +22,6 @@ const config: Config = {
         text: "var(--color-text)",
         muted: "var(--color-muted)",
         connector: "var(--color-connector)",
-        "custom-blueGreen": "#1c393d",
-        "custom-fireOpal": "#EB3A56",
       },
       boxShadow: {
         glow: "var(--shadow-glow)",

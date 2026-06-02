@@ -5,7 +5,7 @@ export type NavItem = {
 
 export const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Projects", href: "/Projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Contact", href: "/#contact" },
 ];
 

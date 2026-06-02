@@ -5,7 +5,7 @@ export const metadata = generatePageMetadata({
   title: "About Abhinav Jain | Full Stack Developer, Designer & Entrepreneur",
   description:
     "Learn about Abhinav Jain — Full Stack Developer, Web Designer, SEO Specialist, Cloud Developer, DevOps Engineer & Entrepreneur from Indore, India. Explore his expertise in MERN Stack, system design, AWS, and his professional experience.",
-  path: "/About",
+  path: "/about",
   keywords: [
     "About Abhinav Jain",
     "Abhinav Jain Developer",
@@ -27,7 +27,7 @@ function AboutSchema() {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     name: "About Abhinav Jain",
-    url: "https://abnjain.me/About",
+    url: "https://abnjain.me/about",
     mainEntity: {
       "@type": "Person",
       name: "Abhinav Jain",
@@ -84,7 +84,7 @@ const experiences: Experience[] = [
       <>
         Developed dynamic websites like{" "}
         <a
-          className="text-custom-fireOpal hover:uppercase"
+          className="text-accent hover:uppercase"
           href="https://dogcyclopedia.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -119,7 +119,7 @@ const experiences: Experience[] = [
         Acquired teaching skills and developed a live project integrating MySQL, Java, and Web
         Design —{" "}
         <a
-          className="text-custom-fireOpal hover:uppercase"
+          className="text-accent hover:uppercase"
           href="https://kgstocks.in"
           target="_blank"
           rel="noopener noreferrer"
@@ -147,7 +147,7 @@ const experiences: Experience[] = [
         </a>
         ,{" "}
         <a
-          className="text-custom-fireOpal hover:uppercase"
+          className="text-accent hover:uppercase"
           href="https://github.com/abnjain/encryption_decryption"
           target="_blank"
           rel="noopener noreferrer"
@@ -156,7 +156,7 @@ const experiences: Experience[] = [
         </a>
         , and{" "}
         <a
-          className="text-custom-fireOpal hover:uppercase"
+          className="text-accent hover:uppercase"
           href="https://github.com/abnjain/hospitalAPI"
           target="_blank"
           rel="noopener noreferrer"
@@ -182,7 +182,7 @@ const experiences: Experience[] = [
       <>
         Developed a comprehensive project integrating MySQL, Java, and Web Design —{" "}
         <a
-          className="text-custom-fireOpal hover:uppercase"
+          className="text-accent hover:uppercase"
           href="https://github.com/abnjain/hospitalAPI"
           target="_blank"
           rel="noopener noreferrer"
@@ -201,7 +201,7 @@ export default function AboutPage() {
       <AboutSchema />
       <main>
         <h1 className="m-8 mt-10 text-center text-3xl font-bold tracking-wide text-text">
-          About <span className="text-custom-fireOpal">ME</span>
+          About <span className="text-accent">ME</span>
         </h1>
 
         <section className="expert m-2 text-center">
@@ -216,7 +216,7 @@ export default function AboutPage() {
           <hr className="mx-auto mb-3 w-2/3 opacity-20" />
 
           <h3 className="m-4 mt-3 text-xl font-semibold text-text">
-            My <span className="text-custom-fireOpal">expertise</span> includes:
+            My <span className="text-accent">expertise</span> includes:
           </h3>
 
           <ul className="expertise space-y-2 text-center text-base">
@@ -226,7 +226,7 @@ export default function AboutPage() {
           </ul>
 
           <a
-            className="mt-6 inline-block rounded-full border border-solid px-4 py-2 text-lg text-custom-fireOpal transition hover:uppercase"
+            className="mt-6 inline-block rounded-full border border-solid px-4 py-2 text-lg text-accent transition hover:uppercase"
             href="/resume.pdf"
             download="Abhinav_Jain_Resume.pdf"
           >

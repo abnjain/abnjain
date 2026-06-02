@@ -19,7 +19,7 @@ export default function Error({ error, reset }: ErrorProps) {
       <button
         type="button"
         onClick={() => reset()}
-        className="rounded-md bg-custom-fireOpal px-5 py-2 text-white transition hover:opacity-90"
+        className="rounded-md bg-accent px-5 py-2 text-white transition hover:opacity-90"
       >
         Try Again
       </button>

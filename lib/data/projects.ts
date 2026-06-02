@@ -20,7 +20,7 @@ export const portfolioProjects: PortfolioProject[] = [
     img: "/Images/portfolio.png",
     link: "/",
     desc: "Visit my Portfolio Website",
-    textColor: "text-custom-fireOpal",
+    textColor: "text-accent",
   },
   {
     name: "VVD(VidhyaVardhani)",

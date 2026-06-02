@@ -4,7 +4,7 @@ export const metadata = generatePageMetadata({
   title: "Blogs | Abhinav Jain — Developer, Designer & IT Solutionist",
   description:
     "Blogs and articles by Abhinav Jain on Web Development, System Design, SEO, Cloud Computing, DevOps, and Entrepreneurship. Insights from a Full Stack Developer in Indore, India.",
-  path: "/Blogs",
+  path: "/blogs",
   keywords: [
     "Developer Blog India",
     "Web Development Blog",
