@@ -53,8 +53,8 @@ export default function HomePage() {
         <ExperienceSection />
         <DeployedAssetsSection />
         <CtaDataStripSection />
-        <FaqSection />
-        <ContactCtaSection />
+        {/* <FaqSection /> */}
+        {/* <ContactCtaSection /> */}
       </main>
     </>
   );
