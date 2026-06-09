@@ -1,5 +1,12 @@
 import type { ReactNode } from "react";
-import { generatePageMetadata } from "@/lib/seo";
+import {
+  generatePageMetadata,
+  getProfilePageSchema,
+  getBreadcrumbSchema,
+  buildGraph,
+} from "@/lib/seo";
+import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
+import { personProfile } from "@/lib/data/profile";
 
 export const metadata = generatePageMetadata({
   title: "About Abhinav Jain | Full Stack Developer, Designer & Entrepreneur",
@@ -22,39 +29,13 @@ export const metadata = generatePageMetadata({
   ],
 });
 
-function AboutSchema() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    name: "About Abhinav Jain",
-    url: "https://abnjain.me/about",
-    mainEntity: {
-      "@type": "Person",
-      name: "Abhinav Jain",
-      alternateName: "abnjain",
-      url: "https://abnjain.me",
-      jobTitle: [
-        "Full Stack Developer",
-        "Web Designer",
-        "SEO Specialist",
-        "Cloud Developer",
-        "DevOps Engineer",
-      ],
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Indore",
-        addressRegion: "Madhya Pradesh",
-        addressCountry: "IN",
-      },
-    },
-  };
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}
+const aboutSchema = buildGraph(
+  getProfilePageSchema(),
+  getBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+  ]),
+);
 
 type Experience = {
   side: "left" | "right";
@@ -198,11 +179,18 @@ const experiences: Experience[] = [
 export default function AboutPage() {
   return (
     <>
-      <AboutSchema />
+      <JsonLdGraph schema={aboutSchema} />
       <main>
         <h1 className="m-8 mt-10 text-center text-3xl font-bold tracking-wide text-text">
           About <span className="text-accent">ME</span>
         </h1>
+
+        <div className="mx-auto mb-10 max-w-3xl rounded-card border border-text/10 bg-surface/80 p-6 text-center shadow-soft">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+            In short
+          </h2>
+          <p className="mt-4 leading-relaxed text-text">{personProfile.summaryParagraph}</p>
+        </div>
 
         <section className="expert m-2 text-center">
           <h2 className="m-6 text-lg text-text">

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { personProfile } from "@/lib/data/profile";
 
 export function HeroSection() {
   const reduce = useReducedMotion();
@@ -18,6 +19,14 @@ export function HeroSection() {
           <br />
           digital experiences.
         </motion.h1>
+        <motion.p
+          className="mx-auto mt-6 max-w-2xl text-base font-normal leading-relaxed text-muted sm:text-lg"
+          initial={reduce ? false : { opacity: 0, y: 12 }}
+          animate={reduce ? undefined : { opacity: 1, y: 0 }}
+          transition={reduce ? undefined : { duration: 0.8, delay: 0.5 }}
+        >
+          {personProfile.summaryOneLine}
+        </motion.p>
       </div>
 
       <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 flex-col items-center">

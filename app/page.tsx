@@ -1,5 +1,15 @@
-import { generatePageMetadata, getPersonSchema } from "@/lib/seo";
-import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  generatePageMetadata,
+  getPersonSchema,
+  getWebsiteSchema,
+  getProfessionalServiceSchema,
+  getFAQPageSchema,
+  buildGraph,
+} from "@/lib/seo";
+import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { EntityIntroSection } from "@/components/sections/EntityIntroSection";
+import { faqData } from "@/lib/data/faq";
 import HomeClient from "./HomeClient";
 
 export const metadata = generatePageMetadata({
@@ -22,11 +32,22 @@ export const metadata = generatePageMetadata({
   ],
 });
 
+const homeSchema = buildGraph(
+  getPersonSchema(),
+  getWebsiteSchema(),
+  getProfessionalServiceSchema(),
+  getFAQPageSchema(faqData),
+);
+
 export default function HomePage() {
   return (
     <>
-      <JsonLd schema={getPersonSchema()} />
-      <HomeClient />
+      <JsonLdGraph schema={homeSchema} />
+      <main className="relative w-full flex-1 selection:bg-accent/10 selection:text-text">
+        <HeroSection />
+        <EntityIntroSection />
+        <HomeClient />
+      </main>
     </>
   );
 }

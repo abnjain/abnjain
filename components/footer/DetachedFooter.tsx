@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useReducedMotion, type Transition } from "framer-motion";
 import { GlowWordmark } from "@/components/footer/GlowWordmark";
 import { BrandMark } from "@/components/footer/BrandMark";
@@ -57,7 +58,10 @@ export function DetachedFooter() {
           <div className="flex items-center justify-center gap-3 md:flex-col md:items-center md:gap-1">
             <BrandMark />
             <p className="text-[10px] text-muted">
-              &copy; {new Date().getFullYear()} Abhinav Jain. Let&apos;s Build Something Amazing for the future.
+              &copy; {new Date().getFullYear()} Abhinav Jain. Let&apos;s Build Something Amazing for the future.{" "}
+              <Link href="/llms.txt" className="hover:text-accent" prefetch={false}>
+                AI context
+              </Link>
             </p>
           </div>
 

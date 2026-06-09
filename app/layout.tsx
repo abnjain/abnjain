@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { generatePageMetadata, getWebsiteSchema } from "@/lib/seo";
-import { JsonLd } from "@/components/seo/JsonLd";
+import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
 
 export const metadata = {
   ...generatePageMetadata({}),
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en-IN" suppressHydrationWarning>
       <body className="bg-bg text-text antialiased">
         <ThemeProvider>
-          <JsonLd schema={getWebsiteSchema()} />
+          <JsonLdGraph schema={getWebsiteSchema()} />
           <SiteFrame>
             <Header />
             {children}

@@ -14,7 +14,9 @@ import type { NavSection } from "@/lib/useActiveNav";
 function sectionForHref(href: string): NavSection {
   if (href === "/" || href === "") return "home";
   if (href.includes("#contact")) return "contact";
-  return "projects";
+  if (href.includes("/about")) return "about";
+  if (href.includes("/projects")) return "projects";
+  return "home";
 }
 
 export default function Header() {

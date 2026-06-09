@@ -1,0 +1,19 @@
+# Abhinav Jain (abnjain) — https://abnjain.me
+
+> Full-stack developer, web designer, and IT consultant from Indore, India.
+
+## Canonical context
+For complete machine-readable facts (services, projects, FAQ, contact), read:
+https://abnjain.me/llms-full.txt
+
+## Key pages
+- Home: https://abnjain.me/
+- About: https://abnjain.me/about
+- Projects: https://abnjain.me/projects
+- Contact: https://abnjain.me/#contact
+- Resume: https://abnjain.me/resume.pdf
+
+## Contact
+- Email: abnjain25@gmail.com
+- GitHub: https://github.com/abnjain
+- LinkedIn: https://www.linkedin.com/in/abnjain

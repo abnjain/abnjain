@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
-import { SEO_CONFIG } from "@/lib/seo";
+import { SEO_CONFIG } from "@/lib/seo/config";
+import { getCaseStudyProjects } from "@/lib/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const { siteUrl } = SEO_CONFIG;
   const now = new Date();
 
-  return [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: siteUrl,
       lastModified: now,
@@ -31,4 +32,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
   ];
+
+  const projectRoutes: MetadataRoute.Sitemap = getCaseStudyProjects().map((p) => ({
+    url: `${siteUrl}/projects/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...projectRoutes];
 }

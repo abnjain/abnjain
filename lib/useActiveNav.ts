@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 
-export type NavSection = "home" | "projects" | "contact";
+export type NavSection = "home" | "about" | "projects" | "contact";
 
 function readHash(): string {
   if (typeof window === "undefined") return "";
@@ -20,6 +20,10 @@ export function sectionFromLocation(
 
   if (pathname.toLowerCase().startsWith("/projects")) {
     return "projects";
+  }
+
+  if (pathname.toLowerCase().startsWith("/about")) {
+    return "about";
   }
 
   return "home";
@@ -64,6 +68,10 @@ export function useActiveNav() {
 
       if (href.toLowerCase().includes("/projects")) {
         return activeSection === "projects";
+      }
+
+      if (href.toLowerCase().includes("/about")) {
+        return activeSection === "about";
       }
 
       return false;
