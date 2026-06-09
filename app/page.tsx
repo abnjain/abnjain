@@ -7,11 +7,11 @@ import {
   buildGraph,
 } from "@/lib/seo";
 import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
-import { ContactCtaSection } from "@/components/sections/ContactCtaSection";
+// import { ContactCtaSection } from "@/components/sections/ContactCtaSection";
 import { CtaDataStripSection } from "@/components/sections/CtaDataStripSection";
 import { DeployedAssetsSection } from "@/components/sections/DeployedAssetsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
-import { FaqSection } from "@/components/sections/FaqSection";
+// import { FaqSection } from "@/components/sections/FaqSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { faqData } from "@/lib/data/faq";
 
