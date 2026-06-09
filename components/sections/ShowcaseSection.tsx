@@ -99,7 +99,7 @@ export function ShowcaseSection() {
             >
               <Image
                 src={slide.image}
-                alt={slide.title}
+                alt={slide.alt}
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1024px"

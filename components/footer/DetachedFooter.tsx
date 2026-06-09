@@ -7,6 +7,7 @@ import {
   footerIconLinks,
   systemLogLines,
 } from "@/lib/data/footer";
+import { decorativeImageAlt } from "@/lib/seo/imageAlt";
 
 const iconMap = [Terminal, Code2, Network] as const;
 
@@ -74,7 +75,7 @@ export function DetachedFooter() {
               <div className="absolute bottom-0 right-0 h-[240%] w-full origin-bottom-right">
                 <Image
                   src="/images/footer-terminal-wave.png"
-                  alt=""
+                  alt={decorativeImageAlt("abnjain footer terminal wave")}
                   fill
                   unoptimized
                   className="object-cover object-right-bottom grayscale"

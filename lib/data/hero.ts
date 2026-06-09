@@ -71,8 +71,12 @@ export const heroContent = {
   },
   images: {
     dither: "/images/hero/dither-bg.png",
+    ditherAlt: "abnjain hero dither background texture",
     character: "/images/hero/character.png",
+    characterAlt: "Abhinav Jain (abnjain) — hero character illustration",
     wireframeMap: "/images/hero/wireframe-map.png",
+    wireframeMapAlt: "abnjain system wireframe map visualization",
     wireframeWave: "/images/hero/wireframe-wave.png",
+    wireframeWaveAlt: "abnjain animated wireframe wave background",
   },
 } as const;

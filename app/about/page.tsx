@@ -184,7 +184,7 @@ export default function AboutPage() {
       <JsonLdGraph schema={aboutSchema} />
       <main>
         <h1 className="m-8 mt-10 text-center text-3xl font-bold tracking-wide text-text">
-          About <span className="text-accent">ME</span>
+          About Abhinav Jain <span className="text-accent">(abnjain)</span>
         </h1>
 
         <div className="mx-auto mb-10 max-w-3xl rounded-card border border-text/10 bg-surface/80 p-6 text-center shadow-soft">

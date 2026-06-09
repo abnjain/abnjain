@@ -1,4 +1,9 @@
-import { generatePageMetadata } from "@/lib/seo";
+import {
+  generatePageMetadata,
+  getBreadcrumbSchema,
+  buildGraph,
+} from "@/lib/seo";
+import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
 
 export const metadata = generatePageMetadata({
   title: "Blogs | Abhinav Jain (abnjain) — Developer, Designer & IT Solutionist",
@@ -22,13 +27,27 @@ export const metadata = generatePageMetadata({
   ],
 });
 
+const blogsSchema = buildGraph(
+  getBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blogs", path: "/blogs" },
+  ]),
+);
+
 export default function BlogsPage() {
   return (
-    <main className="flex min-h-max items-center justify-center p-24 font-bold">
-      <div className="text-4xl text-text">
-        <h1>Blogs Page</h1>
-        <p className="mt-4 text-base font-normal text-muted">Articles coming soon.</p>
-      </div>
-    </main>
+    <>
+      <JsonLdGraph schema={blogsSchema} />
+      <main className="flex min-h-max items-center justify-center p-24 font-bold">
+        <div className="text-4xl text-text">
+          <h1>
+            Blogs by <span className="text-accent">abnjain</span>
+          </h1>
+          <p className="mt-4 text-base font-normal text-muted">
+            Articles by Abhinav Jain (abnjain) coming soon.
+          </p>
+        </div>
+      </main>
+    </>
   );
 }

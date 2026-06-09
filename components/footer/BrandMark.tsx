@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { siteBrand } from "@/lib/data/site";
 
 export function BrandMark() {
   const reduceMotion = useReducedMotion();
@@ -21,7 +22,7 @@ export function BrandMark() {
       >
         <Image
           src="/Images/favicon.png"
-          alt="abnjain brand mark"
+          alt={siteBrand.logoAlt}
           width={44}
           height={44}
           className="h-full w-full object-cover"

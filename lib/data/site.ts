@@ -25,6 +25,7 @@ export const siteBrand = {
   logo: "/Images/favicon.png",
   avatar: "/images/header-avatar.png",
   logoAlt: "Abhinav Jain (abnjain) — Portfolio Home",
+  avatarAlt: "Abhinav Jain (abnjain) — profile photo",
 } as const;
 
 export const headerCta = {

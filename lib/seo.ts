@@ -14,6 +14,7 @@ export {
 } from "@/lib/seo/schemas";
 
 import { SEO_CONFIG } from "@/lib/seo/config";
+import { DEFAULT_OG_IMAGE_ALT } from "@/lib/seo/imageAlt";
 
 export type PageMetadataOptions = {
   title?: string;
@@ -35,7 +36,11 @@ export function generatePageMetadata({
   const { siteUrl, siteName, defaultImage, twitterHandle, locale, geo, globalKeywords } =
     SEO_CONFIG;
 
-  const resolvedTitle = title ? `${title} | ${siteName}` : SEO_CONFIG.siteTitle;
+  const resolvedTitle = title
+    ? title.includes(siteName) || /abnjain/i.test(title)
+      ? title
+      : `${title} | ${siteName}`
+    : SEO_CONFIG.siteTitle;
   const resolvedDesc = description ?? SEO_CONFIG.defaultDescription;
   const resolvedImage = image ?? defaultImage;
   const canonicalUrl = `${siteUrl}${path}`;
@@ -45,9 +50,11 @@ export function generatePageMetadata({
     title: resolvedTitle,
     description: resolvedDesc,
     keywords: allKeywords,
+    applicationName: "abnjain",
     authors: [{ name: siteName, url: siteUrl }],
     creator: siteName,
     publisher: siteName,
+    category: "technology",
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: canonicalUrl,
@@ -66,7 +73,7 @@ export function generatePageMetadata({
           url: resolvedImage,
           width: 1200,
           height: 630,
-          alt: resolvedTitle,
+          alt: DEFAULT_OG_IMAGE_ALT,
         },
       ],
       locale,
@@ -94,7 +101,9 @@ export function generatePageMetadata({
       "geo.region": geo.region,
       "geo.placename": geo.placename,
       "geo.position": geo.position,
+      "geo.country": "IN",
       ICBM: geo.icbm,
+      "content-language": "en-IN",
     },
   };
 }

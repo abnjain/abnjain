@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { HeroDitherBackground } from "@/components/sections/HeroDitherBackground";
 import { HeroLocationBar } from "@/components/sections/HeroLocationBar";
 import { HeroStatusPanel } from "@/components/sections/HeroStatusPanel";
@@ -11,7 +10,7 @@ export function HeroSection() {
     <section className="border-b border-border" aria-label="Hero">
       <div className="grid lg:grid-cols-12 lg:min-h-[51rem]">
         <div className="relative flex min-h-[28rem] flex-col justify-between overflow-hidden border-b border-border lg:col-span-8 lg:min-h-[51rem] lg:border-b-0 lg:border-r">
-          <HeroDitherBackground src={images.dither} />
+          <HeroDitherBackground src={images.dither} alt={images.ditherAlt} />
 
           <div className="relative z-10 flex flex-1 flex-col justify-center md:justify-start px-6 py-8 md:px-10 md:py-24 lg:px-20 lg:py-32">
             <div className="mb-6 flex items-center gap-3">
@@ -38,7 +37,7 @@ export function HeroSection() {
 
           {/* <Image
             src={images.character}
-            alt=""
+            alt={images.characterAlt}
             width={468}
             height={430}
             priority

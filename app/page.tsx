@@ -7,12 +7,13 @@ import {
   buildGraph,
 } from "@/lib/seo";
 import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
+import { ContactCtaSection } from "@/components/sections/ContactCtaSection";
 import { CtaDataStripSection } from "@/components/sections/CtaDataStripSection";
 import { DeployedAssetsSection } from "@/components/sections/DeployedAssetsSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
+import { FaqSection } from "@/components/sections/FaqSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { faqData } from "@/lib/data/faq";
-import HomeClient from "./HomeClient";
 
 export const metadata = generatePageMetadata({
   description:
@@ -52,7 +53,8 @@ export default function HomePage() {
         <ExperienceSection />
         <DeployedAssetsSection />
         <CtaDataStripSection />
-        {/* <HomeClient /> */}
+        <FaqSection />
+        <ContactCtaSection />
       </main>
     </>
   );

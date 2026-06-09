@@ -9,6 +9,7 @@ import {
 import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
 import { portfolioProjects } from "@/lib/data/projects";
 import { personProfile } from "@/lib/data/profile";
+import { imageAlt } from "@/lib/seo/imageAlt";
 
 export const metadata = generatePageMetadata({
   title: "Projects | Abhinav Jain (abnjain) — Web, Cloud & System Development",
@@ -65,7 +66,7 @@ export default function ProjectsPage() {
                 {project.img ? (
                   <Image
                     src={project.img}
-                    alt={`${project.name} — ${project.desc} | Project by Abhinav Jain`}
+                    alt={imageAlt(`${project.name} — ${project.desc} | abnjain project`)}
                     className="h-full w-full rounded-3xl object-cover"
                     width={500}
                     height={300}
@@ -74,7 +75,7 @@ export default function ProjectsPage() {
                   <div
                     className="flex h-full w-full items-center justify-center rounded-3xl bg-gradient-to-br from-accent-muted to-bg"
                     role="img"
-                    aria-label={`${project.name} — preview coming soon`}
+                    aria-label={imageAlt(`${project.name} — preview coming soon`)}
                   >
                     <span className="px-4 text-center text-sm text-muted">
                       Preview coming soon

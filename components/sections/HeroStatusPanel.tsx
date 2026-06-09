@@ -70,6 +70,8 @@ export function HeroStatusPanel() {
           <HeroWireframeViz
             mapSrc={images.wireframeMap}
             waveSrc={images.wireframeWave}
+            mapAlt={images.wireframeMapAlt}
+            waveAlt={images.wireframeWaveAlt}
           />
         </div>
 

@@ -34,7 +34,7 @@ export function FaqSection() {
             transition={reduce ? undefined : { duration: 0.8, delay: 0.5 }}
             className="mt-8 text-4xl font-light tracking-tight text-text"
           >
-            FAQs
+            FAQs — abnjain
           </motion.h2>
         </div>
 

@@ -32,7 +32,7 @@ export function ContactCtaSection() {
   };
 
   return (
-    <section className="scroll-mt-28 px-4 py-24">
+    <section id="contact" className="scroll-mt-28 px-4 py-24" aria-label="Contact Abhinav Jain (abnjain)">
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-10">
         <div className="flex flex-col items-center justify-center gap-10 sm:flex-row md:gap-24">
           <button

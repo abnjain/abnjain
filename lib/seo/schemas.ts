@@ -10,14 +10,27 @@ export function getPersonSchema(): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${personProfile.url}/#person`,
     name: personProfile.name,
-    alternateName: personProfile.alternateName,
+    alternateName: [personProfile.alternateName, "Abhinav Jain abnjain"],
     url: personProfile.url,
     image: personProfile.image,
     email: personProfile.contact.email,
     sameAs: personProfile.sameAs,
     jobTitle: personProfile.jobTitles,
     description: personProfile.summaryParagraph,
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        name: "username",
+        value: personProfile.alternateName,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "brand",
+        value: "abnjain",
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: personProfile.location.city,
@@ -33,20 +46,24 @@ export function getWebsiteSchema(): JsonLdObject {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
     name: siteName,
-    alternateName: siteTitle,
+    alternateName: [siteTitle, personProfile.alternateName, "abnjain.me"],
     url: siteUrl,
     description: defaultDescription,
     inLanguage: "en-IN",
-    publisher: {
-      "@type": "Person",
-      name: personProfile.name,
-      url: personProfile.url,
-    },
-    author: {
-      "@type": "Person",
-      name: personProfile.name,
-      url: personProfile.url,
+    publisher: { "@id": `${personProfile.url}/#person` },
+    author: { "@id": `${personProfile.url}/#person` },
+    about: { "@id": `${personProfile.url}/#person` },
+    keywords: "abnjain, Abhinav Jain, Full Stack Developer, Indore, India",
+    potentialAction: {
+      "@type": "ReadAction",
+      target: [
+        `${siteUrl}/llms-full.txt`,
+        `${siteUrl}/llms.txt`,
+        `${siteUrl}/about`,
+        `${siteUrl}/projects`,
+      ],
     },
   };
 }
@@ -157,9 +174,10 @@ export function getSoftwareApplicationSchema(project: PortfolioProject): JsonLdO
     author: {
       "@type": "Person",
       name: personProfile.name,
+      alternateName: personProfile.alternateName,
       url: personProfile.url,
     },
-    keywords: project.stack.join(", "),
+    keywords: [...project.stack, "abnjain", personProfile.alternateName].join(", "),
   };
 
   if (project.img) {

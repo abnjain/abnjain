@@ -2,6 +2,7 @@ export type ShowcaseSlide = {
   id: number;
   image: string;
   title: string;
+  alt: string;
 };
 
 export type ProjectTabId =

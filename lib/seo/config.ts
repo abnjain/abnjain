@@ -1,7 +1,7 @@
 export const SEO_CONFIG = {
   siteUrl: "https://abnjain.me",
-  siteName: "Abhinav Jain",
-  siteTitle: "Abhinav Jain — Developer, Designer & Best IT Solutionist",
+  siteName: "Abhinav Jain (abnjain)",
+  siteTitle: "Abhinav Jain (abnjain) — Developer, Designer & Best IT Solutionist",
   defaultDescription:
     "Abhinav Jain (abnjain) — Full Stack Developer, Web Designer, SEO Specialist, Cloud Developer, DevOps Specialist & Entrepreneur from Indore, India. Expert in MERN Stack, System Design, and scalable web solutions.",
   defaultImage: "/abhinavjain.png",

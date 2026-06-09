@@ -52,7 +52,7 @@ export const deployedAssetsSection = {
       description:
         "CRS is a central repository system for the SCSIT DAVV, Indore. It is a centralized repository to manage the staff, documents, and other information of the college.",
       image: "/images/projects/asset-003.png",
-      imageAlt: "SCSIT DAVV website preview made by Abhinav Jain (abnjain)",
+      imageAlt: "CRS central repository system preview made by Abhinav Jain (abnjain)",
       stack: ["NEXT_JS", "REACT_JS", "TYPESCRIPT", "REDIS", "MONGODB", "DOCKER", "KUBERNETES"],
       href: "https://crs.abnjain.me/",
     },

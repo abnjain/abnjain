@@ -53,9 +53,8 @@ function faceClasses(variant: ButtonVariant, size: ButtonSize) {
 function ButtonContent({
   children,
   showArrow,
-  size,
   variant,
-}: Pick<ButtonBaseProps, "children" | "showArrow" | "size" | "variant">) {
+}: Pick<ButtonBaseProps, "children" | "showArrow" | "variant">) {
   if (variant === "icon") {
     return <>{children}</>;
   }
@@ -111,11 +110,7 @@ export function Button({
   );
 
   const content = (
-    <ButtonContent
-      showArrow={resolvedShowArrow}
-      size={resolvedSize}
-      variant={variant}
-    >
+    <ButtonContent showArrow={resolvedShowArrow} variant={variant}>
       {children}
     </ButtonContent>
   );

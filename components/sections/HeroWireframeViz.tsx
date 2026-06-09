@@ -1,25 +1,41 @@
 "use client";
 
 import Image from "next/image";
+import { decorativeImageAlt } from "@/lib/seo/imageAlt";
 
 type HeroWireframeVizProps = {
   mapSrc: string;
   waveSrc: string;
+  mapAlt: string;
+  waveAlt: string;
 };
 
 /**
  * Figma hero margin (43:40): animated wave GIF (55:8) behind a clipped
  * wireframe map (55:11) with slow scan drift on the prototype.
  */
-export function HeroWireframeViz({ mapSrc, waveSrc }: HeroWireframeVizProps) {
+export function HeroWireframeViz({
+  mapSrc,
+  waveSrc,
+  mapAlt,
+  waveAlt,
+}: HeroWireframeVizProps) {
   return (
     <div className="hero-wireframe" aria-hidden>
-      {/* 55:8 — GIF wave; unoptimized so frames animate in production */}
+      <Image
+        src={waveSrc}
+        alt={waveAlt || decorativeImageAlt("abnjain hero wireframe wave")}
+        width={385}
+        height={321}
+        unoptimized
+        className="hero-wireframe__wave"
+        aria-hidden
+      />
       <div className="hero-wireframe__map-viewport">
         <div className="hero-wireframe__map-motion">
           <Image
             src={mapSrc}
-            alt=""
+            alt={mapAlt || decorativeImageAlt("abnjain hero wireframe map")}
             width={385}
             height={321}
             className="hero-wireframe__map-image"

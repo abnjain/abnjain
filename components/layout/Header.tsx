@@ -93,11 +93,10 @@ export default function Header() {
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:gap-4">
             <Image
               src={siteBrand.avatar}
-              alt=""
+              alt={siteBrand.avatarAlt}
               width={52}
               height={52}
               className="relative z-10 hidden size-10 object-cover lg:-mr-4 lg:block xl:-mr-6 xl:size-[52px]"
-              aria-hidden
             />
 
             {/* below lg: full CTA label (compact on xs) */}

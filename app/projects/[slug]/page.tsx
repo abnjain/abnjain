@@ -10,6 +10,7 @@ import {
 import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
 import { getCaseStudyProjects, getProjectBySlug } from "@/lib/data/projects";
 import { personProfile } from "@/lib/data/profile";
+import { imageAlt } from "@/lib/seo/imageAlt";
 
 type PageProps = {
   params: { slug: string };
@@ -70,7 +71,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
           <div className="relative mb-10 aspect-video w-full overflow-hidden rounded-card border border-text/10">
             <Image
               src={project.img}
-              alt={project.name}
+              alt={imageAlt(`${project.name} — abnjain case study screenshot`)}
               fill
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
