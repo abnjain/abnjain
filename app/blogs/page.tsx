@@ -1,9 +1,9 @@
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata = generatePageMetadata({
-  title: "Blogs | Abhinav Jain — Developer, Designer & IT Solutionist",
+  title: "Blogs | Abhinav Jain (abnjain) — Developer, Designer & IT Solutionist",
   description:
-    "Blogs and articles by Abhinav Jain on Web Development, System Design, SEO, Cloud Computing, DevOps, and Entrepreneurship. Insights from a Full Stack Developer in Indore, India.",
+    "Blogs and articles by Abhinav Jain (abnjain) on Web Development, System Design, SEO, Cloud Computing, DevOps, and Entrepreneurship. Insights from a Full Stack Developer in Indore, India.",
   path: "/blogs",
   keywords: [
     "Developer Blog India",
@@ -17,6 +17,8 @@ export const metadata = generatePageMetadata({
     "React Blog",
     "Node.js Blog",
     "Entrepreneurship Blog India",
+    "abnjain Portfolio",
+    "abnjain"
   ],
 });
 

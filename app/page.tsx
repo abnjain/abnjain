@@ -7,8 +7,10 @@ import {
   buildGraph,
 } from "@/lib/seo";
 import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
+import { CtaDataStripSection } from "@/components/sections/CtaDataStripSection";
+import { DeployedAssetsSection } from "@/components/sections/DeployedAssetsSection";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { EntityIntroSection } from "@/components/sections/EntityIntroSection";
 import { faqData } from "@/lib/data/faq";
 import HomeClient from "./HomeClient";
 
@@ -29,6 +31,8 @@ export const metadata = generatePageMetadata({
     "Hire SEO Expert India",
     "Hire DevOps Engineer India",
     "Hire Cloud Developer India",
+    "abnjain Deployed Assets",
+    "abnjain"
   ],
 });
 
@@ -45,8 +49,10 @@ export default function HomePage() {
       <JsonLdGraph schema={homeSchema} />
       <main className="relative w-full flex-1 selection:bg-accent/10 selection:text-text">
         <HeroSection />
-        <EntityIntroSection />
-        <HomeClient />
+        <ExperienceSection />
+        <DeployedAssetsSection />
+        <CtaDataStripSection />
+        {/* <HomeClient /> */}
       </main>
     </>
   );

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-type StatCardVariant = "outline" | "accent";
+export type StatCardVariant = "outline" | "accent";
 
 type StatCardProps = {
   value: ReactNode;

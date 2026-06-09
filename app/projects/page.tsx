@@ -11,9 +11,9 @@ import { portfolioProjects } from "@/lib/data/projects";
 import { personProfile } from "@/lib/data/profile";
 
 export const metadata = generatePageMetadata({
-  title: "Projects | Abhinav Jain — Web, Cloud & System Development",
+  title: "Projects | Abhinav Jain (abnjain) — Web, Cloud & System Development",
   description:
-    "Explore projects by Abhinav Jain — Full Stack Developer, System Designer, Cloud Developer & SEO Specialist from Indore, India. Live web apps, MERN stack projects, chess game, HR systems, and more.",
+    "Explore projects by Abhinav Jain (abnjain) — Full Stack Developer, System Designer, Cloud Developer & SEO Specialist from Indore, India. Live web apps, MERN stack projects, chess game, HR systems, and more.",
   path: "/projects",
   keywords: [
     "Web Development Projects",
@@ -27,6 +27,8 @@ export const metadata = generatePageMetadata({
     "SEO Projects India",
     "CRS Project",
     "Portfolio Projects Abhinav Jain",
+    "abnjain Portfolio",
+    "abnjain"
   ],
 });
 

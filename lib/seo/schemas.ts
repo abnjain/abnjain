@@ -120,7 +120,7 @@ export function getProjectsSchema(
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: `Projects by ${siteName}`,
-    description: "Portfolio of web development projects by Abhinav Jain",
+    description: "Portfolio of web development projects by Abhinav Jain (abnjain)",
     url: `${siteUrl}/projects`,
     itemListElement: projects
       .filter((p) => p.slug !== "portfolio")

@@ -40,7 +40,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Header />
             {children}
           </SiteFrame>
-          <div className="h-[30rem] md:h-[28rem]" aria-hidden />
+          {/* Spacer only when footer is fixed (lg+); mobile footer is in document flow */}
+          <div className="hidden h-[28rem] lg:block" aria-hidden />
           <DetachedFooter />
           <Analytics />
         </ThemeProvider>

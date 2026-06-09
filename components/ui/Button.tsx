@@ -28,7 +28,10 @@ type ButtonBaseProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   showArrow?: boolean;
+  /** Applied to the link/button face */
   className?: string;
+  /** Applied to the brutal offset shell wrapper */
+  shellClassName?: string;
   children: ReactNode;
 };
 
@@ -58,12 +61,7 @@ function ButtonContent({
   }
 
   return (
-    <span
-      className={cn(
-        "inline-flex items-center whitespace-nowrap font-mono",
-        size === "lg" ? "font-bold" : "font-normal",
-      )}
-    >
+    <span className="inline-flex items-center whitespace-nowrap font-mono font-bold">
       {children}
       {showArrow ? <span aria-hidden> ↗</span> : null}
     </span>
@@ -100,6 +98,7 @@ export function Button({
   size = "sm",
   showArrow,
   className,
+  shellClassName,
   children,
   ...props
 }: ButtonProps) {
@@ -133,8 +132,8 @@ export function Button({
     }
 
     return (
-      <BrutalShell variant={variant} className={className}>
-        <Link href={href} className={elementClasses} {...linkProps}>
+      <BrutalShell variant={variant} className={shellClassName}>
+        <Link href={href} className={cn(elementClasses, className)} {...linkProps}>
           {content}
         </Link>
       </BrutalShell>
@@ -156,8 +155,8 @@ export function Button({
   }
 
   return (
-    <BrutalShell variant={variant} className={className}>
-      <button type={type} className={elementClasses} {...buttonProps}>
+    <BrutalShell variant={variant} className={shellClassName}>
+      <button type={type} className={cn(elementClasses, className)} {...buttonProps}>
         {content}
       </button>
     </BrutalShell>

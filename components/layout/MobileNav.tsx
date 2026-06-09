@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { cn } from "@/lib/cn";
 import type { NavItem } from "@/lib/data/site";
+
 type MobileNavProps = {
   links: NavItem[];
-  ctaLabel: string;
-  ctaHref: string;
   isOpen: boolean;
   onClose: () => void;
   isActive: (href: string) => boolean;
@@ -18,8 +16,6 @@ type MobileNavProps = {
 
 export function MobileNav({
   links,
-  ctaLabel,
-  ctaHref,
   isOpen,
   onClose,
   isActive,
@@ -46,12 +42,12 @@ export function MobileNav({
           ? { duration: 0 }
           : { duration: 0.28, ease: [0.22, 1, 0.36, 1] }
       }
-      className="overflow-hidden border-t border-border md:hidden"
+      className="overflow-hidden border-t border-border lg:hidden"
       aria-hidden={!isOpen}
     >
       <nav
         aria-label="Mobile navigation"
-        className="space-y-1 px-4 py-4"
+        className="px-4 py-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:px-6"
       >
         <ul className="space-y-1">
           {links.map((link) => (
@@ -71,18 +67,8 @@ export function MobileNav({
           ))}
         </ul>
 
-        <div className="flex items-center justify-between gap-3 pt-3">
+        <div className="border-t border-border pt-4">
           <ThemeToggle />
-          <Button
-            href={ctaHref}
-            scroll={false}
-            onClick={() => handleNavClick(ctaHref)}
-            variant="dark"
-            size="sm"
-            className="flex-1 justify-center"
-          >
-            {ctaLabel}
-          </Button>
         </div>
       </nav>
     </motion.div>

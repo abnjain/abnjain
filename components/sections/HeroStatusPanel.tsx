@@ -1,5 +1,6 @@
 import { heroContent, parseMetricProgress } from "@/lib/data/hero";
 import { cn } from "@/lib/cn";
+import { HeroLocationBar } from "@/components/sections/HeroLocationBar";
 import { HeroWireframeViz } from "@/components/sections/HeroWireframeViz";
 
 function MetricBar({
@@ -37,10 +38,10 @@ function MetricBar({
 }
 
 export function HeroStatusPanel() {
-  const { metrics, bootLog, location, images } = heroContent;
+  const { metrics, bootLog, images } = heroContent;
 
   return (
-    <aside className="flex flex-col bg-surface p-6 md:p-10 lg:col-span-4">
+    <aside className="hidden flex-col bg-surface p-6 md:p-10 lg:col-span-4 lg:flex">
       <div className="flex flex-col gap-8">
         <div className="border-b border-ink pb-2">
           <h2 className="text-base text-ink">SYSTEM STATUS</h2>
@@ -72,13 +73,7 @@ export function HeroStatusPanel() {
           />
         </div>
 
-        <div className="relative z-20 flex shrink-0 items-center justify-between border border-border bg-ink p-4 text-on-dark md:p-6 lg:absolute lg:bottom-0 lg:left-0 lg:right-0">
-          <p className="text-base">{location.label}</p>
-          <div className="text-right text-base">
-            <p>{location.hq}</p>
-            <p>{location.coords}</p>
-          </div>
-        </div>
+        <HeroLocationBar className="relative z-20 shrink-0 lg:absolute lg:bottom-0 lg:left-0 lg:right-0" />
       </div>
     </aside>
   );

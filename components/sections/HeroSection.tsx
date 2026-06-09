@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HeroDitherBackground } from "@/components/sections/HeroDitherBackground";
+import { HeroLocationBar } from "@/components/sections/HeroLocationBar";
 import { HeroStatusPanel } from "@/components/sections/HeroStatusPanel";
 import { heroContent } from "@/lib/data/hero";
 
@@ -48,6 +49,8 @@ export function HeroSection() {
 
         <HeroStatusPanel />
       </div>
+
+      <HeroLocationBar className="border-x-0 border-b-0 lg:hidden" />
     </section>
   );
 }

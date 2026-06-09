@@ -9,13 +9,13 @@ import { JsonLdGraph } from "@/components/seo/JsonLdGraph";
 import { personProfile } from "@/lib/data/profile";
 
 export const metadata = generatePageMetadata({
-  title: "About Abhinav Jain | Full Stack Developer, Designer & Entrepreneur",
+  title: "About Abhinav Jain (abnjain) | Full Stack Developer, Designer & Entrepreneur",
   description:
-    "Learn about Abhinav Jain — Full Stack Developer, Web Designer, SEO Specialist, Cloud Developer, DevOps Engineer & Entrepreneur from Indore, India. Explore his expertise in MERN Stack, system design, AWS, and his professional experience.",
+    "Learn about Abhinav Jain (abnjain) — Full Stack Developer, Web Designer, SEO Specialist, Cloud Developer, DevOps Engineer & Entrepreneur from Indore, India. Explore his expertise in MERN Stack, system design, AWS, and his professional experience.",
   path: "/about",
   keywords: [
-    "About Abhinav Jain",
-    "Abhinav Jain Developer",
+    "About Abhinav Jain (abnjain)",
+    "Abhinav Jain (abnjain) Developer",
     "Full Stack Developer Indore",
     "MERN Stack Developer India",
     "Developer Experience",
@@ -26,6 +26,8 @@ export const metadata = generatePageMetadata({
     "SEO Specialist India",
     "System Designer India",
     "Entrepreneur India",
+    "abnjain Portfolio",
+    "abnjain"
   ],
 });
 

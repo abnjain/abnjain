@@ -12,7 +12,7 @@ export function ProjectsShowcaseSection() {
   const content = homeProjectsData[activeTab];
 
   return (
-    <section id="work" className="relative flex w-full flex-col items-center pb-40 pt-20">
+    <section className="relative flex w-full flex-col items-center pb-40 pt-20">
       <div className="absolute left-1/2 top-0 flex -translate-x-1/2 flex-col items-center">
         <motion.div
           initial={reduce ? false : { height: 0 }}

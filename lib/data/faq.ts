@@ -13,7 +13,7 @@ export const faqData: FaqItem[] = [
   {
     id: 2,
     question: "Where is Abhinav Jain based?",
-    answer: `Abhinav Jain is based in ${personProfile.location.city}, ${personProfile.location.region}, ${personProfile.location.countryName}. He works with clients across India and internationally via remote collaboration.`,
+    answer: `Abhinav Jain (abnjain) is based in ${personProfile.location.city}, ${personProfile.location.region}, ${personProfile.location.countryName}. He works with clients across India and internationally via remote collaboration.`,
   },
   {
     id: 3,

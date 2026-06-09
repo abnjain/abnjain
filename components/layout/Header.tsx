@@ -6,7 +6,6 @@ import Link from "next/link";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { Button } from "@/components/ui/Button";
 import { MarqueeBar } from "@/components/ui/MarqueeBar";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { MobileNav } from "@/components/layout/MobileNav";
 import { useActiveNav } from "@/lib/useActiveNav";
 import { headerCta, headerNavLinks, siteBrand } from "@/lib/data/site";
@@ -54,15 +53,15 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header className="sticky top-0 z-50 w-full pt-[env(safe-area-inset-top)]">
       <MarqueeBar />
 
       <div className="border-b border-border bg-bg">
-        <div className="relative mx-auto flex h-[4.5rem] max-w-[1536px] items-center justify-between gap-4 px-4 md:h-[5.375rem] md:px-10">
+        <div className="relative mx-auto flex h-16 max-w-[1536px] items-center gap-3 px-4 sm:h-[4.5rem] sm:gap-4 sm:px-6 lg:h-[5.375rem] lg:px-10">
           <Link
             href="/"
             onClick={() => handleNavClick("/")}
-            className="shrink-0 font-display text-2xl font-bold tracking-[-0.05em] text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="z-10 min-w-0 flex-1 truncate font-display text-xl font-bold tracking-[-0.05em] text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent sm:flex-none sm:text-2xl"
             aria-label={`${siteBrand.name} home`}
           >
             {siteBrand.wordmark}
@@ -70,17 +69,17 @@ export default function Header() {
 
           <nav
             aria-label="Primary navigation"
-            className="absolute left-1/2 hidden -translate-x-1/2 md:block"
+            className="hidden min-w-0 flex-1 justify-center lg:flex"
           >
-            <ul className="flex items-center gap-8">
+            <ul className="flex max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-1 xl:gap-x-8">
               {headerNavLinks.map((link) => (
-                <li key={link.href}>
+                <li key={link.href} className="shrink-0">
                   <Link
                     href={link.href}
                     scroll={link.href.startsWith("/#") ? false : undefined}
                     onClick={() => handleNavClick(link.href)}
                     className={cn(
-                      "text-base text-ink transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+                      "whitespace-nowrap text-sm text-ink transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent xl:text-base",
                       isNavActive(link.href) && "text-accent",
                     )}
                   >
@@ -91,28 +90,41 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="flex shrink-0 items-center gap-3 md:gap-4">
+          <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3 lg:gap-4">
             <Image
               src={siteBrand.avatar}
               alt=""
               width={52}
               height={52}
-              className="relative z-10 -mr-6 hidden size-[52px] object-cover md:block"
+              className="relative z-10 hidden size-10 object-cover lg:-mr-4 lg:block xl:-mr-6 xl:size-[52px]"
               aria-hidden
             />
+
+            {/* below lg: full CTA label (compact on xs) */}
             <Button
               href={headerCta.href}
               scroll={false}
               onClick={() => handleNavClick(headerCta.href)}
               variant="dark"
               size="sm"
-              className="hidden md:inline-flex"
+              shellClassName="mb-0 mr-0 self-center lg:hidden"
+              className="px-4 py-3 text-[10px] leading-tight sm:px-5 sm:py-3 sm:text-xs lg:hidden"
             >
               {headerCta.label}
             </Button>
-            <div className="hidden md:block">
-              <ThemeToggle />
-            </div>
+
+            {/* lg+: full label + avatar row */}
+            <Button
+              href={headerCta.href}
+              scroll={false}
+              onClick={() => handleNavClick(headerCta.href)}
+              variant="dark"
+              size="sm"
+              shellClassName="hidden lg:inline-flex"
+              className="hidden lg:inline-flex"
+            >
+              {headerCta.label}
+            </Button>
 
             <Button
               type="button"
@@ -121,7 +133,7 @@ export default function Header() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
               onClick={() => setMobileOpen((prev) => !prev)}
-              className="md:hidden"
+              className="lg:hidden"
             >
               {mobileOpen ? (
                 <HiOutlineX className="size-5" aria-hidden />
@@ -134,8 +146,6 @@ export default function Header() {
 
         <MobileNav
           links={headerNavLinks}
-          ctaLabel={headerCta.label}
-          ctaHref={headerCta.href}
           isOpen={mobileOpen}
           onClose={() => setMobileOpen(false)}
           isActive={isNavActive}

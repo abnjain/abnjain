@@ -28,6 +28,6 @@ export const siteBrand = {
 } as const;
 
 export const headerCta = {
-  label: "INITIATE_CONTACT",
+  label: "INITIATE CONTACT",
   href: "/#contact",
 } as const;

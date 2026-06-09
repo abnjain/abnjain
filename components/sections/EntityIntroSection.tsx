@@ -6,7 +6,7 @@ export function EntityIntroSection() {
   return (
     <section
       className="relative mx-auto w-full max-w-5xl px-4 py-16 md:py-20"
-      aria-label="About Abhinav Jain"
+      aria-label="About Abhinav Jain (abnjain)"
     >
       <h2 className="text-center text-2xl font-normal tracking-tight text-text sm:text-3xl">
         Full-stack developer &amp; designer from Indore, India

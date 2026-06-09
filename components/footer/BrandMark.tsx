@@ -29,7 +29,7 @@ export function BrandMark() {
       </motion.div>
 
       <span className="text-sm font-semibold tracking-tight text-muted transition-colors duration-200 group-hover:text-text">
-        Abhinav Jain
+        Abhinav Jain (abnjain)
       </span>
     </Link>
   );

@@ -155,46 +155,48 @@ h4 {
   inset: 0;
   overflow: hidden;
   pointer-events: none;
+  background-color: var(--color-bg);
 }
 
 .hero-dither__motion {
   position: absolute;
-  left: -10%;
-  top: -10%;
-  height: 120%;
-  width: 120%;
+  left: -20%;
+  top: -20%;
+  height: 140%;
+  width: 140%;
   animation: hero-dither-drift 32s ease-in-out infinite alternate;
-  transform: rotate(0.07deg);
+  transform: rotate(0.07deg) scale(1.12);
 }
 
 .hero-dither__image {
   object-fit: cover;
   object-position: center;
-  opacity: 0.3;
+  opacity: 0.45;
+  mix-blend-mode: multiply;
 }
 
 @keyframes hero-dither-drift {
   0% {
-    transform: rotate(0.07deg) translate3d(0%, 0%, 0) scale(1.06);
+    transform: rotate(0.07deg) translate3d(0%, 0%, 0) scale(1.12);
   }
 
   33% {
-    transform: rotate(0.07deg) translate3d(-2.5%, -1.5%, 0) scale(1.08);
+    transform: rotate(0.07deg) translate3d(-1.5%, -1%, 0) scale(1.14);
   }
 
   66% {
-    transform: rotate(0.07deg) translate3d(1.5%, -3%, 0) scale(1.07);
+    transform: rotate(0.07deg) translate3d(1%, -1.5%, 0) scale(1.13);
   }
 
   100% {
-    transform: rotate(0.07deg) translate3d(-1%, 2%, 0) scale(1.09);
+    transform: rotate(0.07deg) translate3d(-0.5%, 1%, 0) scale(1.15);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-dither__motion {
     animation: none;
-    transform: rotate(0.07deg);
+    transform: rotate(0.07deg) scale(1.12);
   }
 }
 
