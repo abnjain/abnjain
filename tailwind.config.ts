@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -16,19 +20,39 @@ const config: Config = {
       colors: {
         bg: "var(--color-bg)",
         surface: "var(--color-surface)",
+        "surface-muted": "var(--color-surface-muted)",
         header: "var(--color-header)",
+        ink: "var(--color-ink)",
         accent: "var(--color-accent)",
         "accent-muted": "var(--color-accent-muted)",
+        alert: "var(--color-alert)",
         text: "var(--color-text)",
         muted: "var(--color-muted)",
+        "on-dark": "var(--color-on-dark)",
+        border: "var(--color-border)",
+        "border-muted": "var(--color-border-muted)",
         connector: "var(--color-connector)",
       },
       boxShadow: {
+        brutal: "var(--shadow-brutal)",
         glow: "var(--shadow-glow)",
         soft: "var(--shadow-soft)",
       },
       borderRadius: {
         card: "var(--radius-card)",
+        none: "0",
+      },
+      letterSpacing: {
+        label: "0.1em",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 24s linear infinite",
       },
     },
   },

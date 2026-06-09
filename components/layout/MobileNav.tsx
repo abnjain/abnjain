@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { NavPillBar } from "@/components/layout/NavPillBar";
+import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { cn } from "@/lib/cn";
 import type { NavItem } from "@/lib/data/site";
-import type { NavSection } from "@/lib/useActiveNav";
-
 type MobileNavProps = {
   links: NavItem[];
-  activeSection: NavSection;
   ctaLabel: string;
   ctaHref: string;
   isOpen: boolean;
@@ -19,7 +18,6 @@ type MobileNavProps = {
 
 export function MobileNav({
   links,
-  activeSection,
   ctaLabel,
   ctaHref,
   isOpen,
@@ -48,31 +46,44 @@ export function MobileNav({
           ? { duration: 0 }
           : { duration: 0.28, ease: [0.22, 1, 0.36, 1] }
       }
-      className="overflow-hidden md:hidden"
+      className="overflow-hidden border-t border-border md:hidden"
       aria-hidden={!isOpen}
     >
       <nav
         aria-label="Mobile navigation"
-        className="mt-3 rounded-3xl border border-black/10 bg-white/50 p-3 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
+        className="space-y-1 px-4 py-4"
       >
-        <NavPillBar
-          links={links}
-          activeSection={activeSection}
-          isActive={isActive}
-          onNavClick={handleNavClick}
-          orientation="vertical"
-          pillClassName="rounded-2xl"
-          linkClassName="rounded-2xl py-3 font-semibold"
-        />
+        <ul className="space-y-1">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                scroll={link.href.startsWith("/#") ? false : undefined}
+                onClick={() => handleNavClick(link.href)}
+                className={cn(
+                  "block px-2 py-3 text-base text-ink transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+                  isActive(link.href) && "text-accent",
+                )}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-        <Link
-          href={ctaHref}
-          scroll={false}
-          onClick={() => handleNavClick(ctaHref)}
-          className="mt-3 flex w-full items-center justify-center rounded-full bg-text px-5 py-3 text-sm font-semibold text-bg transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 dark:bg-white dark:text-bg"
-        >
-          {ctaLabel}
-        </Link>
+        <div className="flex items-center justify-between gap-3 pt-3">
+          <ThemeToggle />
+          <Button
+            href={ctaHref}
+            scroll={false}
+            onClick={() => handleNavClick(ctaHref)}
+            variant="dark"
+            size="sm"
+            className="flex-1 justify-center"
+          >
+            {ctaLabel}
+          </Button>
+        </div>
       </nav>
     </motion.div>
   );

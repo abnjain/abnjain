@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import { SiteFrame } from "@/components/layout/SiteFrame";
 import { DetachedFooter } from "@/components/footer/DetachedFooter";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { fontDisplay, fontMono } from "@/lib/fonts";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { generatePageMetadata, getWebsiteSchema } from "@/lib/seo";
@@ -27,15 +28,19 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en-IN" suppressHydrationWarning>
-      <body className="bg-bg text-text antialiased">
+    <html
+      lang="en-IN"
+      className={`${fontDisplay.variable} ${fontMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="bg-bg font-mono text-text antialiased">
         <ThemeProvider>
           <JsonLdGraph schema={getWebsiteSchema()} />
           <SiteFrame>
             <Header />
             {children}
           </SiteFrame>
-          <div className="h-32 md:h-56 lg:h-72" aria-hidden />
+          <div className="h-[30rem] md:h-[28rem]" aria-hidden />
           <DetachedFooter />
           <Analytics />
         </ThemeProvider>

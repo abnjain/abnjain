@@ -4,7 +4,7 @@ export const THEME_OPTIONS = ["light", "dark", "system"] as const;
 
 export type ThemeOption = (typeof THEME_OPTIONS)[number];
 
-export const DEFAULT_THEME: ThemeOption = "system";
+export const DEFAULT_THEME: ThemeOption = "light";
 
 export function isValidTheme(value: string | null | undefined): value is ThemeOption {
   return THEME_OPTIONS.includes(value as ThemeOption);

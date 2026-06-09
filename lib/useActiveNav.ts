@@ -66,7 +66,7 @@ export function useActiveNav() {
         return activeSection === "contact";
       }
 
-      if (href.toLowerCase().includes("/projects")) {
+      if (href.toLowerCase().includes("/projects") || href.includes("#work")) {
         return activeSection === "projects";
       }
 

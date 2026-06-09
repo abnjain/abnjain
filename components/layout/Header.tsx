@@ -1,36 +1,44 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { Button } from "@/components/ui/Button";
+import { MarqueeBar } from "@/components/ui/MarqueeBar";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { MobileNav } from "@/components/layout/MobileNav";
-import { NavPillBar } from "@/components/layout/NavPillBar";
 import { useActiveNav } from "@/lib/useActiveNav";
-import { headerCta, navLinks, siteBrand } from "@/lib/data/site";
+import { headerCta, headerNavLinks, siteBrand } from "@/lib/data/site";
+import { cn } from "@/lib/cn";
 import type { NavSection } from "@/lib/useActiveNav";
 
 function sectionForHref(href: string): NavSection {
   if (href === "/" || href === "") return "home";
   if (href.includes("#contact")) return "contact";
   if (href.includes("/about")) return "about";
-  if (href.includes("/projects")) return "projects";
+  if (href.includes("/projects") || href.includes("#work")) return "projects";
   return "home";
 }
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { activeSection, isNavActive, setNavSection } = useActiveNav();
+  const { isNavActive, setNavSection } = useActiveNav();
 
   const handleNavClick = (href: string) => {
     const section = sectionForHref(href);
     setNavSection(section);
     setMobileOpen(false);
 
-    if (section === "contact") {
+    if (section === "contact" || href.includes("#contact")) {
       requestAnimationFrame(() => {
         document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+
+    if (href.includes("#work")) {
+      requestAnimationFrame(() => {
+        document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
       });
     }
 
@@ -46,76 +54,86 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-black/5 bg-header/80 backdrop-blur-xl dark:border-white/5">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-sky-400/5 to-teal-500/10 dark:from-cyan-500/15 dark:via-sky-500/5 dark:to-teal-400/10" />
+    <header className="sticky top-0 z-50 w-full">
+      <MarqueeBar />
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-[4.5rem] items-center justify-between gap-4 md:h-20">
+      <div className="border-b border-border bg-bg">
+        <div className="relative mx-auto flex h-[4.5rem] max-w-[1536px] items-center justify-between gap-4 px-4 md:h-[5.375rem] md:px-10">
           <Link
             href="/"
             onClick={() => handleNavClick("/")}
-            className="group flex shrink-0 items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50"
+            className="shrink-0 font-display text-2xl font-bold tracking-[-0.05em] text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-label={`${siteBrand.name} home`}
           >
-            <Image
-              src={siteBrand.logo}
-              alt={siteBrand.logoAlt}
-              width={44}
-              height={44}
-              priority
-              className="rounded-full ring-1 ring-black/10 transition-transform duration-200 group-hover:scale-105 dark:ring-white/10"
-            />
-            <span className="hidden text-sm font-semibold tracking-tight text-text sm:block">
-              {siteBrand.shortName}
-            </span>
+            {siteBrand.wordmark}
           </Link>
 
           <nav
             aria-label="Primary navigation"
             className="absolute left-1/2 hidden -translate-x-1/2 md:block"
           >
-            <NavPillBar
-              links={navLinks}
-              activeSection={activeSection}
-              isActive={isNavActive}
-              onNavClick={handleNavClick}
-              orientation="horizontal"
-              containerClassName="rounded-full border border-black/10 bg-white/45 px-2 py-1.5 shadow-soft backdrop-blur-md dark:border-white/10 dark:bg-white/10"
-            />
+            <ul className="flex items-center gap-8">
+              {headerNavLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    scroll={link.href.startsWith("/#") ? false : undefined}
+                    onClick={() => handleNavClick(link.href)}
+                    className={cn(
+                      "text-base text-ink transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
+                      isNavActive(link.href) && "text-accent",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-3">
-            <Link
+          <div className="flex shrink-0 items-center gap-3 md:gap-4">
+            <Image
+              src={siteBrand.avatar}
+              alt=""
+              width={52}
+              height={52}
+              className="relative z-10 -mr-6 hidden size-[52px] object-cover md:block"
+              aria-hidden
+            />
+            <Button
               href={headerCta.href}
               scroll={false}
               onClick={() => handleNavClick(headerCta.href)}
-              className="hidden rounded-full bg-text px-5 py-2.5 text-sm font-semibold text-bg shadow-soft transition-all duration-200 hover:scale-[1.03] hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 md:inline-flex dark:bg-white dark:text-bg"
+              variant="dark"
+              size="sm"
+              className="hidden md:inline-flex"
             >
               {headerCta.label}
-            </Link>
+            </Button>
+            <div className="hidden md:block">
+              <ThemeToggle />
+            </div>
 
-            <ThemeToggle />
-
-            <button
+            <Button
               type="button"
+              variant="icon"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
               onClick={() => setMobileOpen((prev) => !prev)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white/40 text-text shadow-soft backdrop-blur-md transition-colors hover:bg-white/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 md:hidden dark:border-white/10 dark:bg-white/10 dark:hover:bg-white/15"
+              className="md:hidden"
             >
               {mobileOpen ? (
-                <HiOutlineX className="h-5 w-5" />
+                <HiOutlineX className="size-5" aria-hidden />
               ) : (
-                <HiOutlineMenuAlt3 className="h-5 w-5" />
+                <HiOutlineMenuAlt3 className="size-5" aria-hidden />
               )}
-            </button>
+            </Button>
           </div>
         </div>
 
         <MobileNav
-          links={navLinks}
-          activeSection={activeSection}
+          links={headerNavLinks}
           ctaLabel={headerCta.label}
           ctaHref={headerCta.href}
           isOpen={mobileOpen}

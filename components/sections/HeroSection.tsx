@@ -1,56 +1,52 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-import { personProfile } from "@/lib/data/profile";
+import Image from "next/image";
+import { HeroDitherBackground } from "@/components/sections/HeroDitherBackground";
+import { HeroStatusPanel } from "@/components/sections/HeroStatusPanel";
+import { heroContent } from "@/lib/data/hero";
 
 export function HeroSection() {
-  const reduce = useReducedMotion();
+  const { status, titleLine1, titleLine2, description, images } = heroContent;
 
   return (
-    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden pb-16 pt-20">
-      <div className="relative z-10 mx-auto mb-20 flex max-w-5xl flex-col items-center justify-center px-4 text-center">
-        <motion.h1
-          className="text-4xl font-normal leading-[1.05] tracking-[-0.03em] text-text sm:text-5xl md:text-6xl"
-          initial={reduce ? false : { opacity: 0, scale: 0.95, filter: "blur(10px)" }}
-          animate={reduce ? undefined : { opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={reduce ? undefined : { duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          Crafting elegant
-          <br />
-          digital experiences.
-        </motion.h1>
-        <motion.p
-          className="mx-auto mt-6 max-w-2xl text-base font-normal leading-relaxed text-muted sm:text-lg"
-          initial={reduce ? false : { opacity: 0, y: 12 }}
-          animate={reduce ? undefined : { opacity: 1, y: 0 }}
-          transition={reduce ? undefined : { duration: 0.8, delay: 0.5 }}
-        >
-          {personProfile.summaryOneLine}
-        </motion.p>
-      </div>
+    <section className="border-b border-border" aria-label="Hero">
+      <div className="grid lg:grid-cols-12 lg:min-h-[51rem]">
+        <div className="relative flex min-h-[28rem] flex-col justify-between overflow-hidden border-b border-border lg:col-span-8 lg:min-h-[51rem] lg:border-b-0 lg:border-r">
+          <HeroDitherBackground src={images.dither} />
 
-      <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 flex-col items-center">
-        <motion.div
-          initial={reduce ? false : { scale: 0, opacity: 0 }}
-          animate={reduce ? undefined : { scale: 1, opacity: 1 }}
-          transition={reduce ? undefined : { duration: 0.5, delay: 1 }}
-          className="relative z-10 h-2 w-2 rounded-full border-2 border-connector bg-surface"
-        >
-          {!reduce && (
-            <span
-              className="absolute inset-0 animate-ping rounded-full bg-accent/20"
-              style={{ transform: "scale(2.5)" }}
-              aria-hidden
-            />
-          )}
-        </motion.div>
+          <div className="relative z-10 flex flex-1 flex-col justify-center md:justify-start px-6 py-8 md:px-10 md:py-24 lg:px-20 lg:py-32">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="size-3 shrink-0 bg-accent" aria-hidden />
+              <p className="text-base font-extrabold text-alert">{status}</p>
+            </div>
 
-        <motion.div
-          initial={reduce ? false : { height: 0 }}
-          animate={reduce ? undefined : { height: "10vh" }}
-          transition={reduce ? undefined : { duration: 0.8, delay: 1.2, ease: "easeOut" }}
-          className="mt-1 w-0.5 bg-connector"
-        />
+            <h1 className="font-display text-5xl font-bold uppercase leading-[0.85] tracking-tight text-ink sm:text-7xl md:text-8xl xl:text-[11.25rem]">
+              <span className="block">{titleLine1}</span>
+              <span className="block text-accent">{titleLine2}</span>
+            </h1>
+
+            <div className="mt-8 max-w-lg space-y-0">
+              {description.map((line) => (
+                <p
+                  key={line}
+                  className="text-base font-extrabold leading-6 text-muted"
+                >
+                  {line}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* <Image
+            src={images.character}
+            alt=""
+            width={468}
+            height={430}
+            priority
+            className="pointer-events-none absolute bottom-8 right-4 z-10 hidden w-[min(42%,28rem)] object-contain md:block lg:right-10"
+            aria-hidden
+          /> */}
+        </div>
+
+        <HeroStatusPanel />
       </div>
     </section>
   );
