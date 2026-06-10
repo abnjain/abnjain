@@ -32,10 +32,10 @@ export function ProjectAssetCard({
           alt={imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover saturate-0"
+          className="object-cover blur-sm saturate-0 transition-[filter] duration-300 group-hover:blur-none group-hover:saturate-100"
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-white mix-blend-saturation"
+          className="pointer-events-none absolute inset-0 bg-white mix-blend-saturation transition-opacity duration-300 group-hover:opacity-0"
           aria-hidden
         />
       </div>
@@ -72,5 +72,5 @@ export function ProjectAssetCard({
     );
   }
 
-  return <article className={className}>{content}</article>;
+  return <article className={cn(className, "group")}>{content}</article>;
 }
