@@ -132,7 +132,7 @@ export default function Header() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-navigation"
               onClick={() => setMobileOpen((prev) => !prev)}
-              className="lg:hidden"
+              className="size-auto p-3 lg:hidden"
             >
               {mobileOpen ? (
                 <HiOutlineX className="size-5" aria-hidden />

@@ -22,15 +22,6 @@ export function HeroWireframeViz({
 }: HeroWireframeVizProps) {
   return (
     <div className="hero-wireframe" aria-hidden>
-      <Image
-        src={waveSrc}
-        alt={waveAlt || decorativeImageAlt("abnjain hero wireframe wave")}
-        width={385}
-        height={321}
-        unoptimized
-        className="hero-wireframe__wave"
-        aria-hidden
-      />
       <div className="hero-wireframe__map-viewport">
         <div className="hero-wireframe__map-motion">
           <Image
