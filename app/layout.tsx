@@ -4,6 +4,7 @@ import { SiteFrame } from "@/components/layout/SiteFrame";
 import { DetachedFooter } from "@/components/footer/DetachedFooter";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { fontDisplay, fontMono } from "@/lib/fonts";
+import { THEME_INIT_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { generatePageMetadata, getWebsiteSchema } from "@/lib/seo";
@@ -30,10 +31,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en-IN"
-      className={`${fontDisplay.variable} ${fontMono.variable}`}
+      className={`light ${fontDisplay.variable} ${fontMono.variable}`}
       suppressHydrationWarning
     >
       <body className="bg-bg font-mono text-text antialiased">
+        <script
+          dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }}
+          suppressHydrationWarning
+        />
         <ThemeProvider>
           <JsonLdGraph schema={getWebsiteSchema()} />
           <SiteFrame>

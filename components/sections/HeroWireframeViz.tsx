@@ -5,9 +5,7 @@ import { decorativeImageAlt } from "@/lib/seo/imageAlt";
 
 type HeroWireframeVizProps = {
   mapSrc: string;
-  waveSrc: string;
   mapAlt: string;
-  waveAlt: string;
 };
 
 /**
@@ -16,9 +14,7 @@ type HeroWireframeVizProps = {
  */
 export function HeroWireframeViz({
   mapSrc,
-  waveSrc,
   mapAlt,
-  waveAlt,
 }: HeroWireframeVizProps) {
   return (
     <div className="hero-wireframe" aria-hidden>

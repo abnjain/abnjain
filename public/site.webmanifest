@@ -11,7 +11,7 @@
   "start_url":        "/",
   "scope":            "/",
   "display":          "standalone",
-  "background_color": "#000000",
+  "background_color": "#fcf8f8",
   "theme_color":      "#EB3A56",
   "lang":             "en-IN",
   "dir":              "ltr",
