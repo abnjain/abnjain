@@ -69,9 +69,7 @@ export function HeroStatusPanel() {
         <div className="flex w-full items-center justify-center lg:absolute lg:inset-x-0 lg:top-0 lg:bottom-[6.125rem]">
           <HeroWireframeViz
             mapSrc={images.wireframeMap}
-            waveSrc={images.wireframeWave}
             mapAlt={images.wireframeMapAlt}
-            waveAlt={images.wireframeWaveAlt}
           />
         </div>
 

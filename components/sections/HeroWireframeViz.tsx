@@ -9,8 +9,7 @@ type HeroWireframeVizProps = {
 };
 
 /**
- * Figma hero margin (43:40): animated wave GIF (55:8) behind a clipped
- * wireframe map (55:11) with slow scan drift on the prototype.
+ * Figma hero margin (43:40): clipped wireframe map (55:11) with slow scan drift.
  */
 export function HeroWireframeViz({
   mapSrc,
