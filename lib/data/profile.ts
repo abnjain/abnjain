@@ -49,7 +49,7 @@ export const personProfile = {
   availability: "Freelance, contract, and full-time — remote or on-site in India",
   contact: {
     email: "abnjain25@gmail.com",
-    hirePath: "/#contact",
+    hirePath: "/contact",
     resumePath: "/resume.pdf",
   },
   sameAs: socialLinks.filter((l) => l.external).map((l) => l.href),

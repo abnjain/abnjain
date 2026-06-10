@@ -7,7 +7,7 @@ export const navLinks: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 /** Brutalist header navigation (Figma node 43:231). */
@@ -30,5 +30,5 @@ export const siteBrand = {
 
 export const headerCta = {
   label: "INITIATE CONTACT",
-  href: "/#contact",
+  href: "/contact",
 } as const;

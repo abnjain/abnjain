@@ -74,7 +74,7 @@ export function getProfessionalServiceSchema(): JsonLdObject {
     "@type": "ProfessionalService",
     name: `Hire ${personProfile.name}`,
     description: personProfile.summaryOneLine,
-    url: `${personProfile.url}/#contact`,
+    url: `${personProfile.url}/contact`,
     areaServed: {
       "@type": "Country",
       name: "India",

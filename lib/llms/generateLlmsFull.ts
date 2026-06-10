@@ -58,7 +58,7 @@ export function generateLlmsFull(): string {
     `- About: ${personProfile.url}/about`,
     `- Projects: ${personProfile.url}/projects`,
     `- Blogs: ${personProfile.url}/blogs`,
-    `- Contact: ${personProfile.url}${personProfile.contact.hirePath}`,
+    `- Contact: ${personProfile.url}/contact`,
     `- Resume: ${personProfile.url}${personProfile.contact.resumePath}`,
     "",
     "## FAQ",

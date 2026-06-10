@@ -39,7 +39,7 @@ export function EntityIntroSection() {
           About me
         </Link>
         {" · "}
-        <Link href="/#contact" className="text-accent hover:underline">
+        <Link href="/contact" className="text-accent hover:underline">
           Hire me
         </Link>
       </p>

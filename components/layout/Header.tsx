@@ -14,7 +14,7 @@ import type { NavSection } from "@/lib/useActiveNav";
 
 function sectionForHref(href: string): NavSection {
   if (href === "/" || href === "") return "home";
-  if (href.includes("#contact")) return "contact";
+  if (href.includes("#contact") || href.includes("/contact")) return "contact";
   if (href.includes("/about")) return "about";
   if (href.includes("/projects") || href.includes("#work")) return "projects";
   return "home";
@@ -29,7 +29,7 @@ export default function Header() {
     setNavSection(section);
     setMobileOpen(false);
 
-    if (section === "contact" || href.includes("#contact")) {
+    if (href.includes("#contact")) {
       requestAnimationFrame(() => {
         document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
       });

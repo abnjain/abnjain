@@ -325,6 +325,17 @@ h4 {
   transform: translate(0, 0);
 }
 
+.brutal-pressable:has(.brutal-pressable__face:disabled) .brutal-pressable__shadow {
+  background-color: #000000;
+}
+
+.brutal-pressable:has(.brutal-pressable__face:disabled):hover .brutal-pressable__face,
+.brutal-pressable:has(.brutal-pressable__face:disabled):focus-within .brutal-pressable__face,
+.brutal-pressable:has(.brutal-pressable__face:disabled):hover .brutal-pressable__shadow,
+.brutal-pressable:has(.brutal-pressable__face:disabled):focus-within .brutal-pressable__shadow {
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .brutal-pressable:hover .brutal-pressable__face,
   .brutal-pressable:focus-within .brutal-pressable__face,

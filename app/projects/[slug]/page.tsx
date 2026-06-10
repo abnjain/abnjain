@@ -142,7 +142,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
             </a>
           )}
           <Link
-            href="/#contact"
+            href="/contact"
             className="rounded-card border border-accent px-6 py-3 text-sm font-medium text-accent transition hover:bg-accent/10"
           >
             Hire {personProfile.alternateName}

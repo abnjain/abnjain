@@ -17,7 +17,7 @@ https://abnjain.me/llms-full.txt
 - Projects: https://abnjain.me/projects
 - Blogs: https://abnjain.me/blogs
 - FAQ: https://abnjain.me/#faq
-- Contact: https://abnjain.me/#contact
+- Contact: https://abnjain.me/contact
 - Resume: https://abnjain.me/resume.pdf
 
 ## Location (GEO)

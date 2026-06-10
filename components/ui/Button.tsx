@@ -10,6 +10,9 @@ const brutalFaceClasses: Record<Exclude<ButtonVariant, "icon">, string> = {
   primary: "brutal-pressable__face border border-black bg-accent text-on-dark",
 };
 
+const disabledClasses =
+  "disabled:cursor-not-allowed disabled:border-border-muted disabled:bg-surface-muted disabled:text-muted disabled:hover:translate-x-0 disabled:hover:translate-y-0 motion-reduce:disabled:hover:translate-x-0 motion-reduce:disabled:hover:translate-y-0";
+
 const iconFaceClasses =
   "border border-border bg-bg text-ink transition-[transform,color,background-color] duration-150 hover:bg-surface hover:text-accent hover:translate-x-0.5 hover:translate-y-0.5 motion-reduce:hover:translate-x-0 motion-reduce:hover:translate-y-0";
 
@@ -79,7 +82,7 @@ function BrutalShell({
   return (
     <span
       className={cn(
-        "brutal-pressable relative mb-1 mr-1 inline-flex overflow-visible",
+        "brutal-pressable relative mb-1 mr-1 inline-flex w-fit overflow-visible",
         className,
       )}
     >
@@ -107,6 +110,7 @@ export function Button({
   const elementClasses = cn(
     "inline-flex items-center justify-center rounded-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent",
     faceClasses(variant, resolvedSize),
+    disabledClasses,
   );
 
   const content = (

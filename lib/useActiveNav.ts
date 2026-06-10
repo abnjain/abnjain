@@ -14,7 +14,7 @@ export function sectionFromLocation(
   pathname: string,
   hash: string,
 ): NavSection {
-  if (hash === "#contact") {
+  if (hash === "#contact" || pathname.toLowerCase().startsWith("/contact")) {
     return "contact";
   }
 
@@ -62,7 +62,7 @@ export function useActiveNav() {
         return activeSection === "home";
       }
 
-      if (href.includes("#contact")) {
+      if (href.includes("#contact") || href.toLowerCase().includes("/contact")) {
         return activeSection === "contact";
       }
 
