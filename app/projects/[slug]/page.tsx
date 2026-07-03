@@ -76,6 +76,7 @@ export default function ProjectCaseStudyPage({ params }: PageProps) {
               className="object-cover"
               sizes="(max-width: 896px) 100vw, 896px"
               priority
+              decoding="async"
             />
           </div>
         )}

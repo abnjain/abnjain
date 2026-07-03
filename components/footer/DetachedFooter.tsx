@@ -80,6 +80,8 @@ export function DetachedFooter() {
                   unoptimized
                   className="object-cover object-right-bottom grayscale"
                   sizes="(max-width: 640px) 100vw, 50vw"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

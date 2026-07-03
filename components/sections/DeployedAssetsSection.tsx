@@ -16,7 +16,7 @@ export function DeployedAssetsSection() {
   return (
     <section
       id="work"
-      className="border-b border-border bg-bg"
+      className="border-b border-border bg-bg md:flex md:h-screen md:flex-col"
       aria-label="Deployed assets"
     >
       <SectionBand
@@ -29,7 +29,7 @@ export function DeployedAssetsSection() {
         }
       />
 
-      <div className="grid md:grid-cols-3">
+      <div className="grid min-h-0 flex-1 md:grid-cols-3">
         {visible.map((entry, index) => (
           <ProjectAssetCard
             key={entry.id}
@@ -40,6 +40,7 @@ export function DeployedAssetsSection() {
             imageAlt={entry.imageAlt}
             stack={[...entry.stack]}
             href={entry.href}
+            screenshots={entry.screenshots}
             bordered={index > 0}
           />
         ))}

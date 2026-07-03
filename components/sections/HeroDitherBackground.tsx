@@ -23,6 +23,7 @@ export function HeroDitherBackground({ src, alt }: HeroDitherBackgroundProps) {
           priority
           sizes="(max-width: 1024px) 100vw, 66vw"
           className="hero-dither__image"
+          decoding="async"
         />
       </div>
     </div>

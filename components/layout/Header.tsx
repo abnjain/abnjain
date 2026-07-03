@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
@@ -22,7 +22,34 @@ function sectionForHref(href: string): NavSection {
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
   const { isNavActive, setNavSection } = useActiveNav();
+
+  useEffect(() => {
+    const THRESHOLD = 80;
+    lastScrollY.current = window.scrollY;
+
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY.current;
+
+      if (delta > 10 && currentScrollY > THRESHOLD) {
+        setHidden(true);
+      } else if (delta < -10) {
+        setHidden(false);
+      }
+
+      if (currentScrollY < THRESHOLD) {
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const handleNavClick = (href: string) => {
     const section = sectionForHref(href);
@@ -53,7 +80,13 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full pt-[env(safe-area-inset-top)]">
+    <header
+      className={cn(
+        "sticky top-0 z-50 w-full pt-[env(safe-area-inset-top)] transition-transform duration-300",
+        hidden && "pointer-events-none",
+      )}
+      style={{ transform: hidden ? "translateY(-100%)" : "translateY(0)" }}
+    >
       <MarqueeBar />
 
       <div className="border-b border-border bg-bg">
@@ -97,6 +130,8 @@ export default function Header() {
               width={52}
               height={52}
               className="relative z-10 hidden size-10 object-cover lg:-mr-4 lg:block xl:-mr-6 xl:size-[52px]"
+              loading="lazy"
+              decoding="async"
             />
 
             {/* below lg: full CTA label (compact on xs) */}

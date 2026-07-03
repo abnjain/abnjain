@@ -104,6 +104,8 @@ export function ShowcaseSection() {
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1024px"
                 priority={index === 0}
+                loading={index === 0 ? undefined : "lazy"}
+                decoding="async"
               />
             </motion.div>
           </AnimatePresence>

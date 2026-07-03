@@ -26,6 +26,7 @@ export function BrandMark() {
           width={44}
           height={44}
           className="h-full w-full object-cover"
+          decoding="async"
         />
       </motion.div>
 

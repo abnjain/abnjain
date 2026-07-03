@@ -12,7 +12,7 @@ export const experienceSection = {
   entries: [
     {
       period: "2024 — NOW",
-      title: "CTO / CO-FOUNDER",
+      title: "Architect / CO-FOUNDER",
       company: "VVD VIDYAVARDHANI PRIVATE LIMITED",
       project: "INFRASTRUCTURE_BUILD_v1",
       metric: "[ SCALED_TO_100K_USERS ]",

@@ -70,6 +70,8 @@ export default function ProjectsPage() {
                     className="h-full w-full rounded-3xl object-cover"
                     width={500}
                     height={300}
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <div

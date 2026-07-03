@@ -25,6 +25,8 @@ export function HeroWireframeViz({
             width={385}
             height={321}
             className="hero-wireframe__map-image"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </div>

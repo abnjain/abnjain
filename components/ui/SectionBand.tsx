@@ -29,7 +29,7 @@ type SectionBandLightProps = SectionBandBaseProps & {
 export type SectionBandProps = SectionBandDarkProps | SectionBandLightProps;
 
 const bandLayout =
-  "flex items-center justify-between border-b border-border px-6 py-6 md:px-10";
+  "flex items-center justify-between border-b border-border px-6 py-4 md:px-10";
 
 /** Figma section headers — dark ink band (43:49) or light band with nav (43:92). */
 export function SectionBand(props: SectionBandProps) {
@@ -75,7 +75,9 @@ export function SectionBand(props: SectionBandProps) {
 
     return (
       <div className={cn(bandLayout, "bg-bg", className)}>
-        <h2 className="font-display text-base font-bold text-ink">{title}</h2>
+        <h2 className="font-display text-xs font-bold text-ink md:text-sm lg:text-base">
+          {title}
+        </h2>
         {trailingContent}
       </div>
     );

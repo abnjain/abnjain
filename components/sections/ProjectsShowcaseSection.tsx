@@ -135,6 +135,8 @@ export function ProjectsShowcaseSection() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 1024px"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

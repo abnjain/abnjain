@@ -1,351 +1,360 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import type { TargetAndTransition } from "framer-motion";
+import { useEffect, useState, useMemo } from "react";
+
+type AnimObject = {
+  animate: TargetAndTransition;
+};
+
+// Muted brutalist palette
+const PALETTE = {
+  charcoal: "#2A2927",
+  red: "#B91C24",
+  blue: "#96A9D1",
+  yellow: "#E9C884",
+  pink: "#DEA9B2",
+  grey: "#BAB6B0",
+  green: "#B0D1BB",
+  bg: "#F4F3EF", // warm-white canvas
+};
 
 /**
- * BrutalistBackground
- *
- * Animated brutalist halftone "pixel cluster" background. Renders entirely
- * on a single <canvas>: a cheap fractal-noise field is sampled at low
- * resolution per color layer and upscaled without smoothing, which produces
- * the blocky pixel/halftone look while keeping per-frame cost tiny and
- * independent of screen size (no large DOM trees, no per-cell DOM nodes).
- *
- * Drop-in replacement for a static background image — usage is unchanged:
- *
- *   <section className="relative min-h-screen overflow-hidden">
- *     <BrutalistBackground />
- *     <div className="relative z-10">
- *       {existing content, untouched}
- *     </div>
- *   </section>
- *
- * - pointer-events-none, absolute inset-0, z-index 0 — sits behind content.
- * - Respects prefers-reduced-motion: renders one static frame, no rAF loop,
- *   and reacts live if the OS setting changes mid-session.
- * - Subtle cursor parallax, lerped, skipped entirely under reduced motion.
- * - Layer count / sample density / DPR / fps scale down on small screens.
+ * Renders a dense matrix of dots/squares using an SVG pattern.
+ * This keeps the DOM count to exactly 1 node regardless of how many dots are drawn.
  */
+const DotMatrixSVG = ({
+  width,
+  height,
+  color,
+  dotSize = 3,
+  spacing = 8,
+  className = "",
+  style = {},
+}: {
+  width: number | string;
+  height: number | string;
+  color: string;
+  dotSize?: number;
+  spacing?: number;
+  className?: string;
+  style?: React.CSSProperties;
+}) => {
+  // Unique pattern ID based on properties so multiple patterns can coexist safely
+  const patternId = useMemo(
+    () => `dot-${spacing}-${dotSize}-${color.replace("#", "")}`,
+    [spacing, dotSize, color]
+  );
 
-type Tier = "mobile" | "tablet" | "desktop";
-
-type LayerConfig = {
-  /** base RGB color for this cluster layer */
-  rgb: [number, number, number];
-  /** noise frequency — lower = larger, slower blobs */
-  freq: number;
-  /** how fast this layer's noise field evolves over time */
-  speed: number;
-  /** drift direction in noise-space — gives each layer its own travel path */
-  driftX: number;
-  driftY: number;
-  /** alpha band center (0-1) — where in the noise field this color "appears" */
-  threshold: number;
-  /** softness of the alpha edge around threshold */
-  softness: number;
-  /** peak opacity for this layer */
-  maxAlpha: number;
-  /** per-layer parallax depth (0 = none, 1 = most movement) */
-  depth: number;
-  /** unique noise seed so layers don't line up with each other */
-  seed: number;
+  return (
+    <svg
+      width={width}
+      height={height}
+      className={`mix-blend-multiply ${className}`}
+      style={style}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <pattern
+          id={patternId}
+          x="0"
+          y="0"
+          width={spacing}
+          height={spacing}
+          patternUnits="userSpaceOnUse"
+        >
+          <rect x="0" y="0" width={dotSize} height={dotSize} fill={color} />
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="100%" height="100%" fill={`url(#${patternId})`} />
+    </svg>
+  );
 };
-
-const PALETTE = {
-  charcoal: [42, 41, 39] as [number, number, number],
-  red: [185, 28, 36] as [number, number, number],
-  blue: [150, 169, 209] as [number, number, number],
-  yellow: [233, 200, 132] as [number, number, number],
-  grey: [186, 182, 176] as [number, number, number],
-  green: [176, 209, 187] as [number, number, number],
-  pink: [222, 169, 178] as [number, number, number],
-};
-
-function buildLayers(tier: Tier): LayerConfig[] {
-  const all: LayerConfig[] = [
-    { rgb: PALETTE.grey, freq: 1.1, speed: 0.035, driftX: 0.2, driftY: 0.6, threshold: 0.55, softness: 0.22, maxAlpha: 0.5, depth: 0.15, seed: 59 },
-    { rgb: PALETTE.charcoal, freq: 1.6, speed: 0.05, driftX: 0.6, driftY: -0.3, threshold: 0.62, softness: 0.16, maxAlpha: 0.5, depth: 0.2, seed: 11 },
-    { rgb: PALETTE.blue, freq: 1.3, speed: 0.04, driftX: 0.3, driftY: 0.4, threshold: 0.58, softness: 0.2, maxAlpha: 0.45, depth: 0.5, seed: 83 },
-    { rgb: PALETTE.yellow, freq: 1.9, speed: 0.06, driftX: -0.5, driftY: -0.2, threshold: 0.66, softness: 0.18, maxAlpha: 0.4, depth: 0.6, seed: 23 },
-    { rgb: PALETTE.red, freq: 2.1, speed: 0.07, driftX: -0.4, driftY: 0.5, threshold: 0.7, softness: 0.14, maxAlpha: 0.4, depth: 0.35, seed: 47 },
-    { rgb: PALETTE.pink, freq: 2.0, speed: 0.065, driftX: -0.3, driftY: -0.5, threshold: 0.68, softness: 0.15, maxAlpha: 0.32, depth: 0.55, seed: 31 },
-    { rgb: PALETTE.green, freq: 2.4, speed: 0.08, driftX: 0.5, driftY: 0.3, threshold: 0.74, softness: 0.13, maxAlpha: 0.32, depth: 0.7, seed: 97 },
-  ];
-
-  if (tier === "mobile") return all.slice(0, 4);
-  if (tier === "tablet") return all.slice(0, 5);
-  return all;
-}
-
-// ---- lightweight fractal value-noise (no external deps) ----------------
-
-function hash2(x: number, y: number, seed: number): number {
-  const v = Math.sin(x * 127.1 + y * 311.7 + seed * 74.7) * 43758.5453123;
-  return v - Math.floor(v);
-}
-
-function valueNoise(x: number, y: number, seed: number): number {
-  const xi = Math.floor(x);
-  const yi = Math.floor(y);
-  const xf = x - xi;
-  const yf = y - yi;
-  const tl = hash2(xi, yi, seed);
-  const tr = hash2(xi + 1, yi, seed);
-  const bl = hash2(xi, yi + 1, seed);
-  const br = hash2(xi + 1, yi + 1, seed);
-  const u = xf * xf * (3 - 2 * xf);
-  const v = yf * yf * (3 - 2 * yf);
-  return tl + (tr - tl) * u + (bl - tl) * v + (tl - tr - bl + br) * u * v;
-}
-
-function fbm(x: number, y: number, seed: number, octaves: number): number {
-  let sum = 0;
-  let amp = 0.55;
-  let freq = 1;
-  for (let i = 0; i < octaves; i++) {
-    sum += amp * valueNoise(x * freq, y * freq, seed + i * 17.3);
-    freq *= 2.05;
-    amp *= 0.55;
-  }
-  return sum;
-}
-
-/** Domain-warped fbm — gives the organic, "drifting cloud" blob edges. */
-function blobField(x: number, y: number, t: number, seed: number): number {
-  const wx = fbm(x * 0.6 + t * 0.18, y * 0.6, seed + 4.1, 1) * 1.3;
-  const wy = fbm(x * 0.6, y * 0.6 + t * 0.15, seed + 9.7, 1) * 1.3;
-  return fbm(x + wx, y + wy + t * 0.1, seed, 2);
-}
-
-function smoothstep(edge0: number, edge1: number, value: number): number {
-  const t = Math.min(1, Math.max(0, (value - edge0) / (edge1 - edge0)));
-  return t * t * (3 - 2 * t);
-}
-
-// ---- component -----------------------------------------------------------
 
 export function BrutalistBackground() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  // Offscreen low-res buffers, one per layer, reused every frame.
-  const buffersRef = useRef<
-    {
-      canvas: HTMLCanvasElement;
-      ctx: CanvasRenderingContext2D;
-      img: ImageData;
-      cols: number;
-      rows: number;
-    }[]
-  >([]);
-
-  const pointerRef = useRef({ x: 0, y: 0, targetX: 0, targetY: 0 });
+  const prefersReducedMotion = useReducedMotion();
+  const [isMounted, setIsMounted] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const container = containerRef.current;
-    const canvas = canvasRef.current;
-    if (!container || !canvas) return;
+    setIsMounted(true);
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const reduceQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let reduceMotion = reduceQuery.matches;
-
-    let tier: Tier =
-      window.innerWidth < 640 ? "mobile" : window.innerWidth < 1024 ? "tablet" : "desktop";
-    let layers = buildLayers(tier);
-
-    let dpr = Math.min(window.devicePixelRatio || 1, tier === "mobile" ? 1.5 : 2);
-    let width = 0;
-    let height = 0;
-
-    function setupBuffers() {
-      const baseCols = tier === "mobile" ? 46 : tier === "tablet" ? 70 : 92;
-      const aspect = width > 0 && height > 0 ? width / height : 16 / 9;
-      const cols = baseCols;
-      const rows = Math.max(18, Math.round(baseCols / aspect));
-
-      buffersRef.current = layers.map(() => {
-        const off = document.createElement("canvas");
-        off.width = cols;
-        off.height = rows;
-        const offCtx = off.getContext("2d", { willReadFrequently: true }) as CanvasRenderingContext2D;
-        return { canvas: off, ctx: offCtx, img: offCtx.createImageData(cols, rows), cols, rows };
+    const handleMouseMove = (e: MouseEvent) => {
+      // Normalize mouse coordinates to -0.5 ... 0.5
+      setMousePos({
+        x: e.clientX / window.innerWidth - 0.5,
+        y: e.clientY / window.innerHeight - 0.5,
       });
-    }
-
-    function resize() {
-      const rect = container!.getBoundingClientRect();
-      width = Math.max(1, Math.round(rect.width));
-      height = Math.max(1, Math.round(rect.height));
-
-      const nextTier: Tier = width < 640 ? "mobile" : width < 1024 ? "tablet" : "desktop";
-      if (nextTier !== tier) {
-        tier = nextTier;
-        layers = buildLayers(tier);
-        dpr = Math.min(window.devicePixelRatio || 1, tier === "mobile" ? 1.5 : 2);
-      }
-
-      canvas!.style.width = `${width}px`;
-      canvas!.style.height = `${height}px`;
-      canvas!.width = Math.round(width * dpr);
-      canvas!.height = Math.round(height * dpr);
-      // Resetting canvas.width/height clears all context state, so the
-      // transform + smoothing flag must be re-applied after, in this order.
-      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx!.imageSmoothingEnabled = false;
-
-      setupBuffers();
-    }
-
-    const resizeObserver = new ResizeObserver(() => resize());
-    resizeObserver.observe(container);
-    resize();
-
-    function handlePointerMove(e: PointerEvent) {
-      if (reduceMotion) return;
-      const rect = container!.getBoundingClientRect();
-      pointerRef.current.targetX = (e.clientX - rect.left) / rect.width - 0.5;
-      pointerRef.current.targetY = (e.clientY - rect.top) / rect.height - 0.5;
-    }
-    window.addEventListener("pointermove", handlePointerMove, { passive: true });
-
-    function handleReduceChange() {
-      reduceMotion = reduceQuery.matches;
-      if (reduceMotion) drawFrame(0);
-    }
-    reduceQuery.addEventListener("change", handleReduceChange);
-
-    let rafId = 0;
-    let lastDraw = 0;
-
-    function drawFrame(timeSeconds: number) {
-      const frameInterval = tier === "mobile" ? 1000 / 24 : 1000 / 30;
-      void frameInterval; // referenced in loop(), kept local to drawFrame's closure scope
-
-      ctx!.clearRect(0, 0, width, height);
-
-      const p = pointerRef.current;
-      p.x += (p.targetX - p.x) * 0.06;
-      p.y += (p.targetY - p.y) * 0.06;
-
-      // Mechanical, stepped "glitch clock" — cells snap rather than glide.
-      const glitchStep = Math.floor(timeSeconds / 0.9);
-
-      layers.forEach((layer, i) => {
-        const buf = buffersRef.current[i];
-        if (!buf) return;
-        const { cols, rows, img, ctx: offCtx, canvas: offCanvas } = buf;
-        const data = img.data;
-        const [r, g, b] = layer.rgb;
-
-        for (let row = 0; row < rows; row++) {
-          for (let col = 0; col < cols; col++) {
-            const nx = (col / cols) * layer.freq + layer.driftX * timeSeconds * layer.speed;
-            const ny = (row / rows) * layer.freq + layer.driftY * timeSeconds * layer.speed;
-            let value = blobField(nx, ny, timeSeconds * layer.speed, layer.seed);
-
-            // Sparse, instant jump-cuts on a handful of cells per tick.
-            const jitter = hash2(col + glitchStep * 3, row - glitchStep * 2, layer.seed + 5);
-            if (jitter > 0.985) value += 0.4;
-            else if (jitter < 0.012) value -= 0.4;
-
-            const alpha = smoothstep(
-              layer.threshold - layer.softness,
-              layer.threshold + layer.softness,
-              value,
-            );
-
-            const idx = (row * cols + col) * 4;
-            data[idx] = r;
-            data[idx + 1] = g;
-            data[idx + 2] = b;
-            data[idx + 3] = Math.round(alpha * layer.maxAlpha * 255);
-          }
-        }
-
-        offCtx.putImageData(img, 0, 0);
-
-        ctx?.save();
-        if (ctx) ctx.globalCompositeOperation = "multiply";
-        const px = reduceMotion ? 0 : p.x * 26 * layer.depth;
-        const py = reduceMotion ? 0 : p.y * 26 * layer.depth;
-        ctx?.drawImage(offCanvas, px, py, width, height);
-        ctx?.restore();
-      });
-
-      // Soft floating blurred blob — a slow, drifting system "eye".
-      if (!reduceMotion) {
-        const bx = width * 0.74 + Math.sin(timeSeconds * 0.12) * width * 0.05;
-        const by = height * 0.42 + Math.cos(timeSeconds * 0.09) * height * 0.08;
-        ctx!.save();
-        ctx!.filter = "blur(36px)";
-        ctx!.globalCompositeOperation = "multiply";
-        const gradient = ctx!.createRadialGradient(bx, by, 0, bx, by, 70);
-        gradient.addColorStop(0, "rgba(190,190,186,0.55)");
-        gradient.addColorStop(1, "rgba(190,190,186,0)");
-        ctx!.fillStyle = gradient;
-        ctx!.fillRect(bx - 90, by - 90, 180, 180);
-        ctx!.restore();
-      }
-    }
-
-    function loop(t: number) {
-      const frameInterval = tier === "mobile" ? 1000 / 24 : 1000 / 30;
-      if (t - lastDraw >= frameInterval) {
-        lastDraw = t;
-        drawFrame(t / 1000);
-      }
-      rafId = requestAnimationFrame(loop);
-    }
-
-    if (reduceMotion) {
-      drawFrame(0);
-    } else {
-      rafId = requestAnimationFrame(loop);
-    }
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      resizeObserver.disconnect();
-      window.removeEventListener("pointermove", handlePointerMove);
-      reduceQuery.removeEventListener("change", handleReduceChange);
     };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const labels = useMemo(() => ["SYS://BOOT", "CORE::01", "//GRID", "0xBEEF", "NODE_4"], []);
+  // Avoid hydration mismatch for client-side window/motion logic
+  if (!isMounted) {
+    return (
+      <div
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+        style={{ zIndex: 0, backgroundColor: PALETTE.bg }}
+        aria-hidden="true"
+      />
+    );
+  }
+
+  // --- Animation Variants ---
+
+  // Slow organic drifting
+  const driftAnim = {
+    animate: prefersReducedMotion
+      ? {}
+      : {
+          y: [0, -15, 0, 10, 0],
+          x: [0, 8, -8, 5, 0],
+          transition: {
+            duration: 16,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        },
+  } as AnimObject;
+
+  const driftReverseAnim = {
+    animate: prefersReducedMotion
+      ? {}
+      : {
+          y: [0, 15, 0, -10, 0],
+          x: [0, -10, 5, -5, 0],
+          transition: {
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        },
+  } as AnimObject;
+
+  // Brutalist jump cut / glitch
+  const glitchAnim = {
+    animate: prefersReducedMotion
+      ? {}
+      : {
+          opacity: [0.3, 0.3, 0.7, 0.1, 0.3, 0.3],
+          x: [0, 0, -4, 4, 0, 0],
+          transition: {
+            duration: 8,
+            repeat: Infinity,
+            times: [0, 0.4, 0.42, 0.45, 0.48, 1], // sudden jumps
+            ease: "linear",
+          },
+        },
+  } as AnimObject;
+
+  const flickerAnim = {
+    animate: prefersReducedMotion
+      ? {}
+      : {
+          opacity: [0.1, 0.4, 0.2, 0.5, 0.1],
+          transition: {
+            duration: 10,
+            repeat: Infinity,
+            ease: "linear",
+          },
+        },
+  } as AnimObject;
+
+  // Smooth vertical sliding columns
+  const slideInAnim = {
+    animate: prefersReducedMotion
+      ? {}
+      : {
+          y: ["-5%", "2%", "-3%", "-5%"],
+          transition: {
+            duration: 14,
+            repeat: Infinity,
+            ease: "easeInOut",
+          },
+        },
+  } as AnimObject;
 
   return (
     <div
-      ref={containerRef}
       className="pointer-events-none absolute inset-0 overflow-hidden"
-      style={{ zIndex: 0 }}
-      aria-hidden
+      style={{
+        zIndex: 0,
+        // Layer 1: soft warm-white base canvas
+        backgroundColor: PALETTE.bg,
+      }}
+      aria-hidden="true"
     >
-      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+      {/* Mouse parallax wrapper */}
+      <motion.div
+        className="absolute inset-0 w-full h-full"
+        animate={{
+          x: prefersReducedMotion ? 0 : mousePos.x * -45,
+          y: prefersReducedMotion ? 0 : mousePos.y * -45,
+        }}
+        transition={{ type: "spring", stiffness: 40, damping: 25 }}
+      >
+        {/* =================================================================
+            Layer 2 & 4: Halftone clusters and rectangular color blocks 
+            ================================================================= */}
 
-      {/* Sparse system labels — pure CSS blink, negligible DOM cost. */}
-      <div className="absolute inset-0 hidden md:block">
-        {labels.map((label, i) => (
-          <span
-            key={label}
-            className="absolute font-mono text-[10px] font-bold tracking-widest text-ink/40"
-            style={{
-              left: `${12 + i * 19}%`,
-              top: `${(i % 2 === 0 ? 14 : 78) + (i % 3) * 4}%`,
-              animation: `bb-label-blink ${4 + i}s steps(1) infinite`,
-              animationDelay: `${i * 0.6}s`,
-            }}
-          >
-            {label}
-          </span>
-        ))}
+        {/* 1. TOP-RIGHT FORMATION */}
+        <motion.div
+          className="absolute top-8 right-8 md:top-16 md:right-24"
+          {...driftAnim}
+        >
+          <div className="relative">
+            {/* Color Block */}
+            <div
+              className="absolute -top-6 -left-12 w-40 h-64 mix-blend-multiply opacity-20"
+              style={{ backgroundColor: PALETTE.blue }}
+            />
+            {/* Dot Matrix Fragment */}
+            <DotMatrixSVG
+              width={200}
+              height={140}
+              color={PALETTE.charcoal}
+              spacing={10}
+              dotSize={4}
+              className="opacity-40"
+            />
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="absolute top-24 right-40 hidden md:block"
+          {...glitchAnim}
+          style={{ animationDelay: "1s" }}
+        >
+          <DotMatrixSVG
+            width={100}
+            height={60}
+            color={PALETTE.red}
+            spacing={8}
+            dotSize={2}
+            className="opacity-50"
+          />
+        </motion.div>
+
+        {/* 2. RIGHT-CENTER: VERTICAL COLUMNS & STRIPS */}
+        <motion.div
+          className="absolute top-[25%] right-[8%] md:right-[15%] w-16 md:w-32 h-[50vh] flex gap-4 mix-blend-multiply opacity-40"
+          {...slideInAnim}
+        >
+          <div
+            className="w-[40%] h-full"
+            style={{ backgroundColor: PALETTE.yellow }}
+          />
+          <div
+            className="w-[60%] h-[75%] mt-12"
+            style={{ backgroundColor: PALETTE.pink }}
+          />
+        </motion.div>
+
+        {/* Occasional vertical strips near center-right */}
+        <div className="absolute top-[10%] left-[65%] md:left-[70%] h-[80vh] w-[1px] bg-black/15" />
+        <div className="absolute top-[30%] left-[68%] md:left-[72%] h-[40vh] w-[2px] bg-black/10" />
+
+        <motion.div
+          className="absolute top-[45%] right-[5%] hidden md:block"
+          {...glitchAnim}
+        >
+          <DotMatrixSVG
+            width={40}
+            height={200}
+            color={PALETTE.charcoal}
+            spacing={6}
+            dotSize={3}
+            className="opacity-50"
+          />
+        </motion.div>
+
+        {/* 3. BOTTOM-RIGHT DENSITY */}
+        <motion.div
+          className="absolute -bottom-16 -right-16 md:bottom-12 md:right-24 origin-bottom-right"
+          {...driftReverseAnim}
+        >
+          <div className="relative">
+            <div
+              className="absolute -bottom-8 -right-8 w-80 h-48 mix-blend-multiply opacity-25"
+              style={{ backgroundColor: PALETTE.grey }}
+            />
+            <div
+              className="absolute bottom-12 right-16 w-32 h-32 mix-blend-multiply opacity-40"
+              style={{ backgroundColor: PALETTE.charcoal }}
+            />
+            <DotMatrixSVG
+              width={280}
+              height={180}
+              color={PALETTE.green}
+              spacing={12}
+              dotSize={4}
+              className="opacity-60"
+            />
+          </div>
+        </motion.div>
+
+        {/* 4. BOTTOM-LEFT FRAGMENTS */}
+        <motion.div
+          className="absolute bottom-16 left-8 md:bottom-24 md:left-16"
+          {...flickerAnim}
+        >
+          <div className="flex gap-6 items-end mix-blend-multiply">
+            <div
+              className="w-20 h-56 opacity-30 hidden md:block"
+              style={{ backgroundColor: PALETTE.blue }}
+            />
+            <div className="mb-4">
+              <DotMatrixSVG
+                width={140}
+                height={100}
+                color={PALETTE.charcoal}
+                spacing={8}
+                dotSize={3}
+                className="opacity-40"
+              />
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      {/* =================================================================
+          Layer 5: Small system labels / tiny code-like text
+          ================================================================= */}
+      <div className="absolute inset-0 font-mono text-[10px] font-bold tracking-[0.2em] text-black/40">
+        <motion.div
+          className="absolute top-12 left-12"
+          animate={glitchAnim.animate}
+        >
+          SYS.INIT // 0x001
+        </motion.div>
+        <motion.div
+          className="absolute bottom-24 right-[30%] hidden md:block"
+          animate={flickerAnim.animate}
+        >
+          DATA_GRID_OK
+        </motion.div>
+        <motion.div
+          className="absolute top-[40%] right-10 rotate-90 origin-right"
+          animate={glitchAnim.animate}
+        >
+          LATENCY: 12ms
+        </motion.div>
+        <motion.div
+          className="absolute bottom-12 left-12"
+          animate={flickerAnim.animate}
+        >
+          PROCESS_09
+        </motion.div>
       </div>
 
-      {/* Subtle grain overlay, matches the existing site's noise texture. */}
+      {/* =================================================================
+          Layer 6: Subtle grain/noise overlay
+          ================================================================= */}
       <div
-        className="absolute inset-0 opacity-[0.035] mix-blend-multiply"
+        className="absolute inset-0 opacity-[0.03] mix-blend-multiply pointer-events-none"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E\")",
@@ -353,25 +362,6 @@ export function BrutalistBackground() {
           backgroundSize: "256px 256px",
         }}
       />
-
-      <style jsx>{`
-        @keyframes bb-label-blink {
-          0%,
-          55% {
-            opacity: 0;
-          }
-          60%,
-          100% {
-            opacity: 1;
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          span {
-            animation: none !important;
-            opacity: 0.5 !important;
-          }
-        }
-      `}</style>
     </div>
   );
 }

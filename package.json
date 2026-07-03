@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "find .next -type f -delete 2>/dev/null; find .next -type d -empty -delete 2>/dev/null",
+    "predev": "npm run clean",
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run clean && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
