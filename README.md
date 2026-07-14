@@ -3,7 +3,10 @@
 # Hi there, I'm Abhinav Jain (abnjain) ✨
 </div>
 
-## 🚀 Full Stack Developer | Java Web Developer | Open Source Enthusiast
+<div align="center" >
+
+## 🚀 AI Developer | MERN Stack | Open Source Enthusiast
+</div>
 <div align="left">
 
 🔹 Passionate problem-solver and developer with expertise in **MERN stack, Java Web Development, PHP, WordPress, and SEO**.  
